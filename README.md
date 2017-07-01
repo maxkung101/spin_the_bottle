@@ -1,0 +1,1 @@
+Create a list of members in your small group or tribe. When you're ready, press "Spin the bottle" to begin.

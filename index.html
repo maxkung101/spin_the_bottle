@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Spin the bottle</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.5.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js" data-semver="1.5.11"></script>
+  <script src="app.js"></script>
+</head>
+
+<body ng-app="" ng-controller="MainCtrl">
+  <div id="main" class="w3-container">
+    <h2>Who shall pray for us?</h2>
+    <p class="theresult">{{ result }}</p>
+    <p><button type="button" class="w3-btn w3-block w3-black" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">Spin the bottle</button></p>
+  </div>
+  <div id="thelist" class="w3-container">
+    <form name="myform" ng-submit="addIt()" class="">
+      <div class="w3-bar w3-block">
+        <input type="text" class=" w3-bar-item w3-input" id="name" name="box" placeholder="Name" onkeydown="" ng-model="name" ng-disabled="spinning" required>
+        <button type="button" class="w3-bar-item w3-btn w3-green" ng-click="addIt()" ng-disabled="myform.box.$error.required">Add</button>
+        <button type="button" class="w3-bar-item w3-btn w3-red" ng-click="reset()" ng-disabled="list.length == 0 || spinning">Clear</button>
+      </div>
+    </form>
+    <h2>List of group members</h2>
+    <p class="group" ng-repeat="n in list track by $index">{{n}}</p>
+  </div>
+</body>
+
+</html>
