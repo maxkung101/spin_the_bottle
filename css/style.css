@@ -1,30 +1,27 @@
-/* CSS 3 */
+/* CSS 3 Document */
 
 body {
-  background-color: #ffffff;
-  font-family: "Arial", sans-serrif;
+    background-color: #ffffff;
+    font-family: "Arial", sans-serrif;
 }
 
 #main,
 #thelist {
-  background-color: #fff;
-}
-
-#main {
+    background-color: #fff;
     text-align: center;
-    display: none;
 }
 
 #thelist {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .theresult {
-  font-size: 16pt;
+    font-size: 16pt;
 }
 
 .group {
-  font-size: 14pt;
+    font-size: 20pt;
+    text-align: left;
 }
 
 #bar {
@@ -32,16 +29,42 @@ body {
     font-size: 16pt;
 }
 
-#spin-button {
-    position: absolute;
-    bottom: 15px;
+.spinner {
+    width: 25%;
+    display: block;
+    margin: auto;
 }
 
-@media only screen and ( max-width: 320px ) {
+#spin-button {
+    position: relative;
+}
+
+@media only screen and ( max-width: 1028px ) {
+    /* For medium devices */
+
+    .group {
+        font-size: 18pt;
+        text-align: left;
+    }
+
+    .spinner {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media only screen and ( max-width: 414px ) {
+    /* For mobile devices */
+
+    .group {
+        font-size: 14pt;
+        text-align: left;
+    }
+
     #bar {
         position: fixed;
         bottom: 0px;
-        width: 100%;
         font-size: 10pt;
     }
 
@@ -49,8 +72,9 @@ body {
         padding-bottom: 40px;
     }
 
-    #spin-button {
-        position: absolute;
-        bottom: 45px;
+    .spinner {
+        width: 100%;
+        display: block;
+        margin: auto;
     }
 }
