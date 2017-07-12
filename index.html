@@ -18,11 +18,15 @@
 </head>
 <body ng-app="" ng-controller="MainCtrl">
     <div class="container col-sm-12">
-        <ul id="bar" class="nav nav-pills">
-            <li class="active"><a data-toggle="pill" href="#thelist">Attendance</a></li>
-            <li><a data-toggle="pill" href="#main">Closing time</a></li>
+        <ul id="bar" class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#thelist"><span class="glyphicon glyphicon-list"></span> <span class="kkk">Attendance</span></a></li>
+            <li><a data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-list-alt"></span> <span class="kkk">QA timer</span></a></li>
+            <li><a data-toggle="tab" href="#main"><span class="glyphicon glyphicon-download-alt"></span> <span class="kkk">Closing time</span></a></li>
+            <li><a data-toggle="tab" href="#pr-timer"><span class="glyphicon glyphicon-time"></span> <span class="kkk">Prayer timer</span></a></li>
+            <li><a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">Settings</span></a></li>
         </ul>
         <div class="tab-content">
+            <!-- List Tab -->
             <div id="thelist" class="tab-pane fade in active">
                 <form name="myform" ng-submit="addIt()" class="input-group">
                     <input type="text" class="form-control input-lg" id="name" name="box" placeholder="Name" onkeydown="" ng-model="name" ng-disabled="spinning" required>
@@ -31,16 +35,68 @@
                         <button type="button" class="btn btn-danger btn-lg" ng-click="reset()" ng-disabled="list.length == 0 || spinning">Clear</button>
                     </div>
                 </form>
-                <h2>List of group members</h2>
-                <h4>Total count: {{ list.length }}</h4>
-                <p class="group" ng-repeat="n in list track by $index">{{n}}</p>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2>List of group members</h2>
+                        <h4>Total count: {{ list.length }}</h4>
+                    </div>
+                    <div class="panel-body">
+                        <p class="group" ng-repeat="n in list track by $index">{{n}}</p>
+                    </div>
+                </div>
             </div>
+            <!-- QA Timer Tab -->
+            <div id="qa-timer" class="tab-pane fade">
+                <h1>QA Timer</h1>
+                <p class="timercount">{{ timer1 }}</p>
+                <p ng-if="!runtimer1"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">Start</button></p>
+                <p ng-if="runtimer1"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">Stop</button></p>
+            </div>
+            <!-- Main Tab -->
             <div id="main" class="tab-pane fade">
                 <h1>Who shall pray for us?</h1>
                 <p class="theresult">{{ result }}</p>
                 <p ng-if="!spinning"><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></p>
                 <p ng-if="spinning"><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></p>
                 <button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">Go</button>
+            </div>
+            <!-- Prayer Timer Tab -->
+            <div id="pr-timer" class="tab-pane fade">
+                <h1>Prayer Timer</h1>
+                <p class="timercount">{{ timer2 }}</p>
+                <p ng-if="!runtimer2"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">Start</button></p>
+                <p ng-if="runtimer2"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">Stop</button></p>
+            </div>
+            <!-- Settings Tab -->
+            <div id="settings" class="tab-pane fade">
+                <div class="list-group">
+                    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal">About</button>
+                    <label for="sel1">Language:</label>
+                    <select class="form-control" id="sel1">
+                        <option>English</option>
+                        <option>Chinese (Traditional) Coming soon</option>
+                        <option>Chinese (Simplified) Coming soon</option>
+                    </select>
+                </div>
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">About</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Created by Max Kung</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
