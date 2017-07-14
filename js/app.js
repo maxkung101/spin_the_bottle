@@ -38,7 +38,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.prayer = function (test) {
         switch (test) {
             case "1":
-                return "祷告計時器";
+                return "禱告計時器";
             case "2":
                 return "祷告计时器";
             default:
