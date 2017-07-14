@@ -184,8 +184,8 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.spinning = false;
     $scope.list = [];
     $scope.result0 = "Please take attendance first.";
-    $scope.result1 = "請先出席.";
-    $scope.result2 = "请先出席.";
+    $scope.result1 = "請先出席。";
+    $scope.result2 = "请先出席。";
     // --------------------------------------------------
     // Timers
     $scope.timer1 = 30;
@@ -227,8 +227,8 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         $scope.list = [];
         $scope.name = "";
         $scope.result0 = "Please take attendance first.";
-        $scope.result1 = "請先出席.";
-        $scope.result2 = "请先出席.";
+        $scope.result1 = "請先出席。";
+        $scope.result2 = "请先出席。";
     }
     $scope.countdown1 = function () {
         if (!$scope.runtimer1) {
