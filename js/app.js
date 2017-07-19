@@ -272,12 +272,12 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                     $scope.runtimer2 = false;
                     $scope.timer2 = 60;
                     if ($scope.selectedLanguage == "1") {
-                        $window.alert("時間到了");
+                        $window.alert("... 以你的名義祈禱，阿們。");
                     } else if ($scope.selectedLanguage == "2") {
-                        $window.alert("时间到了");
+                        $window.alert("... 以你的名义祈祷，阿们。");
                     }
                     else {
-                        $window.alert("Time's up");
+                        $window.alert("... In your name I pray, Amen.");
                     }
                 } else if ($scope.deactivate2) {
                     $timeout.cancel();
