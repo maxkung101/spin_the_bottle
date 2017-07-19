@@ -58,8 +58,14 @@
                 <p class="theresult" ng-if='selectedLanguage == "0"'>{{ result0 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "1"'>{{ result1 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "2"'>{{ result2 }}</p>
-                <p ng-if="!spinning"><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></p>
-                <p ng-if="spinning"><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></p>
+                <p ng-if="!spinning">
+                    <span ng-if='selectedSpinner == "0"'><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
+                    <span ng-if='selectedSpinner == "1"'><img src="img/wait_time_clock_alarm_loading-512.png" class="spinner" alt="Fidget toy" /></span>
+                </p>
+                <p ng-if="spinning">
+                    <span ng-if='selectedSpinner == "0"'><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></span>
+                    <span ng-if='selectedSpinner == "1"'><img src="img/loading.gif" class="spinner" alt="Fidget toy" /></span>
+                </p>
                 <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
             <!-- Prayer Timer Tab -->
@@ -77,6 +83,12 @@
                         <option value="0">English</option>
                         <option value="1">繁体中文</option>
                         <option value="2">简体中文</option>
+                    </select>
+                    <hr />
+                    <label for="selectedSpinner">{{ spinningthing(selectedLanguage) }}:</label>
+                    <select class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
+                        <option value="0">Fidget toy</option>
+                        <option value="1">Loading symbol</option>
                     </select>
                     <hr />
                     <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal">{{ about(selectedLanguage) }}</button>

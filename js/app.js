@@ -2,6 +2,8 @@
 var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function ($scope, $timeout, $window) {
+    // Spinners
+    $scope.selectedSpinner = "0";
     // Languages
     $scope.selectedLanguage = "0";
     // >> Bar
@@ -157,6 +159,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "语言";
             default:
                 return "Language";
+        }
+    }
+    $scope.spinningthing = function (test) {
+        switch (test) {
+            case "1":
+                return "隨機微調";
+            case "2":
+                return "随机微调";
+            default:
+                return "Randomizer spinner";
         }
     }
     $scope.about = function (test) {

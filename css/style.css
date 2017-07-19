@@ -27,6 +27,7 @@ body {
 }
 
 #bar {
+    padding-top: 25px;
     background-color: #efefef;
     font-size: 16pt;
 }
@@ -95,9 +96,18 @@ body {
     }
 
     #bar {
+        padding-top: 0px;
         position: fixed;
         bottom: 0px;
         font-size: 10pt;
+    }
+
+    #main,
+    #thelist,
+    #qa-timer,
+    #pr-timer,
+    #settings {
+        padding-top: 25px;
     }
 
     #thelist {
