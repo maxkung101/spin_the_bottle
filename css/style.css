@@ -78,8 +78,16 @@ body {
     }
 }
 
-@media only screen and ( max-width: 414px ) {
+@media only screen and ( max-width: 750px ) {
     /* For mobile devices */
+
+    #bar {
+        font-size: 10pt;
+    }
+}
+
+@media only screen and ( max-width: 414px ) {
+    /* For small mobile devices */
 
     .group {
         font-size: 16pt;
