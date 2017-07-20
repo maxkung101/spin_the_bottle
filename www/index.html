@@ -2,7 +2,7 @@
 <html ng-app="plunker">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Closing Prayer Randomizer</title>
+    <title>RCCC Small Group</title>
     <script>
         document.write('<base href="' + document.location + '" />');
     </script>
@@ -91,10 +91,33 @@
                         <option value="1">Loading symbol</option>
                     </select>
                     <hr />
-                    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal">{{ about(selectedLanguage) }}</button>
+                    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
+                    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ about(selectedLanguage) }}</button>
                 </div>
                 <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
+                <div id="myModal1" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">{{ terms(selectedLanguage) }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p>Terms are available in English (US) only. Thank you for using RCCC Small Group. Please take some time to read this user agreement before using the app.</p>
+                                <ol>
+                                    <li>Youth Ministry: You must be a counselor, caretaker, or equivalent to use the app.</li>
+                                    <li>Liability: We are not responsible for any damages, or data loss.</li>
+                                </ol>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">{{ close(selectedLanguage) }}</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="myModal2" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
                         <!-- Modal content-->

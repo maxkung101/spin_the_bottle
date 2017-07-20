@@ -181,6 +181,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "About";
         }
     }
+    $scope.terms = function (test) {
+        switch (test) {
+            case "1":
+                return "使用條款";
+            case "2":
+                return "使用条款";
+            default:
+                return "Terms of Use";
+        }
+    }
     $scope.close = function (test) {
         switch (test) {
             case "1":
