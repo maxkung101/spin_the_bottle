@@ -1,0 +1,126 @@
+/* CSS 3 Document */
+
+body {
+    background-color: #ffffff;
+    font-family: "Arial", sans-serrif;
+}
+
+#main,
+#thelist,
+#qa-timer,
+#pr-timer {
+    background-color: #fff;
+    text-align: center;
+}
+
+#thelist {
+    padding-bottom: 10px;
+}
+
+.theresult {
+    font-size: 16pt;
+}
+
+.group {
+    font-size: 20pt;
+    text-align: left;
+}
+
+#bar {
+    padding-top: 25px;
+    background-color: #efefef;
+    font-size: 16pt;
+}
+
+.spinner {
+    width: 25%;
+    display: block;
+    margin: auto;
+}
+
+#spin-button {
+    position: relative;
+}
+
+.headings {
+    background-color: #375270;
+    color: #fff;
+}
+
+.headings2 {
+    background-color: #3399cc;
+    color: #fff;
+}
+
+.timercount {
+    font-size: 7em;
+}
+
+@media only screen and ( max-width: 1028px ) {
+    /* For medium devices */
+
+    .group {
+        font-size: 20pt;
+        text-align: left;
+    }
+
+    .spinner {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media only screen and ( max-width: 850px ) {
+    /* For small devices */
+
+    #bar {
+        font-size: 12pt;
+    }
+}
+
+@media only screen and ( max-width: 750px ) {
+    /* For mobile devices */
+
+    #bar {
+        font-size: 10pt;
+    }
+}
+
+@media only screen and ( max-width: 414px ) {
+    /* For small mobile devices */
+
+    .group {
+        font-size: 16pt;
+        text-align: left;
+    }
+
+    #bar {
+        padding-top: 0px;
+        position: fixed;
+        bottom: 0px;
+        font-size: 10pt;
+    }
+
+    #main,
+    #thelist,
+    #qa-timer,
+    #pr-timer,
+    #settings {
+        padding-top: 25px;
+    }
+
+    #thelist {
+        padding-bottom: 40px;
+    }
+
+    .spinner {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    .kkk {
+        display: none;
+    }
+}

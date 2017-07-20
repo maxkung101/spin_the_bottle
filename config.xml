@@ -22,12 +22,12 @@
 			   the filename!		
 		-->
 		
-    <name>Closing Prayer Randomizer</name>
+    <name>RCCC Small Group</name>
     <description>With this app, you can randomly choose which person in your small group to close in prayer.</description>
     <author href="" email="maxkung06@gmail.com">Max Kung</author>
 
     <!-- Define app icon for each platform. -->
-    <icon src="img/icon.png" />
+    <icon src="www/img/logo.png" />
 
 	 <preference name="phonegap-version" value="cli-6.5.0" />
 
