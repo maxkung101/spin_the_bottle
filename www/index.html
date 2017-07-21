@@ -6,11 +6,11 @@
     <script>
         document.write('<base href="' + document.location + '" />');
     </script>
-    <!-- CSS -->
+    <!-- CSS Link -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" />
-    <!-- JavaScript -->
+    <!-- JavaScript Link -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script data-require="angular.js@1.5.x" src="js/angular.min.js" data-semver="1.5.11"></script>
@@ -104,10 +104,11 @@
                                 <h4 class="modal-title">{{ terms(selectedLanguage) }}</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Terms are available in English (US) only. Thank you for using RCCC Small Group. Please take some time to read this user agreement before using the app.</p>
+                                <p>Terms are available in English (US) only. By using this app, you agree with these terms and conditions. Otherwise, you should not be using the application. You can only agree with these terms if you're 12 or older. We may update these terms periodically, but we will try not to ruin your fun. Thank you for using RCCC Small Group. Please take some time to read this user agreement before using this app.</p>
                                 <ol>
-                                    <li>Youth Ministry: You must be a counselor, caretaker, or equivalent to use the app.</li>
+                                    <li>Fellowship Groups: You must be a counselor, caretaker, or group leader to use the app.</li>
                                     <li>Liability: We are not responsible for any damages, or data loss.</li>
+                                    <li>Warranty Information: We don't do warranties.</li>
                                 </ol>
                             </div>
                             <div class="modal-footer">
@@ -126,8 +127,22 @@
                                 <h4 class="modal-title">{{ about(selectedLanguage) }}</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Created by Max Kung</p>
-                                <p>Special thanks to Antioch Hwang</p>
+                                <p>Designed by Max Kung</p>
+                                <p>Programmed by Max Kung</p>
+                                <p>Special thanks to Antioch Hwang and spin the bottle game</p>
+                                <p>Programming:
+                                    <ul>
+                                        <li>HTML 5</li>
+                                        <li>CSS 3 <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+         src="img/vcss.gif"
+         alt="Valid CSS!" />
+</a></li>
+                                        <li>Bootstrap version 3.3.7</li>
+                                        <li>Angular JS version 1.5.11</li>
+                                    </ul>
+                                    
+                                </p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">{{ close(selectedLanguage) }}</button>
