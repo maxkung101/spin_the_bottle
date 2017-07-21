@@ -23,7 +23,7 @@
             <li><a data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-list-alt"></span> 2. <span class="kkk">{{ qa(selectedLanguage) }}</span></a></li>
             <li><a data-toggle="tab" href="#main"><span class="glyphicon glyphicon-download-alt"></span> 3. <span class="kkk">{{ closingtime(selectedLanguage) }}</span></a></li>
             <li><a data-toggle="tab" href="#pr-timer"><span class="glyphicon glyphicon-time"></span> 4. <span class="kkk">{{ prayer(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ settings(selectedLanguage) }}</span></a></li>
+            <li><a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ extras(selectedLanguage) }}</span></a></li>
         </ul>
         <div class="tab-content">
             <!-- List Tab -->
@@ -77,8 +77,9 @@
                 <p ng-if="!runtimer2"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer2"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Settings Tab -->
+            <!-- Extras Tab -->
             <div id="settings" class="tab-pane fade">
+                <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}:</label>
                     <select class="form-control" id="selectedLanguage" ng-model="selectedLanguage">
@@ -86,17 +87,16 @@
                         <option value="1">繁体中文</option>
                         <option value="2">简体中文</option>
                     </select>
-                    <hr />
                     <label for="selectedSpinner">{{ spinningthing(selectedLanguage) }}:</label>
                     <select class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
                         <option value="0">Fidget toy</option>
                         <option value="1">Loading symbol</option>
                         <option value="2">Hatsune Miku</option>
                     </select>
-                    <hr />
-                    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
-                    <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ about(selectedLanguage) }}</button>
                 </div>
+                <h3>{{ about(selectedLanguage) }}</h3>
+                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
                 <!-- Modal -->
                 <div id="myModal1" class="modal fade" role="dialog">
                     <div class="modal-dialog">
@@ -127,22 +127,24 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">{{ about(selectedLanguage) }}</h4>
+                                <h4 class="modal-title">{{ credits(selectedLanguage) }}</h4>
                             </div>
                             <div class="modal-body">
                                 <p>Designed by Max Kung</p>
                                 <p>Programmed by Max Kung</p>
                                 <p>Special thanks to Antioch Hwang and spin the bottle game</p>
-                                <p>Programming:
+                                <p>
+                                    Programming:
                                     <ul>
                                         <li>HTML 5</li>
                                         <li>CSS 3 <img style="border:0;width:88px;height:31px" src="img/vcss.gif" alt="Valid CSS!" /></li>
                                         <li>Bootstrap version 3.3.7</li>
                                         <li>Angular JS version 1.5.11</li>
                                     </ul>
-                                    
+
                                 </p>
-                                <p>Disclaimers:
+                                <p>
+                                    Disclaimers:
                                     <ul>
                                         <li>Hatsune Miku belongs to Crypton Future Media, Inc.</li>
                                     </ul>
