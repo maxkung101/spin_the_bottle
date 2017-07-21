@@ -60,11 +60,13 @@
                 <p class="theresult" ng-if='selectedLanguage == "2"'>{{ result2 }}</p>
                 <p ng-if="!spinning">
                     <span ng-if='selectedSpinner == "0"'><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
-                    <span ng-if='selectedSpinner == "1"'><img src="img/wait_time_clock_alarm_loading-512.png" class="spinner" alt="Fidget toy" /></span>
+                    <span ng-if='selectedSpinner == "1"'><img src="img/wait_time_clock_alarm_loading-512.png" class="spinner" alt="Loading symbol" /></span>
+                    <span ng-if='selectedSpinner == "2"'><img src="img/leekspin.jpg" class="spinner" alt="Hatsune Miku" /></span>
                 </p>
                 <p ng-if="spinning">
                     <span ng-if='selectedSpinner == "0"'><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></span>
-                    <span ng-if='selectedSpinner == "1"'><img src="img/loading.gif" class="spinner" alt="Fidget toy" /></span>
+                    <span ng-if='selectedSpinner == "1"'><img src="img/loading.gif" class="spinner" alt="Loading symbol" /></span>
+                    <span ng-if='selectedSpinner == "2"'><img src="img/mikuspinning.gif" class="spinner" alt="Hatsune Miku" /></span>
                 </p>
                 <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
@@ -89,6 +91,7 @@
                     <select class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
                         <option value="0">Fidget toy</option>
                         <option value="1">Loading symbol</option>
+                        <option value="2">Hatsune Miku</option>
                     </select>
                     <hr />
                     <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
@@ -142,6 +145,11 @@
                                         <li>Angular JS version 1.5.11</li>
                                     </ul>
                                     
+                                </p>
+                                <p>Disclaimers:
+                                    <ul>
+                                        <li>Hatsune Miku belongs to Crypton Future Media, Inc.</li>
+                                    </ul>
                                 </p>
                             </div>
                             <div class="modal-footer">
