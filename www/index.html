@@ -48,6 +48,7 @@
             <!-- QA Timer Tab -->
             <div id="qa-timer" class="tab-pane fade">
                 <h1>{{ qa(selectedLanguage) }}</h1>
+                <p class="theresult">{{ measured(selectedLanguage) }}</p>
                 <p class="timercount">{{ timer1 }}</p>
                 <p ng-if="!runtimer1"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer1"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">{{ stopbutton(selectedLanguage) }}</button></p>
@@ -73,6 +74,7 @@
             <!-- Prayer Timer Tab -->
             <div id="pr-timer" class="tab-pane fade">
                 <h1>{{ prayer(selectedLanguage) }}</h1>
+                <p class="theresult">{{ measured(selectedLanguage) }}</p>
                 <p class="timercount">{{ timer2 }}</p>
                 <p ng-if="!runtimer2"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer2"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>

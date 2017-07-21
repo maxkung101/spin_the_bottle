@@ -109,6 +109,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         }
     }
     // >> Timer pages
+    $scope.measured = function (test) {
+        switch (test) {
+            case "1":
+                return "時間以秒為單位。";
+            case "2":
+                return "时间以秒为单位。";
+            default:
+                return "Time measured in seconds.";
+        }
+    }
     $scope.startbutton = function (test) {
         switch (test) {
             case "1":
