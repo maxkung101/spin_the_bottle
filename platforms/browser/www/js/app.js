@@ -47,14 +47,14 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Prayer timer";
         }
     }
-    $scope.settings = function (test) {
+    $scope.extras = function (test) {
         switch (test) {
             case "1":
-                return "定";
+                return "演員";
             case "2":
-                return "定";
+                return "演员";
             default:
-                return "Settings";
+                return "Extras";
         }
     }
     // >> Attendance page
@@ -150,7 +150,17 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Go";
         }
     }
-    // >> Settings page
+    // >> Extras page
+    $scope.settings = function (test) {
+        switch (test) {
+            case "1":
+                return "設置";
+            case "2":
+                return "设置";
+            default:
+                return "Settings";
+        }
+    }
     $scope.language = function (test) {
         switch (test) {
             case "1":
@@ -179,6 +189,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "关于";
             default:
                 return "About";
+        }
+    }
+    $scope.credits = function (test) {
+        switch (test) {
+            case "1":
+                return "信用";
+            case "2":
+                return "信用";
+            default:
+                return "Credits";
         }
     }
     $scope.terms = function (test) {
