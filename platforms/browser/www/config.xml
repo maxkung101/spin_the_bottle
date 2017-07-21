@@ -4,7 +4,6 @@
     <description>With this app, you can randomly choose which person in your small group to close in prayer.</description>
     <author email="maxkung06@gmail.com" href="">Max Kung</author>
     <content src="index.html" />
-    <icon src="www/img/logo.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -12,6 +11,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="www/img/logo.png" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="phonegap-version" value="cli-6.5.0" />
