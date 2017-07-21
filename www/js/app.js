@@ -91,11 +91,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.listof = function (test) {
         switch (test) {
             case "1":
-                return "小組成員名單";
+                return "會員名單";
             case "2":
-                return "小组成员名单";
+                return "会员名单";
             default:
-                return "List of group members";
+                return "List of members";
         }
     }
     $scope.totalcount = function (test) {
