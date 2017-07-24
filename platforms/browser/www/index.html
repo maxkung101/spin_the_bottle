@@ -60,16 +60,16 @@
                 <p class="theresult" ng-if='selectedLanguage == "1"'>{{ result1 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "2"'>{{ result2 }}</p>
                 <p ng-if="!spinning">
-                    <span ng-if='selectedSpinner == "0"'><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
-                    <span ng-if='selectedSpinner == "1"'><img src="img/wait_time_clock_alarm_loading-512.png" class="spinner" alt="Loading symbol" /></span>
+                    <span ng-if='selectedSpinner == "0"'><img src="img/wait_time_clock_alarm_loading-512.png" class="spinner" alt="Loading symbol" /></span>
+                    <span ng-if='selectedSpinner == "1"'><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
                     <span ng-if='selectedSpinner == "2"'><img src="img/leekspin.jpg" class="spinner" alt="Hatsune Miku" /></span>
                     <span ng-if='selectedSpinner == "3"'><img src="img/nes-mario.jpg" class="spinner" alt="Mario" /></span>
                     <span ng-if='selectedSpinner == "4"'><img src="img/nyan-cat-stable.jpg" class="spinner" alt="Nyan Cat" /></span>
                     <span ng-if='selectedSpinner == "5"'><img src="img/pikachu.jpg" class="spinner" alt="Pikachu" /></span>
                 </p>
                 <p ng-if="spinning">
-                    <span ng-if='selectedSpinner == "0"'><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></span>
-                    <span ng-if='selectedSpinner == "1"'><img src="img/loading.gif" class="spinner" alt="Loading symbol" /></span>
+                    <span ng-if='selectedSpinner == "0"'><img src="img/loading.gif" class="spinner" alt="Loading symbol" /></span>
+                    <span ng-if='selectedSpinner == "1"'><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></span>
                     <span ng-if='selectedSpinner == "2"'><img src="img/mikuspinning.gif" class="spinner" alt="Hatsune Miku" /></span>
                     <span ng-if='selectedSpinner == "3"'><img src="img/mariowalking.gif" class="spinner" alt="Mario" /></span>
                     <span ng-if='selectedSpinner == "4"'><img src="img/nyan-cat.gif" class="spinner" alt="Nyan Cat" /></span>
@@ -97,8 +97,8 @@
                     </select>
                     <label for="selectedSpinner">{{ spinningthing(selectedLanguage) }}:</label>
                     <select class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
-                        <option value="0">Fidget toy</option>
-                        <option value="1">Loading symbol</option>
+                        <option value="0">Loading symbol</option>
+                        <option value="1">Fidget toy</option>
                         <option value="2">Hatsune Miku</option>
                         <option value="3">Mario</option>
                         <option value="4">Nyan Cat</option>
