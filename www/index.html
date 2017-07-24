@@ -65,6 +65,7 @@
                     <span ng-if='selectedSpinner == "2"'><img src="img/leekspin.jpg" class="spinner" alt="Hatsune Miku" /></span>
                     <span ng-if='selectedSpinner == "3"'><img src="img/nes-mario.jpg" class="spinner" alt="Mario" /></span>
                     <span ng-if='selectedSpinner == "4"'><img src="img/nyan-cat-stable.jpg" class="spinner" alt="Nyan Cat" /></span>
+                    <span ng-if='selectedSpinner == "5"'><img src="img/pikachu.jpg" class="spinner" alt="Pikachu" /></span>
                 </p>
                 <p ng-if="spinning">
                     <span ng-if='selectedSpinner == "0"'><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></span>
@@ -72,6 +73,7 @@
                     <span ng-if='selectedSpinner == "2"'><img src="img/mikuspinning.gif" class="spinner" alt="Hatsune Miku" /></span>
                     <span ng-if='selectedSpinner == "3"'><img src="img/mariowalking.gif" class="spinner" alt="Mario" /></span>
                     <span ng-if='selectedSpinner == "4"'><img src="img/nyan-cat.gif" class="spinner" alt="Nyan Cat" /></span>
+                    <span ng-if='selectedSpinner == "5"'><img src="img/nyan-pikachu.gif" class="spinner" alt="Pikachu" /></span>
                 </p>
                 <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
@@ -100,6 +102,7 @@
                         <option value="2">Hatsune Miku</option>
                         <option value="3">Mario</option>
                         <option value="4">Nyan Cat</option>
+                        <option value="5">Pikachu</option>
                     </select>
                 </div>
                 <h3>{{ about(selectedLanguage) }}</h3>
@@ -157,6 +160,7 @@
                                         <li>Hatsune Miku belongs to Crypton Future Media, Inc.</li>
                                         <li>Mario belongs to Nintendo Co., Ltd.</li>
                                         <li>Nyan Cat is an internet sensation on YouTube.</li>
+                                        <li>Pikachu from Pokémon belongs to The Pokémon Company International and Game Freak.</li>
                                     </ul>
                                 </p>
                             </div>
