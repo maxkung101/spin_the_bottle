@@ -112,11 +112,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.measured = function (test) {
         switch (test) {
             case "1":
-                return "時間以秒為單位。";
+                return "時間以分鐘和秒為單位。";
             case "2":
-                return "时间以秒为单位。";
+                return "时间以分钟和秒为单位。";
             default:
-                return "Time measured in seconds.";
+                return "Time measured in minutes and seconds.";
         }
     }
     $scope.startbutton = function (test) {
@@ -240,10 +240,12 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.result2 = "请先出席。";
     // --------------------------------------------------
     // Timers
-    $scope.timer1 = 30;
+    $scope.timer1 = 0;
+    $scope.minute1 = 1;
     $scope.runtimer1 = false;
     $scope.deactivate1 = false;
-    $scope.timer2 = 60;
+    $scope.timer2 = 30;
+    $scope.minute2 = 1;
     $scope.runtimer2 = false;
     $scope.deactivate2 = false;
     // --------------------------------------------------
@@ -289,20 +291,27 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         } else {
             $timeout(function () {
                 if ($scope.timer1 == 0) {
-                    $scope.runtimer1 = false;
-                    $scope.timer1 = 30;
-                    if ($scope.selectedLanguage == "1") {
-                        $window.alert("時間到了");
-                    } else if ($scope.selectedLanguage == "2") {
-                        $window.alert("时间到了");
-                    }
-                    else {
-                        $window.alert("Time's up");
+                    if ($scope.minute1 != 0) {
+                        $scope.minute1 -= 1;
+                        $scope.timer1 = 59;
+                        $scope.countdown1();
+                    } else {
+                        $scope.runtimer1 = false;
+                        $scope.minute1 = 1;
+                        if ($scope.selectedLanguage == "1") {
+                            $window.alert("時間到了");
+                        } else if ($scope.selectedLanguage == "2") {
+                            $window.alert("时间到了");
+                        }
+                        else {
+                            $window.alert("Time's up");
+                        }
                     }
                 } else if ($scope.deactivate1) {
                     $timeout.cancel();
                     $scope.runtimer1 = false;
-                    $scope.timer1 = 30;
+                    $scope.timer1 = 0;
+                    $scope.minute1 = 1;
                     $scope.deactivate1 = false;
                 } else {
                     $scope.timer1 -= 1;
@@ -321,20 +330,28 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         } else {
             $timeout(function () {
                 if ($scope.timer2 == 0) {
-                    $scope.runtimer2 = false;
-                    $scope.timer2 = 60;
-                    if ($scope.selectedLanguage == "1") {
-                        $window.alert("... 以你的名義祈禱，阿們。");
-                    } else if ($scope.selectedLanguage == "2") {
-                        $window.alert("... 以你的名义祈祷，阿们。");
-                    }
-                    else {
-                        $window.alert("... In your name I pray, Amen.");
+                    if ($scope.minute2 != 0) {
+                        $scope.minute2 -= 1;
+                        $scope.timer2 = 59;
+                        $scope.countdown2();
+                    } else {
+                        $scope.runtimer2 = false;
+                        $scope.minute2 = 1;
+                        $scope.timer2 = 30;
+                        if ($scope.selectedLanguage == "1") {
+                            $window.alert("... 以你的名義祈禱，阿們。");
+                        } else if ($scope.selectedLanguage == "2") {
+                            $window.alert("... 以你的名义祈祷，阿们。");
+                        }
+                        else {
+                            $window.alert("... In your name I pray, Amen.");
+                        }
                     }
                 } else if ($scope.deactivate2) {
                     $timeout.cancel();
                     $scope.runtimer2 = false;
-                    $scope.timer2 = 60;
+                    $scope.minute2 = 1;
+                    $scope.timer2 = 30;
                     $scope.deactivate2 = false;
                 } else {
                     $scope.timer2 -= 1;
