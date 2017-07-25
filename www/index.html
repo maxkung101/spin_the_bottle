@@ -59,7 +59,7 @@
                 <p class="theresult" ng-if='selectedLanguage == "0"'>{{ result0 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "1"'>{{ result1 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "2"'>{{ result2 }}</p>
-                <p ng-if="!spinning">
+                <p class="spinner-image" ng-if="!spinning">
                     <span ng-if='selectedSpinner == "0"'><img src="img/loading-stable.png" class="spinner" alt="Loading symbol" /></span>
                     <span ng-if='selectedSpinner == "1"'><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
                     <span ng-if='selectedSpinner == "2"'><img src="img/leekspin.jpg" class="spinner" alt="Hatsune Miku" /></span>
@@ -67,7 +67,7 @@
                     <span ng-if='selectedSpinner == "4"'><img src="img/nyan-cat-stable.jpg" class="spinner" alt="Nyan Cat" /></span>
                     <span ng-if='selectedSpinner == "5"'><img src="img/pikachu.jpg" class="spinner" alt="Pikachu" /></span>
                 </p>
-                <p ng-if="spinning">
+                <p class="spinner-image" ng-if="spinning">
                     <span ng-if='selectedSpinner == "0"'><img src="img/loading.gif" class="spinner" alt="Loading symbol" /></span>
                     <span ng-if='selectedSpinner == "1"'><img src="img/hand-spinner-fidget-toy.gif" class="spinner" alt="Fidget toy" /></span>
                     <span ng-if='selectedSpinner == "2"'><img src="img/mikuspinning.gif" class="spinner" alt="Hatsune Miku" /></span>
@@ -108,11 +108,11 @@
                 <h3>{{ about(selectedLanguage) }}</h3>
                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
-                <!-- Modal -->
+                <!-- Terms Modal -->
                 <div id="myModal1" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
-                        <!-- Modal content-->
+                        <!-- Terms Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ terms(selectedLanguage) }}</h4>
@@ -132,10 +132,11 @@
 
                     </div>
                 </div>
+                <!-- Credits Modal -->
                 <div id="myModal2" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
-                        <!-- Modal content-->
+                        <!-- Credits Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ credits(selectedLanguage) }}</h4>

@@ -2,6 +2,8 @@
 
 body {
     background-color: #ffffff;
+    background: url("../img/background-image.jpg") no-repeat center fixed;
+    background-size: cover;
     font-family: "Arial", sans-serrif;
 }
 
@@ -9,7 +11,6 @@ body {
 #thelist,
 #qa-timer,
 #pr-timer {
-    background-color: #fff;
     text-align: center;
 }
 
@@ -38,6 +39,10 @@ body {
     margin: auto;
 }
 
+.spinner-image {
+    background-color: #ffffff;
+}
+
 #spin-button {
     position: relative;
 }
@@ -54,6 +59,15 @@ body {
 
 .timercount {
     font-size: 7em;
+}
+
+.modal-header {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.modal-footer {
+    background-color: #384b5f;
 }
 
 @media only screen and ( max-width: 1028px ) {
