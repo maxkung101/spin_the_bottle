@@ -24,4 +24,4 @@ I do not own any of the images in this repository (except [logo.png](https://git
 
 Terms of Use
 ------------
-See [index.html](https://github.com/maxkung101/spin_-the_bottle/blob/master/www/index.html#L120)
+See [index.html#L120](https://github.com/maxkung101/spin_-the_bottle/blob/master/www/index.html#L120)
