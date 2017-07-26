@@ -379,11 +379,17 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     }
 });
 
-function saveThis() {
+function saveThis() { // Save settings on change
     if (typeof (Storage) !== "undefined") {
         localStorage.spinner = document.getElementById("selectedSpinner").value;
         localStorage.language = document.getElementById("selectedLanguage").value;
-    } else {
-        // nothing happens
+    } else { // Browser or device does not support local storage
+        if (document.getElementById("selectedLanguage").value == "1") {
+            window.alert("設備沒有本地存儲\n設置尚未保存。");
+        } else if (document.getElementById("selectedLanguage").value == "2") {
+            window.alert("设备没有本地存储\n设置尚未保存。");
+        } else {
+            window.alert("Local storage not supported\nYour settings have not been saved.");
+        }
     }
 }
