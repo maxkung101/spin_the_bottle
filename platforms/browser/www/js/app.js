@@ -2,10 +2,24 @@
 var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function ($scope, $timeout, $window) {
-    // Spinners
-    $scope.selectedSpinner = "0";
-    // Languages
-    $scope.selectedLanguage = "0";
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.spinner && localStorage.language) {
+            // Spinners
+            $scope.selectedSpinner = localStorage.spinner;
+            // Languages
+            $scope.selectedLanguage = localStorage.language;
+        } else {
+            // Spinners
+            $scope.selectedSpinner = "0";
+            // Languages
+            $scope.selectedLanguage = "0";
+        }
+    } else {
+        // Spinners
+        $scope.selectedSpinner = "0";
+        // Languages
+        $scope.selectedLanguage = "0";
+    }
     // >> Bar
     $scope.attendance = function (test) {
         switch (test) {
@@ -364,3 +378,12 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         $scope.deactivate2 = true;
     }
 });
+
+function saveThis() {
+    if (typeof (Storage) !== "undefined") {
+        localStorage.spinner = document.getElementById("selectedSpinner").value;
+        localStorage.language = document.getElementById("selectedLanguage").value;
+    } else {
+        // nothing happens
+    }
+}
