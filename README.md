@@ -1,11 +1,11 @@
-RCCC Small Group
+﻿RCCC Small Group
 ================
 How to use
 ----------
 1. Create a list of members in your small group or tribe.
-2. When it's time to answer questions press "Start" to set the time to 30 seconds.
+2. When it's time to answer questions press "Start" to set the time to one minute.
 3. Press "Go" to decide who gets to close in prayer.
-4. Set the prayer time to 60 seconds by pressing "Start".
+4. Set the prayer time to one minute and thirty seconds by pressing "Start".
 
 Programming
 -----------
