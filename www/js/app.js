@@ -205,6 +205,57 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Randomizer spinner";
         }
     }
+    // >> >> Spinners
+    $scope.spinnerLoadingSymbol = function (test) {
+        switch (test) {
+            case "1":
+                return "加載符號";
+            case "2":
+                return "加载符号";
+            default:
+                return "Loading symbol";
+        }
+    }
+    $scope.spinnerFidget = function (test) {
+        switch (test) {
+            case "1":
+                return "Fidget 玩具";
+            case "2":
+                return "Fidget 玩具";
+            default:
+                return "Fidget toy";
+        }
+    }
+    $scope.spinnerMario = function (test) {
+        switch (test) {
+            case "1":
+                return "瑪利歐";
+            case "2":
+                return "马力欧";
+            default:
+                return "Mario";
+        }
+    }
+    $scope.spinnerNyanCat = function (test) {
+        switch (test) {
+            case "1":
+                return "Pop Tart 貓";
+            case "2":
+                return "Pop Tart 猫";
+            default:
+                return "Nyan Cat";
+        }
+    }
+    $scope.spinnerPikachu = function (test) {
+        switch (test) {
+            case "1":
+                return "皮卡丘";
+            case "2":
+                return "皮卡丘";
+            default:
+                return "Pikachu";
+        }
+    }
     $scope.about = function (test) {
         switch (test) {
             case "1":
