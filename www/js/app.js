@@ -117,6 +117,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Total count";
         }
     };
+    $scope.undobutton = function (test) {
+        switch (test) {
+            case "1":
+                return "解開";
+            case "2":
+                return "解开";
+            default:
+                return "Undo";
+        }
+    };
     // >> Timer pages
     $scope.measured = function (test) {
         switch (test) {
