@@ -7,6 +7,10 @@ body {
     font-family: "Arial", sans-serrif;
 }
 
+#mainapp {
+    margin-top: 25px;
+}
+
 #main,
 #thelist,
 #qa-timer,
@@ -28,7 +32,6 @@ body {
 }
 
 #bar {
-    padding-top: 25px;
     background-color: #efefef;
     font-size: 16pt;
 }
@@ -107,18 +110,9 @@ body {
     }
 
     #bar {
-        padding-top: 0px;
         position: fixed;
         bottom: 0px;
         font-size: 14pt;
-    }
-
-    #main,
-    #thelist,
-    #qa-timer,
-    #pr-timer,
-    #settings {
-        padding-top: 25px;
     }
 
     #thelist {
@@ -145,18 +139,9 @@ body {
     }
 
     #bar {
-        padding-top: 0px;
         position: fixed;
         bottom: 0px;
         font-size: 10pt;
-    }
-
-    #main,
-    #thelist,
-    #qa-timer,
-    #pr-timer,
-    #settings {
-        padding-top: 25px;
     }
 
     #thelist {
