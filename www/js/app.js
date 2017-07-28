@@ -4,20 +4,14 @@ var app = angular.module('plunker', []);
 app.controller('MainCtrl', function ($scope, $timeout, $window) {
     if (typeof (Storage) !== "undefined") {
         if (localStorage.spinner && localStorage.language) {
-            // Spinners
             $scope.selectedSpinner = localStorage.spinner;
-            // Languages
             $scope.selectedLanguage = localStorage.language;
         } else {
-            // Spinners
             $scope.selectedSpinner = "0";
-            // Languages
             $scope.selectedLanguage = "0";
         }
     } else {
-        // Spinners
         $scope.selectedSpinner = "0";
-        // Languages
         $scope.selectedLanguage = "0";
     }
     // Language text
