@@ -20,6 +20,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         // Languages
         $scope.selectedLanguage = "0";
     }
+    // Language text
     // >> Bar
     $scope.attendance = function (test) {
         switch (test) {
@@ -30,7 +31,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Attendance";
         }
-    }
+    };
     $scope.qa = function (test) {
         switch (test) {
             case "1":
@@ -40,7 +41,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "QA timer";
         }
-    }
+    };
     $scope.closingtime = function (test) {
         switch (test) {
             case "1":
@@ -50,7 +51,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Closing time";
         }
-    }
+    };
     $scope.prayer = function (test) {
         switch (test) {
             case "1":
@@ -60,7 +61,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Prayer timer";
         }
-    }
+    };
     $scope.extras = function (test) {
         switch (test) {
             case "1":
@@ -70,7 +71,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Extras";
         }
-    }
+    };
     // >> Attendance page
     $scope.nameplace = function (test) {
         switch (test) {
@@ -81,7 +82,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Name";
         }
-    }
+    };
     $scope.add = function (test) {
         switch (test) {
             case "1":
@@ -91,7 +92,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Add";
         }
-    }
+    };
     $scope.clear = function (test) {
         switch (test) {
             case "1":
@@ -101,7 +102,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Clear";
         }
-    }
+    };
     $scope.listof = function (test) {
         switch (test) {
             case "1":
@@ -111,7 +112,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "List of members";
         }
-    }
+    };
     $scope.totalcount = function (test) {
         switch (test) {
             case "1":
@@ -121,7 +122,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Total count";
         }
-    }
+    };
     // >> Timer pages
     $scope.measured = function (test) {
         switch (test) {
@@ -132,7 +133,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Time measured in minutes and seconds.";
         }
-    }
+    };
     $scope.startbutton = function (test) {
         switch (test) {
             case "1":
@@ -142,7 +143,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Start";
         }
-    }
+    };
     $scope.stopbutton = function (test) {
         switch (test) {
             case "1":
@@ -152,7 +153,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Stop";
         }
-    }
+    };
     // >> Closing time page
     $scope.whoshall = function (test) {
         switch (test) {
@@ -163,7 +164,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Who shall pray for us";
         }
-    }
+    };
     $scope.gobutton = function (test) {
         switch (test) {
             case "1":
@@ -173,7 +174,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Go";
         }
-    }
+    };
     // >> Extras page
     $scope.settings = function (test) {
         switch (test) {
@@ -184,7 +185,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Settings";
         }
-    }
+    };
     $scope.language = function (test) {
         switch (test) {
             case "1":
@@ -194,7 +195,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Language";
         }
-    }
+    };
     $scope.spinningthing = function (test) {
         switch (test) {
             case "1":
@@ -204,7 +205,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Randomizer spinner";
         }
-    }
+    };
     // >> >> Spinners
     $scope.spinnerLoadingSymbol = function (test) {
         switch (test) {
@@ -215,7 +216,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Loading symbol";
         }
-    }
+    };
     $scope.spinnerFidget = function (test) {
         switch (test) {
             case "1":
@@ -225,7 +226,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Fidget toy";
         }
-    }
+    };
     $scope.spinnerMario = function (test) {
         switch (test) {
             case "1":
@@ -235,7 +236,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Mario";
         }
-    }
+    };
     $scope.spinnerNyanCat = function (test) {
         switch (test) {
             case "1":
@@ -245,7 +246,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Nyan Cat";
         }
-    }
+    };
     $scope.spinnerPikachu = function (test) {
         switch (test) {
             case "1":
@@ -255,7 +256,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Pikachu";
         }
-    }
+    };
     $scope.about = function (test) {
         switch (test) {
             case "1":
@@ -265,7 +266,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "About";
         }
-    }
+    };
     $scope.credits = function (test) {
         switch (test) {
             case "1":
@@ -275,7 +276,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Credits";
         }
-    }
+    };
     $scope.terms = function (test) {
         switch (test) {
             case "1":
@@ -285,7 +286,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Terms of Use";
         }
-    }
+    };
     $scope.close = function (test) {
         switch (test) {
             case "1":
@@ -295,7 +296,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             default:
                 return "Close";
         }
-    }
+    };
     // --------------------------------------------------
     // Init
     $scope.spinning = false;
@@ -328,7 +329,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             $scope.result2 = $scope.list[$scope.rand] + " 会祈祷。";
             $scope.spinning = false;
         }, $scope.delay);
-    }
+    };
     $scope.addIt = function () { // add a person to the list
         $scope.list.push($scope.name);
         $scope.name = "";
@@ -341,14 +342,26 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             $scope.result1 = "準備好後，按\"GO\"開始。";
             $scope.result2 = "准备好后，按\"GO\"开始。";
         }
-    }
+    };
+    $scope.undoname = function () {
+        $scope.list.pop();
+        if ($scope.list.length == 1) {
+            $scope.result0 = "Not enough people. Please add more.";
+            $scope.result1 = "請添加更多的人。";
+            $scope.result2 = "请添加更多的人。";
+        } else if ($scope.list.length == 0) {
+            $scope.result0 = "Please take attendance first.";
+            $scope.result1 = "請先出席。";
+            $scope.result2 = "请先出席。";
+        }
+    };
     $scope.reset = function () { // reset everything
         $scope.list = [];
         $scope.name = "";
         $scope.result0 = "Please take attendance first.";
         $scope.result1 = "請先出席。";
         $scope.result2 = "请先出席。";
-    }
+    };
     $scope.countdown1 = function () {
         if (!$scope.runtimer1) {
             $scope.runtimer1 = true;
@@ -384,10 +397,10 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 }
             }, 1000);
         }
-    }
+    };
     $scope.endcountdown1 = function () {
         $scope.deactivate1 = true;
-    }
+    };
     $scope.countdown2 = function () {
         if (!$scope.runtimer2) {
             $scope.runtimer2 = true;
@@ -424,10 +437,10 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 }
             }, 1000);
         }
-    }
+    };
     $scope.endcountdown2 = function () {
         $scope.deactivate2 = true;
-    }
+    };
 });
 
 function saveThis() { // Save settings on change
