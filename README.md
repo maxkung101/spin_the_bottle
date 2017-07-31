@@ -10,7 +10,7 @@ How to use
 Programming
 -----------
 * HTML 5
-* CSS 3 ![Valid CSS!](https://github.com/maxkung101/spin_-the_bottle/blob/master/www/img/vcss.gif)
+* CSS 3 ![Valid CSS!](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/vcss.gif)
 * Bootstrap version 3.3.7
 * Angular JS version 1.5.11
 
@@ -20,7 +20,7 @@ Beta name: RCCC Small Group
 
 Disclaimer
 ----------
-I do not own any of the images in this repository (except [logo.png](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/logo.png)). All images belong to their perspective owners. Hatsune Miku belongs to Crypton Future Media, Inc. Mario belongs to Nintendo Co., Ltd. Nyan Cat is an internet sensation on YouTube. Pikachu from Pokémon belongs to The Pokémon Company International and Game Freak.
+I do not own any of the images in this repository (except [logo.png](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/logo.png) and [background-image.jpg](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/background-image.jpg)). All images belong to their perspective owners. Hatsune Miku belongs to Crypton Future Media, Inc. Mario belongs to Nintendo Co., Ltd. Nyan Cat is an internet sensation on YouTube. Pikachu from Pokémon belongs to The Pokémon Company International and Game Freak.
 
 Terms of Use
 ------------
