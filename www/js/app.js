@@ -66,7 +66,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Extras";
         }
     };
-    // >> Attendance page
+    // >> Attendance tab
     $scope.add = function (test) {
         switch (test) {
             case "1":
@@ -127,7 +127,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Undo";
         }
     };
-    // >> Timer pages
+    // >> Timer tabs
     $scope.measured = function (test) {
         switch (test) {
             case "1":
@@ -158,7 +158,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Stop";
         }
     };
-    // >> Closing time page
+    // >> Closing time tab
     $scope.gobutton = function (test) {
         switch (test) {
             case "1":
@@ -179,7 +179,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Who shall pray for us";
         }
     };
-    // >> Extras page
+    // >> Extras tab
     $scope.about = function (test) {
         switch (test) {
             case "1":
