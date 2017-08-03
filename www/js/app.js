@@ -67,16 +67,6 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         }
     };
     // >> Attendance page
-    $scope.nameplace = function (test) {
-        switch (test) {
-            case "1":
-                return "名字";
-            case "2":
-                return "名字";
-            default:
-                return "Name";
-        }
-    };
     $scope.add = function (test) {
         switch (test) {
             case "1":
@@ -105,6 +95,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "我的小组";
             default:
                 return "My small group";
+        }
+    };
+    $scope.nameplace = function (test) {
+        switch (test) {
+            case "1":
+                return "名字";
+            case "2":
+                return "名字";
+            default:
+                return "Name";
         }
     };
     $scope.totalcount = function (test) {
@@ -159,16 +159,6 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         }
     };
     // >> Closing time page
-    $scope.whoshall = function (test) {
-        switch (test) {
-            case "1":
-                return "是誰要幫我們祈禱";
-            case "2":
-                return "是谁要帮我们祈祷";
-            default:
-                return "Who shall pray for us";
-        }
-    };
     $scope.gobutton = function (test) {
         switch (test) {
             case "1":
@@ -179,15 +169,45 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Go";
         }
     };
-    // >> Extras page
-    $scope.settings = function (test) {
+    $scope.whoshall = function (test) {
         switch (test) {
             case "1":
-                return "設置";
+                return "是誰要幫我們祈禱";
             case "2":
-                return "设置";
+                return "是谁要帮我们祈祷";
             default:
-                return "Settings";
+                return "Who shall pray for us";
+        }
+    };
+    // >> Extras page
+    $scope.about = function (test) {
+        switch (test) {
+            case "1":
+                return "關於";
+            case "2":
+                return "关于";
+            default:
+                return "About";
+        }
+    };
+    $scope.close = function (test) {
+        switch (test) {
+            case "1":
+                return "關";
+            case "2":
+                return "关";
+            default:
+                return "Close";
+        }
+    };
+    $scope.credits = function (test) {
+        switch (test) {
+            case "1":
+                return "信用";
+            case "2":
+                return "信用";
+            default:
+                return "Credits";
         }
     };
     $scope.language = function (test) {
@@ -198,6 +218,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "语言";
             default:
                 return "Language";
+        }
+    };
+    $scope.settings = function (test) {
+        switch (test) {
+            case "1":
+                return "設置";
+            case "2":
+                return "设置";
+            default:
+                return "Settings";
         }
     };
     $scope.spinningthing = function (test) {
@@ -261,26 +291,6 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Pikachu";
         }
     };
-    $scope.about = function (test) {
-        switch (test) {
-            case "1":
-                return "關於";
-            case "2":
-                return "关于";
-            default:
-                return "About";
-        }
-    };
-    $scope.credits = function (test) {
-        switch (test) {
-            case "1":
-                return "信用";
-            case "2":
-                return "信用";
-            default:
-                return "Credits";
-        }
-    };
     $scope.terms = function (test) {
         switch (test) {
             case "1":
@@ -289,16 +299,6 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "使用条款";
             default:
                 return "Terms of Use";
-        }
-    };
-    $scope.close = function (test) {
-        switch (test) {
-            case "1":
-                return "關";
-            case "2":
-                return "关";
-            default:
-                return "Close";
         }
     };
     // --------------------------------------------------

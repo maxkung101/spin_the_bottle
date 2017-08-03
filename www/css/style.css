@@ -7,23 +7,26 @@ body {
     font-family: "Arial", sans-serrif;
 }
 
+/* All */
+#main,
+#pr-timer,
+#qa-timer,
+#thelist {
+    text-align: center;
+}
+
+#bar {
+    background-color: #efefef;
+    font-size: 16pt;
+}
+
 #mainapp {
     margin-top: 25px;
 }
 
-#main,
-#thelist,
-#qa-timer,
-#pr-timer {
-    text-align: center;
-}
-
+/* List Tab */
 #thelist {
     padding-bottom: 10px;
-}
-
-.theresult {
-    font-size: 16pt;
 }
 
 .group {
@@ -31,9 +34,18 @@ body {
     text-align: left;
 }
 
-#bar {
-    background-color: #efefef;
+.theresult {
     font-size: 16pt;
+}
+
+/* Timers Tab */
+.timercount {
+    font-size: 7em;
+}
+
+/* Main Tab */
+#spin-button {
+    position: relative;
 }
 
 .spinner {
@@ -43,22 +55,9 @@ body {
     background-color: #ffffff;
 }
 
-#spin-button {
-    position: relative;
-}
-
-.headings {
-    background-color: #375270;
-    color: #fff;
-}
-
-.headings2 {
-    background-color: #3399cc;
-    color: #fff;
-}
-
-.timercount {
-    font-size: 7em;
+/* Extras Tab */
+.modal-footer {
+    background-color: #384b5f;
 }
 
 .modal-header {
@@ -66,18 +65,15 @@ body {
     color: #fff;
 }
 
-.modal-footer {
-    background-color: #384b5f;
-}
+@media only screen and ( max-width: 1028px ) { /* For medium devices */
 
-@media only screen and ( max-width: 1028px ) {
-    /* For medium devices */
-
+    /* List Tab */
     .group {
         font-size: 20pt;
         text-align: left;
     }
 
+    /* Main Tab */
     .spinner {
         width: 50%;
         display: block;
@@ -85,76 +81,80 @@ body {
     }
 }
 
-@media only screen and ( max-width: 850px ) {
-    /* For small devices */
+@media only screen and ( max-width: 850px ) { /* For small devices */
 
+    /* All */
     #bar {
         font-size: 12pt;
     }
 }
 
-@media only screen and ( max-width: 750px ) {
-    /* For mobile devices widescreen */
+@media only screen and ( max-width: 750px ) { /* For mobile devices widescreen */
 
+    /* All */
     #bar {
         font-size: 10pt;
     }
 }
 
-@media only screen and ( max-width: 414px ) {
-    /* For phablets */
+@media only screen and ( max-width: 414px ) { /* For phablets */
 
-    .group {
-        font-size: 16pt;
-        text-align: left;
-    }
-
+    /* All */
     #bar {
         position: fixed;
         bottom: 0px;
         font-size: 14pt;
     }
 
-    #thelist {
-        padding-bottom: 40px;
-    }
-
-    .spinner {
-        width: 100%;
-        display: block;
-        margin: auto;
-    }
-
     .kkk {
         display: none;
     }
-}
 
-@media only screen and ( max-width: 374px ) {
-    /* For small mobile devices */
+    /* List Tab */
+    #thelist {
+        padding-bottom: 40px;
+    }
 
     .group {
         font-size: 16pt;
         text-align: left;
     }
 
+    /* Main Tab */
+    .spinner {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media only screen and ( max-width: 374px ) { /* For small mobile devices */
+
+    /* All */
     #bar {
         position: fixed;
         bottom: 0px;
         font-size: 10pt;
     }
 
+    .kkk {
+        display: none;
+    }
+
+    /* List Tab */
     #thelist {
         padding-bottom: 30px;
     }
 
+    .group {
+        font-size: 16pt;
+        text-align: left;
+    }
+
+    /* Main Tab */
     .spinner {
         width: 100%;
         display: block;
         margin: auto;
-    }
-
-    .kkk {
-        display: none;
     }
 }
