@@ -100,11 +100,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.listof = function (test) {
         switch (test) {
             case "1":
-                return "會員名單";
+                return "我的小組";
             case "2":
-                return "会员名单";
+                return "我的小组";
             default:
-                return "List of members";
+                return "My small group";
         }
     };
     $scope.totalcount = function (test) {
