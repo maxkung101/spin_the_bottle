@@ -24,7 +24,7 @@
             <li><a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ extras(selectedLanguage) }}</span></a></li>
         </ul>
         <div class="tab-content">
-            <!-- List Tab -->
+            <!-- Attendance tab -->
             <div id="thelist" class="tab-pane fade in active">
                 <form name="myform" ng-submit="addIt()" class="input-group">
                     <input type="text" class="form-control input-lg" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" onkeydown="" ng-model="name" ng-disabled="spinning" required>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <!-- QA timer Tab -->
+            <!-- QA timer tab -->
             <div id="qa-timer" class="tab-pane fade">
                 <h1>{{ qa(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
@@ -52,7 +52,7 @@
                 <p ng-if="!runtimer1"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer1"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Closing time Tab -->
+            <!-- Closing time tab -->
             <div id="main" class="tab-pane fade">
                 <h1>{{ whoshall(selectedLanguage) }}?</h1>
                 <p class="theresult" ng-if='selectedLanguage == "0"'>{{ result0 }}</p>
@@ -76,7 +76,7 @@
                 </p>
                 <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Prayer timer Tab -->
+            <!-- Prayer timer tab -->
             <div id="pr-timer" class="tab-pane fade">
                 <h1>{{ prayer(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
@@ -84,7 +84,7 @@
                 <p ng-if="!runtimer2"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer2"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Extras Tab -->
+            <!-- Extras tab -->
             <div id="settings" class="tab-pane fade">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
@@ -98,7 +98,7 @@
                     <select onchange="saveThis()" class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
                         <option value="0">{{ spinnerLoadingSymbol(selectedLanguage) }}</option>
                         <option value="1">{{ spinnerFidget(selectedLanguage) }}</option>
-                        <option value="2">Hatsune Miku</option>
+                        <option value="2">{{ spinnerMiku(selectedLanguage) }}</option>
                         <option value="3">{{ spinnerMario(selectedLanguage) }}</option>
                         <option value="4">{{ spinnerNyanCat(selectedLanguage) }}</option>
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
@@ -137,6 +137,7 @@
                         <!-- Credits Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">{{ credits(selectedLanguage) }}</h4>
                             </div>
                             <div class="modal-body">

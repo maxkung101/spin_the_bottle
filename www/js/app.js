@@ -261,6 +261,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Fidget toy";
         }
     };
+    $scope.spinnerMiku = function (test) {
+        switch (test) {
+            case "1":
+                return "初音未來";
+            case "2":
+                return "初音未来";
+            default:
+                return "Hatsune Miku";
+        }
+    };
     $scope.spinnerMario = function (test) {
         switch (test) {
             case "1":
