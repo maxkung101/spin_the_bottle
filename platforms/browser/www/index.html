@@ -33,7 +33,7 @@
                         <button type="button" class="btn btn-danger btn-lg" ng-click="reset()" ng-disabled="list.length == 0 || spinning">{{ clear(selectedLanguage) }}</button>
                     </div>
                 </form>
-                <div class="panel panel-info">
+                <div id="listinfo" class="panel panel-info">
                     <div class="panel-heading">
                         <h2>{{ listof(selectedLanguage) }}</h2>
                         <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
