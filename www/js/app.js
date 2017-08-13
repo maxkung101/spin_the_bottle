@@ -348,19 +348,19 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         $scope.list.push($scope.name);
         $scope.name = "";
         if ($scope.list.length == 1) {
-            $scope.result0 = "Not enough people. Please add more.";
+            $scope.result0 = "Please add more people.";
             $scope.result1 = "請添加更多的人。";
             $scope.result2 = "请添加更多的人。";
         } else if ($scope.list.length == 2) {
-            $scope.result0 = "When you're ready, press \"Go\" to begin.";
-            $scope.result1 = "準備好後，按\"GO\"開始。";
-            $scope.result2 = "准备好后，按\"GO\"开始。";
+            $scope.result0 = "Press \"Go\" to begin.";
+            $scope.result1 = "按 \"GO\" 開始。";
+            $scope.result2 = "按 \"GO\" 开始。";
         }
     };
     $scope.undoname = function () {
         $scope.list.pop();
         if ($scope.list.length == 1) {
-            $scope.result0 = "Not enough people. Please add more.";
+            $scope.result0 = "Please add more people.";
             $scope.result1 = "請添加更多的人。";
             $scope.result2 = "请添加更多的人。";
         } else if ($scope.list.length == 0) {
