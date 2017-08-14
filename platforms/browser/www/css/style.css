@@ -37,6 +37,13 @@ body {
 /* Timer tabs */
 .timercount {
     font-size: 7em;
+    color: #ccc;
+    background-color: #384b5f;
+    padding: 5px 15px 5px 15px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #8d98a3;
+    box-shadow: 10px 10px 5px grey;
 }
 
 /* Closing time tab */
