@@ -367,6 +367,10 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             $scope.result0 = "Please take attendance first.";
             $scope.result1 = "請先出席。";
             $scope.result2 = "请先出席。";
+        } else {
+            $scope.result0 = "Press \"Go\" to begin.";
+            $scope.result1 = "按 \"GO\" 開始。";
+            $scope.result2 = "按 \"GO\" 开始。";
         }
     };
     $scope.reset = function () { // reset everything

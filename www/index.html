@@ -40,7 +40,7 @@
                     </div>
                     <div class="panel-body">
                         <p class="group" ng-repeat="n in list track by $index">{{n}}</p>
-                        <button class="btn btn-warning" ng-if="list.length != 0" ng-click="undoname()" ng-disabled="spinning">{{ undobutton(selectedLanguage) }}</button>
+                        <button type="button" class="btn btn-warning" ng-if="list.length != 0" ng-click="undoname()" ng-disabled="spinning">{{ undobutton(selectedLanguage) }}</button>
                     </div>
                 </div>
             </div>
