@@ -86,7 +86,7 @@ body {
 @media only screen and ( max-height: 736px ) { /* iphone 6 Plus 6S Plus 7 Plus */
     #listinfo {
         overflow-y: scroll;
-        max-height: 618px;
+        max-height: 610px;
     }
 
     .modal-body {
@@ -157,6 +157,33 @@ body {
     #bar {
         position: fixed;
         bottom: 0px;
+        font-size: 17pt;
+    }
+
+    .kkk {
+        display: none;
+    }
+
+    /* Attendance tab */
+    .group {
+        font-size: 16pt;
+        text-align: left;
+    }
+
+    /* Closing time tab */
+    .spinner {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media only screen and ( max-width: 375px ) { /* For mobile devices */
+
+    /* All */
+    #bar {
+        position: fixed;
+        bottom: 0px;
         font-size: 14pt;
     }
 
@@ -178,7 +205,7 @@ body {
     }
 }
 
-@media only screen and ( max-width: 374px ) { /* For small mobile devices */
+@media only screen and ( max-width: 320px ) { /* For small mobile devices */
 
     /* All */
     #bar {
