@@ -12,6 +12,7 @@ Programming
 * HTML 5
 * CSS 3 ![Valid CSS!](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/vcss.gif)
 * Bootstrap version 3.3.7
+* JavaScript
 * Angular JS version 1.5.11
 
 Prototype name: Spin the Bottle<br>
