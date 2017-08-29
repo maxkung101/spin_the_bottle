@@ -3,16 +3,19 @@ var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function ($scope, $timeout, $window) {
     if (typeof (Storage) !== "undefined") {
-        if (localStorage.spinner && localStorage.language) {
+        if (localStorage.spinner && localStorage.language && localStorage.timer) {
             $scope.selectedSpinner = localStorage.spinner;
             $scope.selectedLanguage = localStorage.language;
+            $scope.selectedTimer = localStorage.timer;
         } else {
             $scope.selectedSpinner = "0";
             $scope.selectedLanguage = "0";
+            $scope.selectedTimer = "0";
         }
     } else {
         $scope.selectedSpinner = "0";
         $scope.selectedLanguage = "0";
+        $scope.selectedTimer = "0";
     }
     // Language text
     // >> Bar
@@ -233,11 +236,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.spinningthing = function (test) {
         switch (test) {
             case "1":
-                return "隨機微調";
+                return "動畫";
             case "2":
-                return "随机微调";
+                return "动画";
             default:
-                return "Randomizer spinner";
+                return " animation";
         }
     };
     // >> >> Spinners
@@ -299,6 +302,26 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "皮卡丘";
             default:
                 return "Pikachu";
+        }
+    };
+    $scope.timerbox = function (test) {
+        switch (test) {
+            case "1":
+                return "計時器";
+            case "2":
+                return "计时器";
+            default:
+                return "Timer";
+        }
+    };
+    $scope.defaulttimer = function (test) {
+        switch (test) {
+            case "1":
+                return "默認";
+            case "2":
+                return "默认";
+            default:
+                return "Default";
         }
     };
     $scope.terms = function (test) {
@@ -465,6 +488,7 @@ function saveThis() { // Save settings on change
     if (typeof (Storage) !== "undefined") {
         localStorage.spinner = document.getElementById("selectedSpinner").value;
         localStorage.language = document.getElementById("selectedLanguage").value;
+        localStorage.timer = document.getElementById("selectedTimer").value;
     } else { // Browser or device does not support local storage
         if (document.getElementById("selectedLanguage").value == "1") {
             window.alert("設備沒有本地存儲\n設置尚未保存。");

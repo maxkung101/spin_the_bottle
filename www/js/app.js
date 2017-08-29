@@ -3,16 +3,19 @@ var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function ($scope, $timeout, $window) {
     if (typeof (Storage) !== "undefined") {
-        if (localStorage.spinner && localStorage.language) {
+        if (localStorage.spinner && localStorage.language && localStorage.timer) {
             $scope.selectedSpinner = localStorage.spinner;
             $scope.selectedLanguage = localStorage.language;
+            $scope.selectedTimer = localStorage.timer;
         } else {
             $scope.selectedSpinner = "0";
             $scope.selectedLanguage = "0";
+            $scope.selectedTimer = "0";
         }
     } else {
         $scope.selectedSpinner = "0";
         $scope.selectedLanguage = "0";
+        $scope.selectedTimer = "0";
     }
     // Language text
     // >> Bar
@@ -39,11 +42,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.closingtime = function (test) {
         switch (test) {
             case "1":
-                return "關閉";
+                return "隨機數發生器";
             case "2":
-                return "关闭";
+                return "随机数发生器";
             default:
-                return "Closing time";
+                return "Randomizer";
         }
     };
     $scope.prayer = function (test) {
@@ -127,7 +130,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Undo";
         }
     };
-    // >> Timer tabs
+    // >> Timer tab
     $scope.measured = function (test) {
         switch (test) {
             case "1":
@@ -158,7 +161,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Stop";
         }
     };
-    // >> Closing time tab
+    // >> Randomizer tab
     $scope.gobutton = function (test) {
         switch (test) {
             case "1":
@@ -169,6 +172,26 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Go";
         }
     };
+    $scope.biblereading = function (test) {
+        switch (test) {
+            case "1":
+                return "唸聖經";
+            case "2":
+                return "念圣经";
+            default:
+                return "Bible reading";
+        }
+    };
+    $scope.closeprayer = function (test) {
+        switch (test) {
+            case "1":
+                return "結束祈禱";
+            case "2":
+                return "结束祈祷";
+            default:
+                return "Close prayer";
+        }
+    };
     $scope.whoshall = function (test) {
         switch (test) {
             case "1":
@@ -177,6 +200,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "是谁要帮我们祈祷";
             default:
                 return "Who shall pray for us";
+        }
+    };
+    $scope.whowill = function (test) {
+        switch (test) {
+            case "1":
+                return "是誰要先唸給我們";
+            case "2":
+                return "是谁要先念给我们";
+            default:
+                return "Who will be the first to read";
         }
     };
     // >> Extras tab
@@ -233,11 +266,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.spinningthing = function (test) {
         switch (test) {
             case "1":
-                return "隨機微調";
+                return "動畫";
             case "2":
-                return "随机微调";
+                return "动画";
             default:
-                return "Randomizer spinner";
+                return " animation";
         }
     };
     // >> >> Spinners
@@ -254,11 +287,11 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.spinnerFidget = function (test) {
         switch (test) {
             case "1":
-                return "Fidget 玩具";
+                return "手指旋轉";
             case "2":
-                return "Fidget 玩具";
+                return "手指旋转";
             default:
-                return "Fidget toy";
+                return "Finger spinner";
         }
     };
     $scope.spinnerMiku = function (test) {
@@ -301,6 +334,26 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Pikachu";
         }
     };
+    $scope.timerbox = function (test) {
+        switch (test) {
+            case "1":
+                return "計時器";
+            case "2":
+                return "计时器";
+            default:
+                return "Timer";
+        }
+    };
+    $scope.defaulttimer = function (test) {
+        switch (test) {
+            case "1":
+                return "默認";
+            case "2":
+                return "默认";
+            default:
+                return "Default";
+        }
+    };
     $scope.terms = function (test) {
         switch (test) {
             case "1":
@@ -318,6 +371,8 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.result0 = "Please take attendance first.";
     $scope.result1 = "請先出席。";
     $scope.result2 = "请先出席。";
+    $scope.timerRadio = "qa";
+    $scope.randomizerRadio = "st";
     // --------------------------------------------------
     // Timers
     $scope.timer1 = 0;
@@ -338,10 +393,18 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
         $scope.result2 = "随机";
         $timeout(function () {
             $scope.rand = Math.floor((Math.random() * $scope.list.length) + 1) - 1;
-            $scope.result0 = $scope.list[$scope.rand] + " will pray for us.";
-            $scope.result1 = $scope.list[$scope.rand] + " 會祈禱。";
-            $scope.result2 = $scope.list[$scope.rand] + " 会祈祷。";
-            $scope.spinning = false;
+            if ($scope.randomizerRadio == "st") {
+                $scope.result0 = "We will start with " + $scope.list[$scope.rand] + ".";
+                $scope.result1 = "讓 " + $scope.list[$scope.rand] + " 先唸。";
+                $scope.result2 = "让 " + $scope.list[$scope.rand] + " 先念。";
+                $scope.spinning = false;
+            }
+            else {
+                $scope.result0 = $scope.list[$scope.rand] + " will pray for us.";
+                $scope.result1 = $scope.list[$scope.rand] + " 會祈禱。";
+                $scope.result2 = $scope.list[$scope.rand] + " 会祈祷。";
+                $scope.spinning = false;
+            }
         }, $scope.delay);
     };
     $scope.addIt = function () { // add a person to the list
@@ -465,6 +528,7 @@ function saveThis() { // Save settings on change
     if (typeof (Storage) !== "undefined") {
         localStorage.spinner = document.getElementById("selectedSpinner").value;
         localStorage.language = document.getElementById("selectedLanguage").value;
+        localStorage.timer = document.getElementById("selectedTimer").value;
     } else { // Browser or device does not support local storage
         if (document.getElementById("selectedLanguage").value == "1") {
             window.alert("設備沒有本地存儲\n設置尚未保存。");

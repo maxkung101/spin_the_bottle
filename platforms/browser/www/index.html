@@ -48,7 +48,10 @@
             <div id="qa-timer" class="tab-pane fade">
                 <h1>{{ qa(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
-                <p><span class="timercount">{{ minute1 }}:<span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span></p>
+                <p ng-if='selectedTimer == "0"'><span class="timercount">{{ minute1 }}:<span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span></p>
+                <p ng-if='selectedTimer == "1"'><span class="timercount reverse">{{ minute1 }}:<span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span></p>
+                <p ng-if='selectedTimer == "2"'><span class="timercount rcccec">{{ minute1 }}:<span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span></p>
+                <p ng-if='selectedTimer == "3"'><span class="timercount nerf">{{ minute1 }}:<span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span></p>
                 <p ng-if="!runtimer1"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer1"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
@@ -80,7 +83,10 @@
             <div id="pr-timer" class="tab-pane fade">
                 <h1>{{ prayer(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
-                <p><span class="timercount">{{ minute2 }}:<span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span></p>
+                <p ng-if='selectedTimer == "0"'><span class="timercount">{{ minute2 }}:<span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span></p>
+                <p ng-if='selectedTimer == "1"'><span class="timercount reverse">{{ minute2 }}:<span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span></p>
+                <p ng-if='selectedTimer == "2"'><span class="timercount rcccec">{{ minute2 }}:<span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span></p>
+                <p ng-if='selectedTimer == "3"'><span class="timercount nerf">{{ minute2 }}:<span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span></p>
                 <p ng-if="!runtimer2"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if="runtimer2"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
@@ -94,7 +100,7 @@
                         <option value="1">繁体中文</option>
                         <option value="2">简体中文</option>
                     </select>
-                    <label for="selectedSpinner">{{ spinningthing(selectedLanguage) }}:</label>
+                    <label for="selectedSpinner">{{ closingtime(selectedLanguage) }}{{ spinningthing(selectedLanguage) }}:</label>
                     <select onchange="saveThis()" class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
                         <option value="0">{{ spinnerLoadingSymbol(selectedLanguage) }}</option>
                         <option value="1">{{ spinnerFidget(selectedLanguage) }}</option>
@@ -102,6 +108,13 @@
                         <option value="3">{{ spinnerMario(selectedLanguage) }}</option>
                         <option value="4">{{ spinnerNyanCat(selectedLanguage) }}</option>
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
+                    </select>
+                    <label for="selectedTimer">{{ timerbox(selectedLanguage) }}:</label>
+                    <select onchange="saveThis()" class="form-control" id="selectedTimer" ng-model="selectedTimer">
+                        <option value="0">{{ defaulttimer(selectedLanguage) }}</option>
+                        <option value="1">Theme 1</option>
+                        <option value="2">Theme 2</option>
+                        <option value="3">Theme 3</option>
                     </select>
                 </div>
                 <h3>{{ about(selectedLanguage) }}</h3>

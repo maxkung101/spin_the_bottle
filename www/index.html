@@ -17,10 +17,9 @@
 <body ng-app="" ng-controller="MainCtrl">
     <div id="mainapp" class="container col-sm-12">
         <ul id="bar" class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#thelist"><span class="glyphicon glyphicon-list"></span> 1. <span class="kkk">{{ attendance(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-list-alt"></span> 2. <span class="kkk">{{ qa(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#main"><span class="glyphicon glyphicon-download-alt"></span> 3. <span class="kkk">{{ closingtime(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#pr-timer"><span class="glyphicon glyphicon-time"></span> 4. <span class="kkk">{{ prayer(selectedLanguage) }}</span></a></li>
+            <li class="active"><a data-toggle="tab" href="#thelist"><span class="glyphicon glyphicon-list"></span> <span class="kkk">{{ attendance(selectedLanguage) }}</span></a></li>
+            <li><a data-toggle="tab" href="#main"><span class="glyphicon glyphicon-download-alt"></span> <span class="kkk">{{ closingtime(selectedLanguage) }}</span></a></li>
+            <li><a data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-time"></span> <span class="kkk">{{ timerbox(selectedLanguage) }}</span></a></li>
             <li><a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ extras(selectedLanguage) }}</span></a></li>
         </ul>
         <div class="tab-content">
@@ -44,17 +43,12 @@
                     </div>
                 </div>
             </div>
-            <!-- QA timer tab -->
-            <div id="qa-timer" class="tab-pane fade">
-                <h1>{{ qa(selectedLanguage) }}</h1>
-                <p class="theresult">{{ measured(selectedLanguage) }}</p>
-                <p><span class="timercount">{{ minute1 }}:<span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span></p>
-                <p ng-if="!runtimer1"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">{{ startbutton(selectedLanguage) }}</button></p>
-                <p ng-if="runtimer1"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">{{ stopbutton(selectedLanguage) }}</button></p>
-            </div>
-            <!-- Closing time tab -->
+            <!-- Randomizer tab -->
             <div id="main" class="tab-pane fade">
-                <h1>{{ whoshall(selectedLanguage) }}?</h1>
+                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
+                <h1 ng-if='randomizerRadio=="st"'>{{ whowill(selectedLanguage) }}?</h1>
+                <h1 ng-if='randomizerRadio=="cp"'>{{ whoshall(selectedLanguage) }}?</h1>
                 <p class="theresult" ng-if='selectedLanguage == "0"'>{{ result0 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "1"'>{{ result1 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "2"'>{{ result2 }}</p>
@@ -76,13 +70,49 @@
                 </p>
                 <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Prayer timer tab -->
-            <div id="pr-timer" class="tab-pane fade">
-                <h1>{{ prayer(selectedLanguage) }}</h1>
+            <!-- Timer tab -->
+            <div id="qa-timer" class="tab-pane fade">
+                <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" ng-model="timerRadio" ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" ng-model="timerRadio" ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
+                <h1 ng-if='timerRadio=="qa"'>{{ qa(selectedLanguage) }}</h1>
+                <h1 ng-if='timerRadio=="pr"'>{{ prayer(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
-                <p><span class="timercount">{{ minute2 }}:<span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span></p>
-                <p ng-if="!runtimer2"><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
-                <p ng-if="runtimer2"><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
+
+                <p ng-if='selectedTimer == "0"'>
+                    <span class="timercount">
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                </p>
+                <p ng-if='selectedTimer == "1"'>
+                    <span class="timercount reverse">
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                </p>
+                <p ng-if='selectedTimer == "2"'>
+                    <span class="timercount radar">
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                </p>
+                <p ng-if='selectedTimer == "3"'>
+                    <span class="timercount rcccec">
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                </p>
+                <p ng-if='selectedTimer == "4"'>
+                    <span class="timercount n-strike">
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                </p>
+                <p ng-if='selectedTimer == "5"'>
+                    <span class="timercount rebelle">
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                </p>
+
+                <p ng-if='!runtimer1 && timerRadio=="qa"'><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">{{ startbutton(selectedLanguage) }}</button></p>
+                <p ng-if='runtimer1 && timerRadio=="qa"'><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">{{ stopbutton(selectedLanguage) }}</button></p>
+                <p ng-if='!runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
+                <p ng-if='runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
             <!-- Extras tab -->
             <div id="settings" class="tab-pane fade">
@@ -94,7 +124,7 @@
                         <option value="1">繁体中文</option>
                         <option value="2">简体中文</option>
                     </select>
-                    <label for="selectedSpinner">{{ spinningthing(selectedLanguage) }}:</label>
+                    <label for="selectedSpinner">{{ closingtime(selectedLanguage) }}{{ spinningthing(selectedLanguage) }}:</label>
                     <select onchange="saveThis()" class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
                         <option value="0">{{ spinnerLoadingSymbol(selectedLanguage) }}</option>
                         <option value="1">{{ spinnerFidget(selectedLanguage) }}</option>
@@ -102,6 +132,15 @@
                         <option value="3">{{ spinnerMario(selectedLanguage) }}</option>
                         <option value="4">{{ spinnerNyanCat(selectedLanguage) }}</option>
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
+                    </select>
+                    <label for="selectedTimer">{{ timerbox(selectedLanguage) }}:</label>
+                    <select onchange="saveThis()" class="form-control" id="selectedTimer" ng-model="selectedTimer">
+                        <option value="0">{{ defaulttimer(selectedLanguage) }}</option>
+                        <option value="1">Reverse</option>
+                        <option value="2">Radar</option>
+                        <option value="3">RCCC EC</option>
+                        <option value="4">Dart tag</option>
+                        <option value="5">Heart guardian</option>
                     </select>
                 </div>
                 <h3>{{ about(selectedLanguage) }}</h3>
