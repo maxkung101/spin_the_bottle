@@ -2,9 +2,9 @@
 ================
 How to use
 ----------
-Attendance: Create a list of members in your small group or tribe.
-Timer: When it's time to answer questions press "Start" to set the time to one minute.
-Randomizer: Press "Go" to decide who gets to close in prayer
+Attendance: Create a list of members in your small group or tribe.<br>
+Randomizer: Press "Go" to decide who gets to read first, or close in prayer.<br>
+Timer: Press "Start" to set the time to 1'00" in qa mode, or 1'30" in prayer mode.
 
 Programming
 -----------
@@ -13,10 +13,6 @@ Programming
 * Bootstrap version 3.3.7
 * JavaScript
 * Angular JS version 1.5.11
-
-Prototype name: Spin the Bottle<br>
-Alpha name: Closing Prayer Randomizer<br>
-Beta name: RCCC Small Group
 
 Disclaimer
 ----------
