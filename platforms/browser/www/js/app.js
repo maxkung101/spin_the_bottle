@@ -347,11 +347,51 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     $scope.defaulttimer = function (test) {
         switch (test) {
             case "1":
-                return "默認";
+                return "白色";
             case "2":
-                return "默认";
+                return "白色";
             default:
-                return "Default";
+                return "White";
+        }
+    };
+    $scope.timerTheme1 = function (test) {
+        switch (test) {
+            case "1":
+                return "黑色";
+            case "2":
+                return "黑色";
+            default:
+                return "Black";
+        }
+    };
+    $scope.timerTheme6 = function (test) {
+        switch (test) {
+            case "1":
+                return "美國旗";
+            case "2":
+                return "美国旗";
+            default:
+                return "USA Flag";
+        }
+    };
+    $scope.timerTheme7 = function (test) {
+        switch (test) {
+            case "1":
+                return "中國旗";
+            case "2":
+                return "中国旗";
+            default:
+                return "China Flag";
+        }
+    };
+    $scope.timerTheme8 = function (test) {
+        switch (test) {
+            case "1":
+                return "台灣旗";
+            case "2":
+                return "台湾旗";
+            default:
+                return "Taiwan Flag";
         }
     };
     $scope.terms = function (test) {
