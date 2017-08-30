@@ -9,7 +9,6 @@ body {
 
 /* All */
 #main,
-#pr-timer,
 #qa-timer,
 #thelist {
     text-align: center;
@@ -54,19 +53,28 @@ body {
     border-color: #fff;
 }
 
-.rcccec { /* Theme 2 */
+.radar { /* Theme 2 */
+    color: #2fd000;
+    background-color: #1d1d1d;
+    border-color: #b5b5b5;
+}
+
+.rcccec { /* Theme 3 */
     color: #ccc;
     background-color: #384b5f;
     border-color: #8d98a3;
 }
 
-.nerf { /* Theme 3 */
-    color: #e6e600;
-    background-color: none;
-    padding: 0px 10px 0px 10px;
-    border-color: #e60000;
-    border-style: solid;
-    border-width: 7px;
+.n-strike { /* Theme 4 */
+    color: #ff7d00;
+    background-color: #1654ff;
+    border-color: #e6e600;
+}
+
+.rebelle { /* Theme 5 */
+    color: #ff3dbf;
+    background-color: #ffffff;
+    border-color: #c600ff;
 }
 
 /* Closing time tab */

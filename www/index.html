@@ -78,33 +78,32 @@
                 <h1 ng-if='timerRadio=="pr"'>{{ prayer(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
 
-                <p ng-if='selectedTimer == "0"'>
-                    <span class="timercount">
+                <p>
+                    <span class="timercount" ng-if='selectedTimer == "0"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
-                </p>
-                <p ng-if='selectedTimer == "1"'>
-                    <span class="timercount reverse">
+                    <span class="timercount reverse" ng-if='selectedTimer == "1"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
-                </p>
-                <p ng-if='selectedTimer == "2"'>
-                    <span class="timercount radar">
+                    <span class="timercount radar" ng-if='selectedTimer == "2"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
-                </p>
-                <p ng-if='selectedTimer == "3"'>
-                    <span class="timercount rcccec">
+                    <span class="timercount rcccec" ng-if='selectedTimer == "3"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
-                </p>
-                <p ng-if='selectedTimer == "4"'>
-                    <span class="timercount n-strike">
+                    <span class="timercount n-strike" ng-if='selectedTimer == "4"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
-                </p>
-                <p ng-if='selectedTimer == "5"'>
-                    <span class="timercount rebelle">
+                    <span class="timercount rebelle" ng-if='selectedTimer == "5"'>
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                    <span class="timercount usa" ng-if='selectedTimer == "6"'>
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                    <span class="timercount china" ng-if='selectedTimer == "7"'>
+                        <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
+                    </span>
+                    <span class="timercount taiwan" ng-if='selectedTimer == "8"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
                 </p>
@@ -136,11 +135,14 @@
                     <label for="selectedTimer">{{ timerbox(selectedLanguage) }}:</label>
                     <select onchange="saveThis()" class="form-control" id="selectedTimer" ng-model="selectedTimer">
                         <option value="0">{{ defaulttimer(selectedLanguage) }}</option>
-                        <option value="1">Reverse</option>
-                        <option value="2">Radar</option>
+                        <option value="1">{{ timerTheme1(selectedLanguage) }}</option>
+                        <option value="2">Game Boy</option>
                         <option value="3">RCCC EC</option>
                         <option value="4">Dart tag</option>
                         <option value="5">Heart guardian</option>
+                        <option value="6">{{ timerTheme6(selectedLanguage) }}</option>
+                        <option value="7">{{ timerTheme7(selectedLanguage) }}</option>
+                        <option value="8">{{ timerTheme8(selectedLanguage) }}</option>
                     </select>
                 </div>
                 <h3>{{ about(selectedLanguage) }}</h3>
