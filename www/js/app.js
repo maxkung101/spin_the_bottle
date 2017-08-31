@@ -394,6 +394,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Taiwan Flag";
         }
     };
+    $scope.timerTheme9 = function (test) {
+        switch (test) {
+            case "1":
+                return "香港旗";
+            case "2":
+                return "香港旗";
+            default:
+                return "Hong Kong Flag";
+        }
+    };
     $scope.terms = function (test) {
         switch (test) {
             case "1":
