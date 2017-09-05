@@ -9,7 +9,7 @@ Timer: Press "Start" to set the time to 1'00" in qa mode, or 1'30" in prayer mod
 Programming
 -----------
 * HTML 5
-* CSS 3 ![Valid CSS!](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/vcss.gif)
+* CSS 3
 * Bootstrap version 3.3.7
 * JavaScript
 * Angular JS version 1.5.11
