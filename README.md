@@ -20,4 +20,4 @@ I do not own any of the images in this repository (except [logo.png](https://git
 
 Terms of Use
 ------------
-See [index.html lines 165 to 185](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L165)
+See [index.html lines 164 to 184](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L164)
