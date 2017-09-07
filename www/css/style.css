@@ -33,7 +33,7 @@ body {
     font-size: 16pt;
 }
 
-/* Timer tabs */
+/* Timer tab */
 .timercount { /* Default timer */
     font-family: "Helvetica", "Arial", sans-serif;
     font-size: 7em;
@@ -101,7 +101,7 @@ body {
     border-color: #ff0000;
 }
 
-/* Closing time tab */
+/* Randomizer tab */
 #spin-button {
     position: relative;
 }
@@ -176,13 +176,11 @@ body {
 
 @media only screen and ( max-width: 1028px ) { /* For medium devices */
 
-    /* Attendance tab */
     .group {
         font-size: 20pt;
         text-align: left;
     }
 
-    /* Closing time tab */
     .spinner {
         width: 50%;
         display: block;
@@ -192,7 +190,6 @@ body {
 
 @media only screen and ( max-width: 850px ) { /* For small devices */
 
-    /* All */
     #bar {
         font-size: 12pt;
     }
@@ -208,7 +205,6 @@ body {
 
 @media only screen and ( max-width: 414px ) { /* For phablets */
 
-    /* All */
     #bar {
         position: fixed;
         bottom: 0px;
@@ -219,13 +215,11 @@ body {
         display: none;
     }
 
-    /* Attendance tab */
     .group {
         font-size: 16pt;
         text-align: left;
     }
 
-    /* Closing time tab */
     .spinner {
         width: 100%;
         display: block;
@@ -235,7 +229,6 @@ body {
 
 @media only screen and ( max-width: 375px ) { /* For mobile devices */
 
-    /* All */
     #bar {
         position: fixed;
         bottom: 0px;
@@ -246,13 +239,11 @@ body {
         display: none;
     }
 
-    /* Attendance tab */
     .group {
         font-size: 16pt;
         text-align: left;
     }
 
-    /* Closing time tab */
     .spinner {
         width: 100%;
         display: block;
@@ -262,7 +253,6 @@ body {
 
 @media only screen and ( max-width: 320px ) { /* For small mobile devices */
 
-    /* All */
     #bar {
         position: fixed;
         bottom: 0px;
@@ -273,13 +263,11 @@ body {
         display: none;
     }
 
-    /* Attendance tab */
     .group {
         font-size: 16pt;
         text-align: left;
     }
 
-    /* Closing time tab */
     .spinner {
         width: 100%;
         display: block;
