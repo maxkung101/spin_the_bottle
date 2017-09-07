@@ -26,10 +26,10 @@
             <!-- Attendance tab -->
             <div id="thelist" class="tab-pane fade in active">
                 <form name="myform" ng-submit="addIt()" class="input-group">
-                    <input type="text" class="form-control input-lg" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" onkeydown="" ng-model="name" ng-disabled="spinning" required>
+                    <input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" onkeydown="" ng-model="name" ng-disabled="spinning" required>
                     <div class="input-group-btn">
-                        <button type="submit" class="btn btn-success btn-lg" ng-disabled="myform.box.$error.required">{{ add(selectedLanguage) }}</button>
-                        <button type="button" class="btn btn-danger btn-lg" ng-click="reset()" ng-disabled="list.length == 0 || spinning">{{ clear(selectedLanguage) }}</button>
+                        <button type="submit" class="btn btn-success" ng-disabled="myform.box.$error.required">{{ add(selectedLanguage) }}</button>
+                        <button type="button" class="btn btn-danger" ng-click="reset()" ng-disabled="list.length == 0 || spinning">{{ clear(selectedLanguage) }}</button>
                     </div>
                 </form>
                 <div id="listinfo" class="panel panel-info">
