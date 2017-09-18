@@ -14,10 +14,10 @@ Programming
 * JavaScript
 * Angular JS version 1.5.11
 
-Disclaimer
-----------
-I do not own any of the images in this repository (except [logo.png](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/logo.png) and [background-image.jpg](https://github.com/maxkung101/spin_the_bottle/blob/master/www/img/background-image.jpg)). All images belong to their perspective owners. Hatsune Miku belongs to Crypton Future Media, Inc. Mario belongs to Nintendo Co., Ltd. Nyan Cat is an internet sensation on YouTube. Pikachu from Pokémon belongs to The Pokémon Company International and Game Freak.
+Credits
+-------
+See [index.html lines 200 to 217](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L200)
 
 Terms of Use
 ------------
-See [index.html lines 164 to 184](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L164)
+See [index.html lines 162 to 182](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L162)
