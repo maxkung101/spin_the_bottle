@@ -1,5 +1,4 @@
 # RCCC Small Group
-![build](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![HTML](https://img.shields.io/badge/HTML-5-red.svg)
 ![CSS](https://img.shields.io/badge/CSS-3-blue.svg)
 ![angularjs](https://img.shields.io/badge/angularjs-v1.5-yellow.svg)
