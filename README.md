@@ -1,6 +1,10 @@
 ﻿RCCC Small Group
 ================
-How to use
+Introduction
+------------
+***RCCC Small Group*** is a randomizer app intended for caretakers and counselors to lead their small group.
+
+How to Use
 ----------
 Attendance: Create a list of members in your small group or tribe.<br>
 Randomizer: Press "Go" to decide who gets to read first, or close in prayer.<br>
