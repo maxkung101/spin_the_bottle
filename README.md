@@ -10,11 +10,14 @@ Clone the repo via git:
 ```
 $ git clone https://github.com/maxkung101/spin_the_bottle
 ```
-How to Use
-----------
-Attendance: Create a list of members in your small group or tribe.<br>
-Randomizer: Press "Go" to decide who gets to read first, or close in prayer.<br>
-Timer: Press "Start" to set the time to 1'00" in qa mode, or 1'30" in prayer mode.
+Features
+--------
+* Attendance List
+* Randomizer
+* Timer
+* Multiple Randomizer Animations
+* Multiple Timer Themes
+* Chinese Language (both traditional and simplified)
 
 Credits
 -------
