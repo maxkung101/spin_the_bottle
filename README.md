@@ -4,6 +4,12 @@ Introduction
 ------------
 ***RCCC Small Group*** is a randomizer app intended for caretakers and counselors to lead their small group.
 
+Download source code
+--------------------
+Clone the repo via git:
+```
+$ git clone https://github.com/maxkung101/spin_the_bottle
+```
 How to Use
 ----------
 Attendance: Create a list of members in your small group or tribe.<br>
