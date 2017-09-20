@@ -2,7 +2,7 @@
 ================
 Introduction
 ------------
-***RCCC Small Group*** is a randomizer app intended for caretakers and counselors to lead their small group.
+***RCCC Small Group*** is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.
 
 Download source code
 --------------------
