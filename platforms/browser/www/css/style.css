@@ -175,7 +175,6 @@ body {
 }
 
 @media only screen and ( max-width: 1028px ) { /* For medium devices */
-
     .group {
         font-size: 20pt;
         text-align: left;
@@ -189,22 +188,18 @@ body {
 }
 
 @media only screen and ( max-width: 850px ) { /* For small devices */
-
     #bar {
         font-size: 12pt;
     }
 }
 
 @media only screen and ( max-width: 750px ) { /* For mobile devices widescreen */
-
-    /* All */
     #bar {
         font-size: 10pt;
     }
 }
 
 @media only screen and ( max-width: 414px ) { /* For phablets */
-
     #bar {
         position: fixed;
         bottom: 0px;
@@ -228,7 +223,6 @@ body {
 }
 
 @media only screen and ( max-width: 375px ) { /* For mobile devices */
-
     #bar {
         position: fixed;
         bottom: 0px;
@@ -252,7 +246,6 @@ body {
 }
 
 @media only screen and ( max-width: 320px ) { /* For small mobile devices */
-
     #bar {
         position: fixed;
         bottom: 0px;

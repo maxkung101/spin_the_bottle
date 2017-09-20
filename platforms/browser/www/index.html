@@ -77,7 +77,6 @@
                 <h1 ng-if='timerRadio=="qa"'>{{ qa(selectedLanguage) }}</h1>
                 <h1 ng-if='timerRadio=="pr"'>{{ prayer(selectedLanguage) }}</h1>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
-
                 <p>
                     <span class="timercount" ng-if='selectedTimer == "0"'>
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
@@ -110,7 +109,6 @@
                         <span ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span ng-if='timerRadio=="qa"'><span ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span ng-if='timerRadio=="pr"'><span ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>
                 </p>
-
                 <p ng-if='!runtimer1 && timerRadio=="qa"'><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown1()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p ng-if='runtimer1 && timerRadio=="qa"'><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown1()">{{ stopbutton(selectedLanguage) }}</button></p>
                 <p ng-if='!runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-success btn-lg btn-block" ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
@@ -215,7 +213,7 @@
                                     <ul>
                                         <li>Hatsune Miku belongs to Crypton Future Media, Inc.</li>
                                         <li>Mario belongs to Nintendo Co., Ltd.</li>
-                                        <li>Nyan Cat is an internet sensation on YouTube.</li>
+                                        <li>Nyan Cat belongs to YouTube.</li>
                                         <li>Pikachu from Pokémon belongs to The Pokémon Company International and Game Freak.</li>
                                     </ul>
                                 </p>
