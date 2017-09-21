@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.rccc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>RCCC Small Group</name>
-    <description>Attention caretakers and counselors, you can use this app to lead your small group. You can also randomly choose which person in your small group to start the bible reading, or close in prayer.</description>
+    <description>
+  Attention caretakers and counselors, you can use this app to lead your small group. You can also randomly choose which person in your small group to start the bible reading, or close in prayer.        <br />
+</description>
     <author email="maxkung06@gmail.com" href="">Max Kung</author>
     <content src="index.html" />
     <access origin="*" />
