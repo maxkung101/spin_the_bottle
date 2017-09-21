@@ -1,8 +1,8 @@
 # RCCC Small Group
 ![HTML](https://img.shields.io/badge/HTML-5-red.svg)
 ![CSS](https://img.shields.io/badge/CSS-3-blue.svg)
-![angularjs](https://img.shields.io/badge/angularjs-v1.5-yellow.svg)
-![bootstrap](https://img.shields.io/badge/bootstrap-v3-blue.svg)
+![angularjs](https://img.shields.io/badge/angularjs-v1.5.11-yellow.svg)
+![bootstrap](https://img.shields.io/badge/bootstrap-v3.3.7-blue.svg)
 
 Introduction
 ------------
