@@ -1,7 +1,7 @@
 ﻿/* JavaScript Document */
-var app = angular.module('plunker', []);
+var app = angular.module('plunker', ['ngStorage']);
 
-app.controller('MainCtrl', function ($scope, $timeout, $window) {
+app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     if (typeof (Storage) !== "undefined") {
         if (localStorage.spinner && localStorage.language && localStorage.timer) {
             $scope.selectedSpinner = localStorage.spinner;
@@ -407,16 +407,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     // --------------------------------------------------
     // Init
     $scope.spinning = false;
-    if (typeof (Storage) !== "undefined") {
-        if (localStorage.mylist) {
-            localStorage.mylist = [];
-            $scope.list = localStorage.mylist;
-        } else {
-            $scope.list = [];
-        }
-    } else {
-        $scope.list = [];
-    }
+    $scope.list = $localStorage.mylist || [];
     $scope.result0 = "Please take attendance first.";
     $scope.result1 = "請先出席。";
     $scope.result2 = "请先出席。";
@@ -458,8 +449,8 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     };
     $scope.addIt = function () { // add a person to the list
         $scope.list.push($scope.name);
-        //localStorage.mylist.push($scope.name);
         $scope.name = "";
+        $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
             $scope.result0 = "Please add more people.";
             $scope.result1 = "請添加更多的人。";
@@ -472,7 +463,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     };
     $scope.removeItem = function (x) {
         $scope.list.splice(x, 1);
-        //localStorage.mylist.splice(x, 1);
+        $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
             $scope.result0 = "Please add more people.";
             $scope.result1 = "請添加更多的人。";
@@ -489,8 +480,8 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     }
     $scope.reset = function () { // reset everything
         $scope.list = [];
-        //localStorage.mylist = [];
         $scope.name = "";
+        $localStorage.mylist = [];
         $scope.result0 = "Please take attendance first.";
         $scope.result1 = "請先出席。";
         $scope.result2 = "请先出席。";
