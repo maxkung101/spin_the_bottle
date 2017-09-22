@@ -38,8 +38,7 @@
                         <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
                     </div>
                     <div class="panel-body">
-                        <p class="group" ng-repeat="n in list track by $index">{{n}}</p>
-                        <button type="button" class="btn btn-warning" ng-if="list.length != 0" ng-click="undoname()" ng-disabled="spinning">{{ undobutton(selectedLanguage) }}</button>
+                        <p class="group" ng-repeat="n in list track by $index">{{n}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="pull-right">×</span></p>
                     </div>
                 </div>
             </div>

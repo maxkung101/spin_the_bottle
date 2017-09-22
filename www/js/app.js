@@ -120,16 +120,6 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
                 return "Total count";
         }
     };
-    $scope.undobutton = function (test) {
-        switch (test) {
-            case "1":
-                return "解開";
-            case "2":
-                return "解开";
-            default:
-                return "Undo";
-        }
-    };
     // >> Timer tab
     $scope.measured = function (test) {
         switch (test) {
@@ -417,7 +407,16 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     // --------------------------------------------------
     // Init
     $scope.spinning = false;
-    $scope.list = [];
+    if (typeof (Storage) !== "undefined") {
+        if (localStorage.mylist) {
+            localStorage.mylist = [];
+            $scope.list = localStorage.mylist;
+        } else {
+            $scope.list = [];
+        }
+    } else {
+        $scope.list = [];
+    }
     $scope.result0 = "Please take attendance first.";
     $scope.result1 = "請先出席。";
     $scope.result2 = "请先出席。";
@@ -459,6 +458,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
     };
     $scope.addIt = function () { // add a person to the list
         $scope.list.push($scope.name);
+        //localStorage.mylist.push($scope.name);
         $scope.name = "";
         if ($scope.list.length == 1) {
             $scope.result0 = "Please add more people.";
@@ -470,8 +470,9 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             $scope.result2 = "按 \"GO\" 开始。";
         }
     };
-    $scope.undoname = function () {
-        $scope.list.pop();
+    $scope.removeItem = function (x) {
+        $scope.list.splice(x, 1);
+        //localStorage.mylist.splice(x, 1);
         if ($scope.list.length == 1) {
             $scope.result0 = "Please add more people.";
             $scope.result1 = "請添加更多的人。";
@@ -485,9 +486,10 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
             $scope.result1 = "按 \"GO\" 開始。";
             $scope.result2 = "按 \"GO\" 开始。";
         }
-    };
+    }
     $scope.reset = function () { // reset everything
         $scope.list = [];
+        //localStorage.mylist = [];
         $scope.name = "";
         $scope.result0 = "Please take attendance first.";
         $scope.result1 = "請先出席。";
