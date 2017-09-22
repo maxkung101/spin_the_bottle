@@ -199,7 +199,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             case "2":
                 return "是谁要先念给我们";
             default:
-                return "Who shall we start with";
+                return "Who will we start with";
         }
     };
     // >> Extras tab
@@ -408,9 +408,19 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     // Init
     $scope.spinning = false;
     $scope.list = $localStorage.mylist || [];
-    $scope.result0 = "Please take attendance first.";
-    $scope.result1 = "請先出席。";
-    $scope.result2 = "请先出席。";
+    if ($scope.list.length == 1) {
+        $scope.result0 = "Please add more people.";
+        $scope.result1 = "請添加更多的人。";
+        $scope.result2 = "请添加更多的人。";
+    } else if ($scope.list.length == 0) {
+        $scope.result0 = "Please take attendance first.";
+        $scope.result1 = "請先出席。";
+        $scope.result2 = "请先出席。";
+    } else {
+        $scope.result0 = "Press \"Go\" to begin.";
+        $scope.result1 = "按 \"GO\" 開始。";
+        $scope.result2 = "按 \"GO\" 开始。";
+    }
     $scope.timerRadio = "qa";
     $scope.randomizerRadio = "st";
     // --------------------------------------------------
