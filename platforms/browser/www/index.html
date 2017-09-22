@@ -12,6 +12,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script data-require="angular.js@1.5.x" src="js/angular.min.js" data-semver="1.5.11"></script>
+    <script src="js/ngStorage.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body ng-app="" ng-controller="MainCtrl">
@@ -38,8 +39,7 @@
                         <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
                     </div>
                     <div class="panel-body">
-                        <p class="group" ng-repeat="n in list track by $index">{{n}}</p>
-                        <button type="button" class="btn btn-warning" ng-if="list.length != 0" ng-click="undoname()" ng-disabled="spinning">{{ undobutton(selectedLanguage) }}</button>
+                        <p class="group" ng-repeat="n in list track by $index">{{n}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="pull-right">×</span></p>
                     </div>
                 </div>
             </div>
