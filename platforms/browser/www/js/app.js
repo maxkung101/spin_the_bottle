@@ -199,7 +199,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             case "2":
                 return "是谁要先念给我们";
             default:
-                return "Who will be the first to read";
+                return "Who shall we start with";
         }
     };
     // >> Extras tab
@@ -434,7 +434,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $timeout(function () {
             $scope.rand = Math.floor((Math.random() * $scope.list.length) + 1) - 1;
             if ($scope.randomizerRadio == "st") {
-                $scope.result0 = "We will start with " + $scope.list[$scope.rand] + ".";
+                $scope.result0 = "We'll start with " + $scope.list[$scope.rand] + ".";
                 $scope.result1 = "讓 " + $scope.list[$scope.rand] + " 先唸。";
                 $scope.result2 = "让 " + $scope.list[$scope.rand] + " 先念。";
                 $scope.spinning = false;
