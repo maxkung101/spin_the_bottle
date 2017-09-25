@@ -2,21 +2,6 @@
 var app = angular.module('plunker', ['ngStorage']);
 
 app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
-    if (typeof (Storage) !== "undefined") {
-        if (localStorage.spinner && localStorage.language && localStorage.timer) {
-            $scope.selectedSpinner = localStorage.spinner;
-            $scope.selectedLanguage = localStorage.language;
-            $scope.selectedTimer = localStorage.timer;
-        } else {
-            $scope.selectedSpinner = "0";
-            $scope.selectedLanguage = "0";
-            $scope.selectedTimer = "0";
-        }
-    } else {
-        $scope.selectedSpinner = "0";
-        $scope.selectedLanguage = "0";
-        $scope.selectedTimer = "0";
-    }
     // Language text
     // >> Bar
     $scope.attendance = function (test) {
@@ -423,6 +408,18 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     }
     $scope.timerRadio = "qa";
     $scope.randomizerRadio = "st";
+    $scope.selectedLanguage = $localStorage.selectedLanguage || "0";
+    $scope.changeLanguage = function () {
+        $localStorage.selectedLanguage = $scope.selectedLanguage;
+    };
+    $scope.selectedSpinner = $localStorage.selectedSpinner || "0";
+    $scope.changeSpinner = function () {
+        $localStorage.selectedSpinner = $scope.selectedSpinner;
+    };
+    $scope.selectedTimer = $localStorage.selectedTimer || "0";
+    $scope.changeTimer = function () {
+        $localStorage.selectedTimer = $scope.selectedTimer;
+    };
     // --------------------------------------------------
     // Timers
     $scope.timer1 = 0;
@@ -576,19 +573,3 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $scope.deactivate2 = true;
     };
 });
-
-function saveThis() { // Save settings on change
-    if (typeof (Storage) !== "undefined") {
-        localStorage.spinner = document.getElementById("selectedSpinner").value;
-        localStorage.language = document.getElementById("selectedLanguage").value;
-        localStorage.timer = document.getElementById("selectedTimer").value;
-    } else { // Browser or device does not support local storage
-        if (document.getElementById("selectedLanguage").value == "1") {
-            window.alert("設備沒有本地存儲\n設置尚未保存。");
-        } else if (document.getElementById("selectedLanguage").value == "2") {
-            window.alert("设备没有本地存储\n设置尚未保存。");
-        } else {
-            window.alert("Local storage not supported\nYour settings have not been saved.");
-        }
-    }
-}

@@ -119,13 +119,13 @@
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}:</label>
-                    <select onchange="saveThis()" class="form-control" id="selectedLanguage" ng-model="selectedLanguage">
+                    <select class="form-control" id="selectedLanguage" ng-model="selectedLanguage" ng-change="changeLanguage()">
                         <option value="0">English</option>
                         <option value="1">繁体中文</option>
                         <option value="2">简体中文</option>
                     </select>
                     <label for="selectedSpinner">{{ closingtime(selectedLanguage) }}{{ spinningthing(selectedLanguage) }}:</label>
-                    <select onchange="saveThis()" class="form-control" id="selectedSpinner" ng-model="selectedSpinner">
+                    <select class="form-control" id="selectedSpinner" ng-model="selectedSpinner" ng-change="changeSpinner()">
                         <option value="0">{{ spinnerLoadingSymbol(selectedLanguage) }}</option>
                         <option value="1">{{ spinnerFidget(selectedLanguage) }}</option>
                         <option value="2">{{ spinnerMiku(selectedLanguage) }}</option>
@@ -134,7 +134,7 @@
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
                     </select>
                     <label for="selectedTimer">{{ timerbox(selectedLanguage) }}:</label>
-                    <select onchange="saveThis()" class="form-control" id="selectedTimer" ng-model="selectedTimer">
+                    <select class="form-control" id="selectedTimer" ng-model="selectedTimer" ng-change="changeTimer()">
                         <option value="0">{{ defaulttimer(selectedLanguage) }}</option>
                         <option value="1">{{ timerTheme1(selectedLanguage) }}</option>
                         <option value="2">Game Boy</option>
