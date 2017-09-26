@@ -18,4 +18,5 @@
     <preference name="orientation" value="portrait" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="permissions" value="none" />
+    <preference name="target-device" value="universal" />
 </widget>
