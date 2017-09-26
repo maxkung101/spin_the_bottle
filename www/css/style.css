@@ -35,7 +35,7 @@ body {
 
 /* Timer tab */
 .timercount { /* Default timer */
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 7em;
     color: #000;
     background-color: #fff;
