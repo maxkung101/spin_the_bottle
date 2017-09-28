@@ -445,8 +445,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 $scope.result1 = "讓 " + $scope.list[$scope.rand] + " 先唸。";
                 $scope.result2 = "让 " + $scope.list[$scope.rand] + " 先念。";
                 $scope.spinning = false;
-            }
-            else {
+            } else {
                 $scope.result0 = $scope.list[$scope.rand] + " will pray for us.";
                 $scope.result1 = $scope.list[$scope.rand] + " 會祈禱。";
                 $scope.result2 = $scope.list[$scope.rand] + " 会祈祷。";
@@ -551,8 +550,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                             $window.alert("... 以你的名義祈禱，阿們。");
                         } else if ($scope.selectedLanguage == "2") {
                             $window.alert("... 以你的名义祈祷，阿们。");
-                        }
-                        else {
+                        } else {
                             $window.alert("... In your name I pray, Amen.");
                         }
                     }
