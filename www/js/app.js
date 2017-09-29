@@ -510,8 +510,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                             $window.alert("時間到了");
                         } else if ($scope.selectedLanguage == "2") {
                             $window.alert("时间到了");
-                        }
-                        else {
+                        } else {
                             $window.alert("Time's up");
                         }
                     }
