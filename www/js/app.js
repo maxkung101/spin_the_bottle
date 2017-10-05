@@ -474,7 +474,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             $scope.textListReady();
         }
     };
-    $scope.removeItem = function (x) {
+    $scope.removeItem = function (x) { // remove a person from the list
         $scope.list.splice(x, 1);
         $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
