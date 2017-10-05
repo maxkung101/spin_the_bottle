@@ -390,21 +390,32 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }
     };
     // --------------------------------------------------
-    // Init
-    $scope.spinning = false;
-    $scope.list = $localStorage.mylist || [];
-    if ($scope.list.length == 1) {
-        $scope.result0 = "Please add more people.";
-        $scope.result1 = "請添加更多的人。";
-        $scope.result2 = "请添加更多的人。";
-    } else if ($scope.list.length == 0) {
+    // Set text functions
+    $scope.textListEmpty = function() {
         $scope.result0 = "Please take attendance first.";
         $scope.result1 = "請先出席。";
         $scope.result2 = "请先出席。";
-    } else {
+    };
+    $scope.textListNotready = function() {
+        $scope.result0 = "Please add more people.";
+        $scope.result1 = "請添加更多的人。";
+        $scope.result2 = "请添加更多的人。";
+    };
+    $scope.textListReady = function() {
         $scope.result0 = "Press \"Go\" to begin.";
         $scope.result1 = "按 \"GO\" 開始。";
         $scope.result2 = "按 \"GO\" 开始。";
+    };
+    // --------------------------------------------------
+    // Init
+    $scope.spinning = false;
+    $scope.list = $localStorage.mylist || [];
+    if ($scope.list.length == 0) {
+        $scope.textListEmpty();
+    } else if ($scope.list.length == 1) {
+        $scope.textListNotready();
+    } else {
+        $scope.textListReady();
     }
     $scope.timerRadio = "qa";
     $scope.randomizerRadio = "st";
@@ -458,39 +469,27 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $scope.name = "";
         $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
-            $scope.result0 = "Please add more people.";
-            $scope.result1 = "請添加更多的人。";
-            $scope.result2 = "请添加更多的人。";
-        } else if ($scope.list.length == 2) {
-            $scope.result0 = "Press \"Go\" to begin.";
-            $scope.result1 = "按 \"GO\" 開始。";
-            $scope.result2 = "按 \"GO\" 开始。";
+            $scope.textListNotready();
+        } else {
+            $scope.textListReady();
         }
     };
-    $scope.removeItem = function (x) {
+    $scope.removeItem = function (x) { // remove a person from the list
         $scope.list.splice(x, 1);
         $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
-            $scope.result0 = "Please add more people.";
-            $scope.result1 = "請添加更多的人。";
-            $scope.result2 = "请添加更多的人。";
+            $scope.textListNotready();
         } else if ($scope.list.length == 0) {
-            $scope.result0 = "Please take attendance first.";
-            $scope.result1 = "請先出席。";
-            $scope.result2 = "请先出席。";
+            $scope.textListEmpty();
         } else {
-            $scope.result0 = "Press \"Go\" to begin.";
-            $scope.result1 = "按 \"GO\" 開始。";
-            $scope.result2 = "按 \"GO\" 开始。";
+            $scope.textListReady();
         }
     }
     $scope.reset = function () { // reset everything
         $scope.list = [];
         $scope.name = "";
         $localStorage.mylist = [];
-        $scope.result0 = "Please take attendance first.";
-        $scope.result1 = "請先出席。";
-        $scope.result2 = "请先出席。";
+        $scope.textListEmpty();
     };
     $scope.countdown1 = function () {
         if (!$scope.runtimer1) {
