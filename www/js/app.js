@@ -461,7 +461,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             $scope.result0 = "Please add more people.";
             $scope.result1 = "請添加更多的人。";
             $scope.result2 = "请添加更多的人。";
-        } else if ($scope.list.length == 2) {
+        } else {
             $scope.result0 = "Press \"Go\" to begin.";
             $scope.result1 = "按 \"GO\" 開始。";
             $scope.result2 = "按 \"GO\" 开始。";
