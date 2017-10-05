@@ -390,23 +390,23 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }
     };
     // --------------------------------------------------
-	// Set text functions
-	$scope.textListEmpty = function() {
+    // Set text functions
+    $scope.textListEmpty = function() {
         $scope.result0 = "Please take attendance first.";
         $scope.result1 = "請先出席。";
         $scope.result2 = "请先出席。";
     };
-	$scope.textListNotready = function() {
+    $scope.textListNotready = function() {
         $scope.result0 = "Please add more people.";
         $scope.result1 = "請添加更多的人。";
         $scope.result2 = "请添加更多的人。";
     };
-	$scope.textListReady = function() {
+    $scope.textListReady = function() {
         $scope.result0 = "Press \"Go\" to begin.";
         $scope.result1 = "按 \"GO\" 開始。";
         $scope.result2 = "按 \"GO\" 开始。";
     };
-	// --------------------------------------------------
+    // --------------------------------------------------
     // Init
     $scope.spinning = false;
     $scope.list = $localStorage.mylist || [];
