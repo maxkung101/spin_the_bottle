@@ -19,10 +19,6 @@ body {
     font-size: 16pt;
 }
 
-#mainapp {
-    margin-top: 25px;
-}
-
 /* Attendance tab */
 .group {
     font-size: 20pt;
@@ -127,50 +123,50 @@ body {
 @media only screen and ( max-height: 1024px ) { /* ipad classic portrait ipad pro landscape */
     #listinfo {
         overflow-y: scroll;
-        max-height: 900px;
+        max-height: 952px;
     }
 }
 
 @media only screen and ( max-height: 768px ) { /* ipad classic landscape */
     #listinfo {
         overflow-y: scroll;
-        max-height: 640px;
+        max-height: 677px;
     }
 }
 
 @media only screen and ( max-height: 736px ) { /* iphone 6 Plus 6S Plus 7 Plus */
     #listinfo {
         overflow-y: scroll;
-        max-height: 625px;
+        max-height: 658px;
     }
 
     .modal-body {
         overflow-y: scroll;
-        max-height: 620px;
+        max-height: 600px;
     }
 }
 
 @media only screen and ( max-height: 667px ) { /* iphone 6 6S 7 */
     #listinfo {
         overflow-y: scroll;
-        max-height: 555px;
+        max-height: 592px;
     }
 
     .modal-body {
         overflow-y: scroll;
-        max-height: 520px;
+        max-height: 500px;
     }
 }
 
 @media only screen and ( max-height: 568px ) { /* iphone SE */
     #listinfo {
         overflow-y: scroll;
-        max-height: 460px;
+        max-height: 497px;
     }
 
     .modal-body {
         overflow-y: scroll;
-        max-height: 420px;
+        max-height: 400px;
     }
 }
 
