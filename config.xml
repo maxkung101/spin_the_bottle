@@ -5,16 +5,16 @@
         id        = "com.phonegap.rccc"
         version   = "1.0.0">
 	<!--
-	  id: the unique identifier for your application. 
-	  To support all supported platforms, this must be 
-	  reverse-domain name style 
-	  (e.g. com.yourcompany.yourapp) 	
+	 id: the unique identifier for your application. 
+	 To support all supported platforms, this must be 
+	 reverse-domain name style 
+	 (e.g. com.yourcompany.yourapp) 	
 
-	  NOTE:  This causes a distinct app to be installed.
-		if the id is the same the app overwrites
-		an existing app of same id, regardless of
-		the name element below and regardless of
-		the filename!		
+	 NOTE: This causes a distinct app to be installed.
+	 If the id is the same the app overwrites
+	 an existing app of same id, regardless of
+	 the name element below and regardless of
+	 the filename!		
 	-->
 	<name>RCCC Small Group</name>
 	<description>
@@ -125,11 +125,11 @@
 	<allow-intent href="mailto:*" />
 	<allow-intent href="geo:*" />
 	<platform name="android">
-	  <allow-intent href="market:*" />
+		<allow-intent href="market:*" />
 	</platform>
 	<platform name="ios">
-	  <allow-intent href="itms:*" />
-	  <allow-intent href="itms-apps:*" />
+		<allow-intent href="itms:*" />
+		<allow-intent href="itms-apps:*" />
 	</platform>
 	<icon src="www/img/logo.png" />
 </widget>
