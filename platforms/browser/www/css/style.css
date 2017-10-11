@@ -119,6 +119,27 @@ body {
     color: #fff;
 }
 
+.credit-p {
+	text-align: center;
+}
+
+.credit-title {
+	font-size: 12pt;
+	color: #008bac;
+}
+
+.credit-person {
+	font-size: 14pt;
+}
+
+.credit-symbol {
+	font-size: 11pt;
+}
+
+.credit-company {
+	font-size: 13pt;
+}
+
 /* Scroll */
 @media only screen and ( max-height: 1024px ) { /* ipad classic portrait ipad pro landscape */
     #listinfo {
