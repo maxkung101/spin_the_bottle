@@ -112,6 +112,7 @@ body {
 /* Extras tab */
 .modal-footer {
     background-color: #384b5f;
+    text-align: center;
 }
 
 .modal-header {
