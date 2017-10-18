@@ -30,7 +30,7 @@
                         <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
                     </div>
                     <div class="panel-body">
-                        <p class="group" ng-repeat="n in list track by $index">{{n}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="pull-right">×</span></p>
+                        <p class="group" ng-repeat="n in list track by $index">{{n}}<span ng-if="!spinning" ng-click="removeItem($index)" style="cursor:pointer;" class="pull-right">×</span></p>
 						<form name="myform" ng-submit="addIt()" class="input-group">
 							<input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" ng-model="name" ng-disabled="spinning" required>
 							<div class="input-group-btn">
