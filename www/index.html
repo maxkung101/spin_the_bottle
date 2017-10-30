@@ -8,6 +8,7 @@
     <link href="css/style.css" rel="stylesheet">
     <script>document.write('<base href="' + document.location + '" />');</script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script data-require="angular.js@1.5.x" src="js/angular.min.js" data-semver="1.5.11"></script>
     <script src="js/ngStorage.js"></script>
@@ -15,22 +16,22 @@
 </head>
 <body ng-controller="MainCtrl">
     <div id="mainapp" class="container col-sm-12">
-        <ul id="bar" class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#thelist"><span class="glyphicon glyphicon-list-alt"></span> <span class="kkk">{{ attendance(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#main"><span class="glyphicon glyphicon-random"></span> <span class="kkk">{{ closingtime(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-time"></span> <span class="kkk">{{ timerbox(selectedLanguage) }}</span></a></li>
-            <li><a data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ extras(selectedLanguage) }}</span></a></li>
+        <ul id="bar" class="nav nav-tabs nav-justified" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><span class="glyphicon glyphicon-list-alt"></span> <span class="kkk">{{ attendance(selectedLanguage) }}</span></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><span class="glyphicon glyphicon-random"></span> <span class="kkk">{{ closingtime(selectedLanguage) }}</span></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-time"></span> <span class="kkk">{{ timerbox(selectedLanguage) }}</span></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ extras(selectedLanguage) }}</span></a></li>
         </ul>
         <div class="tab-content">
             <!-- Attendance tab -->
-            <div id="thelist" class="tab-pane fade in active">
+            <div id="thelist" class="container tab-pane active">
                 <div id="listinfo" class="panel panel-info">
                     <div class="panel-heading">
                         <h3>{{ listof(selectedLanguage) }}</h3>
                         <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
                     </div>
                     <div class="panel-body">
-                        <p class="group" ng-repeat="n in list track by $index">{{n}}<span ng-if="!spinning" ng-click="removeItem($index)" style="cursor:pointer;" class="pull-right">×</span></p>
+                        <p class="group" ng-repeat="n in list track by $index">{{n}}<button ng-if="!spinning" ng-click="removeItem($index)" class="close">&times;</button></p>
 						<form name="myform" ng-submit="addIt()" class="input-group">
 							<input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" ng-model="name" ng-disabled="spinning" required>
 							<div class="input-group-btn">
@@ -42,7 +43,7 @@
                 </div>
             </div>
             <!-- Randomizer tab -->
-            <div id="main" class="tab-pane fade">
+            <div id="main" class="container tab-pane fade">
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
                 <h1 ng-if='randomizerRadio=="st"'>{{ whowill(selectedLanguage) }}?</h1>
@@ -69,7 +70,7 @@
                 <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
             <!-- Timer tab -->
-            <div id="qa-timer" class="tab-pane fade">
+            <div id="qa-timer" class="container tab-pane fade">
                 <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" ng-model="timerRadio" ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
                 <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" ng-model="timerRadio" ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
                 <h1 ng-if='timerRadio=="qa"'>{{ qa(selectedLanguage) }}</h1>
@@ -113,7 +114,7 @@
                 <p ng-if='runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-danger btn-lg btn-block" ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
             <!-- Extras tab -->
-            <div id="settings" class="tab-pane fade">
+            <div id="settings" class="container tab-pane fade">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}:</label>
