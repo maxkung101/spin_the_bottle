@@ -5,6 +5,7 @@
     <title>RCCC Small Group</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/style.css" rel="stylesheet">
     <script>document.write('<base href="' + document.location + '" />');</script>
     <script src="js/jquery.min.js"></script>
@@ -17,14 +18,14 @@
 <body ng-controller="MainCtrl">
     <div id="mainapp" class="container col-sm-12">
         <ul id="bar" class="nav nav-tabs nav-justified" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><span class="glyphicon glyphicon-list-alt"></span> <span class="kkk">{{ attendance(selectedLanguage) }}</span></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><span class="glyphicon glyphicon-random"></span> <span class="kkk">{{ closingtime(selectedLanguage) }}</span></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><span class="glyphicon glyphicon-time"></span> <span class="kkk">{{ timerbox(selectedLanguage) }}</span></a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings"><span class="glyphicon glyphicon-cog"></span> <span class="kkk">{{ extras(selectedLanguage) }}</span></a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> {{ attendance(selectedLanguage) }}</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><i class="fa fa-spinner"></i> {{ closingtime(selectedLanguage) }}</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> {{ timerbox(selectedLanguage) }}</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings"><i class="fa fa-cog"></i> {{ extras(selectedLanguage) }}</a></li>
         </ul>
         <div class="tab-content">
             <!-- Attendance tab -->
-            <div id="thelist" class="container tab-pane active">
+            <div id="thelist" class="tab-pane active">
                 <div id="listinfo" class="panel panel-info">
                     <div class="panel-heading">
                         <h3>{{ listof(selectedLanguage) }}</h3>

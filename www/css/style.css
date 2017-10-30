@@ -222,61 +222,11 @@ body {
     }
 }
 
-@media only screen and ( max-width: 414px ) { /* For phablets */
+@media only screen and ( max-width: 414px ) { /* For phablets and mobile devices */
     #bar {
         position: fixed;
         bottom: 0px;
-        font-size: 10pt;
-    }
-
-    .kkk {
-        display: inline;
-    }
-
-    .group {
-        font-size: 16pt;
-        text-align: left;
-    }
-
-    .spinner {
-        width: 100%;
-        display: block;
-        margin: auto;
-    }
-}
-
-@media only screen and ( max-width: 375px ) { /* For mobile devices */
-    #bar {
-        position: fixed;
-        bottom: 0px;
-        font-size: 10pt;
-    }
-
-    .kkk {
-        display: inline;
-    }
-
-    .group {
-        font-size: 16pt;
-        text-align: left;
-    }
-
-    .spinner {
-        width: 100%;
-        display: block;
-        margin: auto;
-    }
-}
-
-@media only screen and ( max-width: 320px ) { /* For small mobile devices */
-    #bar {
-        position: fixed;
-        bottom: 0px;
-        font-size: 10pt;
-    }
-
-    .kkk {
-        display: inline;
+        font-size: 7pt;
     }
 
     .group {
