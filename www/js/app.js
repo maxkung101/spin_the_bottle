@@ -477,6 +477,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.removeItem = function (x) { // remove a person from the list
         $scope.list.splice(x, 1);
         $localStorage.mylist = $scope.list
+        $scope.changemode();
+    };
+    $scope.changemode = function (x) { // change randomizer mode
         if ($scope.list.length == 1) {
             $scope.textListNotready();
         } else if ($scope.list.length == 0) {
@@ -484,7 +487,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         } else {
             $scope.textListReady();
         }
-    }
+    };
     $scope.reset = function () { // reset everything
         $scope.list = [];
         $scope.name = "";

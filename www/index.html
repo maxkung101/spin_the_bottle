@@ -16,22 +16,22 @@
     <script src="js/app.js"></script>
 </head>
 <body ng-controller="MainCtrl">
+    <ul id="bar" class="nav nav-tabs nav-justified" role="tablist">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> <span class="kkk"><br></span>{{ attendance(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><i class="fa fa-spinner"></i> <span class="kkk"><br></span>{{ closingtime(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> <span class="kkk"><br></span>{{ timerbox(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings"><i class="fa fa-cog"></i> <span class="kkk"><br></span>{{ extras(selectedLanguage) }}</a></li>
+    </ul>
     <div id="mainapp" class="container col-sm-12">
-        <ul id="bar" class="nav nav-tabs nav-justified" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> {{ attendance(selectedLanguage) }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><i class="fa fa-spinner"></i> {{ closingtime(selectedLanguage) }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> {{ timerbox(selectedLanguage) }}</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings"><i class="fa fa-cog"></i> {{ extras(selectedLanguage) }}</a></li>
-        </ul>
         <div class="tab-content">
             <!-- Attendance tab -->
             <div id="thelist" class="tab-pane active">
-                <div id="listinfo" class="panel panel-info">
-                    <div class="panel-heading">
+                <div id="listinfo">
+                    <div id="listheader">
                         <h3>{{ listof(selectedLanguage) }}</h3>
                         <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
                     </div>
-                    <div class="panel-body">
+                    <div id="listbody">
                         <p class="group" ng-repeat="n in list track by $index">{{n}}<button ng-if="!spinning" ng-click="removeItem($index)" class="close">&times;</button></p>
 						<form name="myform" ng-submit="addIt()" class="input-group">
 							<input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" ng-model="name" ng-disabled="spinning" required>
@@ -45,10 +45,10 @@
             </div>
             <!-- Randomizer tab -->
             <div id="main" class="container tab-pane fade">
-                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
-                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
-                <h1 ng-if='randomizerRadio=="st"'>{{ whowill(selectedLanguage) }}?</h1>
-                <h1 ng-if='randomizerRadio=="cp"'>{{ whoshall(selectedLanguage) }}?</h1>
+                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-click="changemode()" ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" ng-model="randomizerRadio" ng-click="changemode()" ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
+                <div class="theintro" ng-if='randomizerRadio=="st"'>{{ whowill(selectedLanguage) }}?</div>
+                <div class="theintro" ng-if='randomizerRadio=="cp"'>{{ whoshall(selectedLanguage) }}?</div>
                 <p class="theresult" ng-if='selectedLanguage == "0"'>{{ result0 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "1"'>{{ result1 }}</p>
                 <p class="theresult" ng-if='selectedLanguage == "2"'>{{ result2 }}</p>
@@ -68,7 +68,7 @@
                     <span ng-if='selectedSpinner == "4"'><img src="img/nyan-cat.gif" class="spinner" alt="Nyan Cat" /></span>
                     <span ng-if='selectedSpinner == "5"'><img src="img/nyan-pikachu.gif" class="spinner" alt="Pikachu" /></span>
                 </p>
-                <p ng-if="!spinning"><button type="button" id="spin-button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
+                <p id="spin-button" ng-if="!spinning"><button type="button" class="btn btn-default btn-lg btn-block" ng-click="myFunction()" ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
             <!-- Timer tab -->
             <div id="qa-timer" class="container tab-pane fade">
@@ -147,6 +147,7 @@
                         <option value="9">{{ timerTheme9(selectedLanguage) }}</option>
                     </select>
                 </div>
+                <br>
                 <h3>{{ about(selectedLanguage) }}</h3>
                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
@@ -160,8 +161,8 @@
                                 <p><!-- Terms of Use -->
             Terms are available in English (US) only. By using this app, you agree with these terms and
             conditions. Otherwise, you should not be using the application. You can only agree with these
-            terms if you're 12 or older. We may update these terms periodically, but we won't ruin your
-            fun. Thank you for using RCCC Small Group. Please take some time to read this user agreement
+            terms if you're age 12 or older. We may update these terms periodically, but we won't ruin your
+            fun. Thank you for using RCCC Small Group. Please take some time to read the user agreement
             before using this app. </p><ol>
             <li><strong>
             Age Restrictions:</strong> We suggest that children under the age of 12 should not be using
@@ -201,7 +202,8 @@
 								</p>
                                 <p class="credit-p">
 									<span class="credit-title">Special thanks</span><br>
-									<span class="credit-person">Antioch Hwang</span>
+									<span class="credit-person">Antioch Hwang</span><br>
+                                    <span class="credit-person">Rutgers Community Christian Church</span>
 								</p>
                                 <p class="credit-p">
 									<span class="credit-title">Disclaimer</span>

@@ -19,14 +19,39 @@ body {
     font-size: 16pt;
 }
 
+.kkk {
+    display: none;
+}
+
 /* Attendance tab */
 #listinfo {
     background-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #adadad;
+}
+
+#listheader {
+    color: #fff;
+    background-color: #19475e;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+#listbody {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 5px;
 }
 
 .group {
     font-size: 20pt;
     text-align: left;
+}
+
+/* Randomizer tab */
+.theintro {
+    font-size: 25pt;
 }
 
 .theresult {
@@ -114,15 +139,17 @@ body {
 }
 
 /* Extras tab */
-.modal-footer {
-    background-color: #384b5f;
-    text-align: center;
+#settings {
+    padding-top: 10px;
 }
 
 .modal-header {
     background-color: #2c3e50;
     color: #fff;
-    text-align: center;
+}
+
+.modal-footer {
+    background-color: #384b5f;
 }
 
 .credit-p {
@@ -161,7 +188,7 @@ body {
     }
 }
 
-@media only screen and ( max-height: 736px ) { /* iphone 6 Plus 6S Plus 7 Plus */
+@media only screen and ( max-height: 736px ) { /* iphone 8 + */
     #listinfo {
         overflow-y: scroll;
         max-height: 658px;
@@ -169,11 +196,11 @@ body {
 
     .modal-body {
         overflow-y: scroll;
-        max-height: 600px;
+        max-height: 585px;
     }
 }
 
-@media only screen and ( max-height: 667px ) { /* iphone 6 6S 7 */
+@media only screen and ( max-height: 667px ) { /* iphone 8 */
     #listinfo {
         overflow-y: scroll;
         max-height: 592px;
@@ -181,7 +208,7 @@ body {
 
     .modal-body {
         overflow-y: scroll;
-        max-height: 500px;
+        max-height: 485px;
     }
 }
 
@@ -193,7 +220,7 @@ body {
 
     .modal-body {
         overflow-y: scroll;
-        max-height: 400px;
+        max-height: 385px;
     }
 }
 
@@ -226,12 +253,25 @@ body {
     #bar {
         position: fixed;
         bottom: 0px;
+        width: 100%;
         font-size: 7pt;
     }
 
     .group {
         font-size: 16pt;
         text-align: left;
+    }
+
+    .theintro {
+        font-size: 20pt;
+    }
+
+    .theresult {
+        font-size: 14pt;
+    }
+
+    .kkk {
+        display: inline;
     }
 
     .spinner {
