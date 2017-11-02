@@ -33,14 +33,14 @@
                     </div>
                     <div id="listbody">
                         <p class="group" ng-repeat="n in list track by $index">{{n}}<button ng-if="!spinning" ng-click="removeItem($index)" class="close">&times;</button></p>
-						<form name="myform" ng-submit="addIt()" class="input-group">
-							<input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" ng-model="name" ng-disabled="spinning" required>
-							<div class="input-group-btn">
-								<button type="submit" class="btn btn-success" ng-disabled="myform.box.$error.required">{{ add(selectedLanguage) }}</button>
-							</div>
-						</form>
+                        <form name="myform" ng-submit="addIt()" class="input-group">
+                            <input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" ng-model="name" ng-disabled="spinning" required>
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-success" ng-disabled="myform.box.$error.required">{{ add(selectedLanguage) }}</button>
+                            </div>
+                        </form>
                     </div>
-					<button type="button" class="btn btn-danger" ng-if="list.length != 0" ng-click="reset()" ng-disabled="spinning"><span class="glyphicon glyphicon-trash"></span> {{ clear(selectedLanguage) }}</button>
+                    <button type="button" class="btn btn-danger" ng-if="list.length != 0" ng-click="reset()" ng-disabled="spinning"><span class="glyphicon glyphicon-trash"></span> {{ clear(selectedLanguage) }}</button>
                 </div>
             </div>
             <!-- Randomizer tab -->
@@ -201,29 +201,29 @@
 									<span class="credit-person">Max Kung</span>
 								</p>
                                 <p class="credit-p">
-									<span class="credit-title">Special thanks</span><br>
-									<span class="credit-person">Antioch Hwang</span><br>
+                                    <span class="credit-title">Special thanks</span><br>
+                                    <span class="credit-person">Antioch Hwang</span><br>
                                     <span class="credit-person">Rutgers Community Christian Church</span>
 								</p>
                                 <p class="credit-p">
-									<span class="credit-title">Disclaimer</span>
+                                    <span class="credit-title">Disclaimer</span>
                                 </p>
 								<p class="credit-p">
-									<span class="credit-symbol">Hatsune Miku</span><br>
-									<span class="credit-company">Crypton Future Media, Inc.</span>
+                                    <span class="credit-symbol">Hatsune Miku</span><br>
+                                    <span class="credit-company">Crypton Future Media, Inc.</span>
 								</p>
 								<p class="credit-p">
-									<span class="credit-symbol">Mario</span><br>
-									<span class="credit-company">Nintendo Co., Ltd.</span>
+                                    <span class="credit-symbol">Mario</span><br>
+                                    <span class="credit-company">Nintendo Co., Ltd.</span>
 								</p>
 								<p class="credit-p">
-									<span class="credit-symbol">Nyan Cat</span><br>
-									<span class="credit-company">YouTube</span>
+                                    <span class="credit-symbol">Nyan Cat</span><br>
+                                    <span class="credit-company">YouTube</span>
 								</p>
 								<p class="credit-p">
-									<span class="credit-symbol">Pikachu</span><br>
-									<span class="credit-company">The Pokémon Company</span><br>
-									<span class="credit-company">Game Freak</span>
+                                    <span class="credit-symbol">Pikachu</span><br>
+                                    <span class="credit-company">The Pokémon Company</span><br>
+                                    <span class="credit-company">Game Freak</span>
 								</p>
                             </div>
                             <div class="modal-footer">
