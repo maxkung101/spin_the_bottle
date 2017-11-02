@@ -27,9 +27,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.closingtime = function (test) {
         switch (test) {
             case "1":
-                return "隨機數發生器";
+                return "隨機器";
             case "2":
-                return "随机数发生器";
+                return "随机器";
             default:
                 return "Randomizer";
         }
