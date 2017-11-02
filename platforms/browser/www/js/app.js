@@ -14,16 +14,6 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Attendance";
         }
     };
-    $scope.qa = function (test) {
-        switch (test) {
-            case "1":
-                return "QA 計時器";
-            case "2":
-                return "QA 计时器";
-            default:
-                return "QA timer";
-        }
-    };
     $scope.closingtime = function (test) {
         switch (test) {
             case "1":
@@ -34,14 +24,14 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Randomizer";
         }
     };
-    $scope.prayer = function (test) {
+    $scope.timerbox = function (test) {
         switch (test) {
             case "1":
-                return "禱告計時器";
+                return "計時器";
             case "2":
-                return "祷告计时器";
+                return "计时器";
             default:
-                return "Prayer timer";
+                return "Timer";
         }
     };
     $scope.extras = function (test) {
@@ -114,6 +104,26 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "时间以分钟和秒为单位。";
             default:
                 return "Time measured in minutes and seconds.";
+        }
+    };
+    $scope.qa = function (test) {
+        switch (test) {
+            case "1":
+                return "QA 計時器";
+            case "2":
+                return "QA 计时器";
+            default:
+                return "QA timer";
+        }
+    };
+    $scope.prayer = function (test) {
+        switch (test) {
+            case "1":
+                return "禱告計時器";
+            case "2":
+                return "祷告计时器";
+            default:
+                return "Prayer timer";
         }
     };
     $scope.startbutton = function (test) {
@@ -307,16 +317,6 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "皮卡丘";
             default:
                 return "Pikachu";
-        }
-    };
-    $scope.timerbox = function (test) {
-        switch (test) {
-            case "1":
-                return "計時器";
-            case "2":
-                return "计时器";
-            default:
-                return "Timer";
         }
     };
     $scope.defaulttimer = function (test) {
