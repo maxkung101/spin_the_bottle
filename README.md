@@ -25,8 +25,8 @@ Features
 
 Credits
 -------
-See [index.html lines 200 to 227](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L200)
+See [index.html lines 206 to 233](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L206)
 
 Terms of Use
 ------------
-See [index.html lines 162 to 183](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L162)
+See [index.html lines 168 to 189](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L168)
