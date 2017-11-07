@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html data-ng-app="plunker">
+<html data-ng-app="plunker" lang="en-US">
 <head>
     <title>RCCC Small Group</title>
     <meta charset="utf-8">
@@ -84,7 +84,7 @@
                     <h1 data-ng-switch-when="pr">{{ prayer(selectedLanguage) }}</h1>
                 </div>
                 <p class="theresult">{{ measured(selectedLanguage) }}</p>
-                <p ng-switch="selectedTimer">
+                <p data-ng-switch="selectedTimer">
                     <span class="timercount" data-ng-switch-when="0">
                         <span data-ng-if='timerRadio=="qa"'>{{ minute1 }}</span><span data-ng-if='timerRadio=="pr"'>{{ minute2 }}</span>:<span data-ng-if='timerRadio=="qa"'><span data-ng-if="timer1 <= 9">0</span>{{ timer1 }}</span><span data-ng-if='timerRadio=="pr"'><span data-ng-if="timer2 <= 9">0</span>{{ timer2 }}</span>
                     </span>

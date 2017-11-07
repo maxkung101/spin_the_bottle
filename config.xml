@@ -18,11 +18,7 @@
 	-->
 	<name>RCCC Small Group</name>
 	<description>
-	  Attention caretakers and counselors, you can use this app to lead your small group. You can also randomly choose which person in your small group to start the bible reading, or close in prayer.<br/>
-	  How to Use<br/>
-	  Attendance: Create a list of members in your small group or tribe.<br/>
-	  Randomizer: Press "Go" to decide who gets to read first, or close in prayer.<br/>
-	  Timer: Press "Start" to set the time to 1'00" in qa mode, or 1'30" in prayer mode.
+	  Attention caretakers and counselors, you can use this app to lead your small group. You can also randomly choose which person in your small group to start the bible reading, or close in prayer.
 	</description>
 	<author href="" email="maxkung06@gmail.com">Max Kung</author>
 	<content src="index.html" />
