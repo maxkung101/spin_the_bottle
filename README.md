@@ -16,7 +16,7 @@ $ git clone https://github.com/maxkung101/spin_the_bottle
 ```
 Features
 --------
-* Attendance List
+* Name List
 * Randomizer
 * Timer
 * Multiple Randomizer Animations
