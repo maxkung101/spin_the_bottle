@@ -25,7 +25,7 @@
     </ul>
     <div id="mainapp" class="container col-sm-12">
         <div class="tab-content">
-            <!-- Attendance tab -->
+            <!-- My List pane -->
             <div id="thelist" class="tab-pane active">
                 <div id="listinfo">
                     <div id="listheader">
@@ -41,10 +41,10 @@
                             </div>
                         </form>
                     </div>
-                    <button type="button" class="btn btn-danger" data-ng-if="list.length != 0" data-ng-click="reset()" data-ng-disabled="spinning"><span class="glyphicon glyphicon-trash"></span> {{ clear(selectedLanguage) }}</button>
+                    <button type="button" class="btn btn-danger" data-ng-if="list.length != 0" data-ng-click="reset()" data-ng-disabled="spinning">{{ clear(selectedLanguage) }}</button>
                 </div>
             </div>
-            <!-- Randomizer tab -->
+            <!-- Randomizer pane -->
             <div id="main" class="container tab-pane fade">
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
@@ -75,7 +75,7 @@
                 </p>
                 <p id="spin-button" data-ng-if="!spinning"><button type="button" class="btn btn-default btn-lg btn-block" data-ng-click="myFunction()" data-ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Timer tab -->
+            <!-- Timer pane -->
             <div id="qa-timer" class="container tab-pane fade">
                 <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
                 <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
@@ -121,7 +121,7 @@
                 <p data-ng-if='!runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-success btn-lg btn-block" data-ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p data-ng-if='runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-danger btn-lg btn-block" data-ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
             </div>
-            <!-- Extras tab -->
+            <!-- Extras pane -->
             <div id="settings" class="container tab-pane fade">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">

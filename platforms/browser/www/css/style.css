@@ -23,7 +23,7 @@ body {
     display: none;
 }
 
-/* Attendance tab */
+/* My List pane */
 #listinfo {
     background-color: #fff;
     border-style: solid;
@@ -49,7 +49,18 @@ body {
     text-align: left;
 }
 
-/* Randomizer tab */
+/* Randomizer pane */
+#spin-button {
+    position: relative;
+}
+
+.spinner {
+    width: 25%;
+    display: block;
+    margin: auto;
+    background-color: #ffffff;
+}
+
 .theintro {
     font-size: 25pt;
 }
@@ -58,7 +69,7 @@ body {
     font-size: 16pt;
 }
 
-/* Timer tab */
+/* Timer pane */
 .timercount { /* Default timer */
     font-family: "Arial", sans-serif;
     font-size: 7em;
@@ -126,19 +137,7 @@ body {
     border-color: #ff0000;
 }
 
-/* Randomizer tab */
-#spin-button {
-    position: relative;
-}
-
-.spinner {
-    width: 25%;
-    display: block;
-    margin: auto;
-    background-color: #ffffff;
-}
-
-/* Extras tab */
+/* Extras pane */
 #settings {
     padding-top: 10px;
 }

@@ -6,11 +6,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.attendance = function (test) {
         switch (test) {
             case "1":
-                return "出席名單";
+                return "我的名單";
             case "2":
-                return "出席名单";
+                return "我的名单";
             default:
-                return "Attendance";
+                return "My List";
         }
     };
     $scope.closingtime = function (test) {
@@ -43,7 +43,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Extras";
         }
     };
-    // Language text: Attendance
+    // Language text: My List
     $scope.add = function (test) {
         switch (test) {
             case "1":
