@@ -2,8 +2,7 @@
 var app = angular.module('plunker', ['ngStorage']);
 
 app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
-    // Language text
-    // >> Bar
+    // Language text: Bar
     $scope.attendance = function (test) {
         switch (test) {
             case "1":
@@ -44,7 +43,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Extras";
         }
     };
-    // >> Attendance tab
+    // Language text: Attendance
     $scope.add = function (test) {
         switch (test) {
             case "1":
@@ -95,7 +94,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Total count";
         }
     };
-    // >> Timer tab
+    // Language text: Timer
     $scope.measured = function (test) {
         switch (test) {
             case "1":
@@ -146,7 +145,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Stop";
         }
     };
-    // >> Randomizer tab
+    // Language text: Randomizer
     $scope.gobutton = function (test) {
         switch (test) {
             case "1":
@@ -197,7 +196,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Who will we start with";
         }
     };
-    // >> Extras tab
+    // Language text: Extras
     $scope.about = function (test) {
         switch (test) {
             case "1":
@@ -258,7 +257,17 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return " animation";
         }
     };
-    // >> >> Spinners
+    $scope.terms = function (test) {
+        switch (test) {
+            case "1":
+                return "使用條款";
+            case "2":
+                return "使用条款";
+            default:
+                return "Terms of Use";
+        }
+    };
+    // Language text: Spinners
     $scope.spinnerLoadingSymbol = function (test) {
         switch (test) {
             case "1":
@@ -377,16 +386,6 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "香港颜色";
             default:
                 return "Hong Kong Colors";
-        }
-    };
-    $scope.terms = function (test) {
-        switch (test) {
-            case "1":
-                return "使用條款";
-            case "2":
-                return "使用条款";
-            default:
-                return "Terms of Use";
         }
     };
     // --------------------------------------------------
