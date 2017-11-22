@@ -29,4 +29,4 @@ See [index.html lines 213 to 240](https://github.com/maxkung101/spin_the_bottle/
 
 Terms of Use
 ------------
-See [index.html lines 175 to 196](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L167)
+See [index.html lines 175 to 196](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L175)
