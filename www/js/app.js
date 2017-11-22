@@ -146,16 +146,6 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }
     };
     // Language text: Randomizer
-    $scope.gobutton = function (test) {
-        switch (test) {
-            case "1":
-                return "GO";
-            case "2":
-                return "GO";
-            default:
-                return "Go";
-        }
-    };
     $scope.biblereading = function (test) {
         switch (test) {
             case "1":
@@ -401,9 +391,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $scope.result2 = "请添加更多的人。";
     };
     $scope.textListReady = function() {
-        $scope.result0 = "Press \"Go\" to begin.";
-        $scope.result1 = "按 \"GO\" 開始。";
-        $scope.result2 = "按 \"GO\" 开始。";
+        $scope.result0 = "Touch picture to begin.";
+        $scope.result1 = "點擊圖片開始。";
+        $scope.result2 = "点击图片开始。";
     };
     // --------------------------------------------------
     // Init

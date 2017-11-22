@@ -57,7 +57,15 @@
                     <span class="theresult" data-ng-switch-when="1">{{ result1 }}</span>
                     <span class="theresult" data-ng-switch-when="2">{{ result2 }}</span>
                 </p>
-                <span class="spinner-image" data-ng-switch="selectedSpinner" data-ng-if="!spinning">
+                <span class="spinner-image" data-ng-switch="selectedSpinner" data-ng-if="list.length < 2 && !spinning">
+                    <span data-ng-switch-when="0"><img src="img/loading-stable.png" class="spinner" alt="Loading symbol" /></span>
+                    <span data-ng-switch-when="1"><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
+                    <span data-ng-switch-when="2"><img src="img/leekspin.jpg" class="spinner" alt="Hatsune Miku" /></span>
+                    <span data-ng-switch-when="3"><img src="img/nes-mario.jpg" class="spinner" alt="Mario" /></span>
+                    <span data-ng-switch-when="4"><img src="img/nyan-cat-stable.jpg" class="spinner" alt="Nyan Cat" /></span>
+                    <span data-ng-switch-when="5"><img src="img/pikachu.jpg" class="spinner" alt="Pikachu" /></span>
+                </span>
+                <span class="spinner-image" data-ng-switch="selectedSpinner" data-ng-if="list.length >= 2 && !spinning" data-ng-click="myFunction()">
                     <span data-ng-switch-when="0"><img src="img/loading-stable.png" class="spinner" alt="Loading symbol" /></span>
                     <span data-ng-switch-when="1"><img src="img/fidget-spinner-green.png" class="spinner" alt="Fidget toy" /></span>
                     <span data-ng-switch-when="2"><img src="img/leekspin.jpg" class="spinner" alt="Hatsune Miku" /></span>
@@ -73,7 +81,6 @@
                     <span data-ng-switch-when="4"><img src="img/nyan-cat.gif" class="spinner" alt="Nyan Cat" /></span>
                     <span data-ng-switch-when="5"><img src="img/nyan-pikachu.gif" class="spinner" alt="Pikachu" /></span>
                 </p>
-                <p id="spin-button" data-ng-if="!spinning"><button type="button" class="btn btn-default btn-lg btn-block" data-ng-click="myFunction()" data-ng-disabled="list.length < 2 || spinning">{{ gobutton(selectedLanguage) }}</button></p>
             </div>
             <!-- Timer pane -->
             <div id="qa-timer" class="container tab-pane fade">
