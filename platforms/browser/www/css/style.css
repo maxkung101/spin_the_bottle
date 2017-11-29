@@ -172,57 +172,6 @@ body {
 	font-size: 13pt;
 }
 
-/* Scroll */
-@media only screen and ( max-height: 1024px ) { /* ipad classic portrait ipad pro landscape */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 952px;
-    }
-}
-
-@media only screen and ( max-height: 768px ) { /* ipad classic landscape */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 677px;
-    }
-}
-
-@media only screen and ( max-height: 736px ) { /* iphone 8 + */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 658px;
-    }
-
-    .modal-body {
-        overflow-y: scroll;
-        max-height: 585px;
-    }
-}
-
-@media only screen and ( max-height: 667px ) { /* iphone 8 */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 592px;
-    }
-
-    .modal-body {
-        overflow-y: scroll;
-        max-height: 485px;
-    }
-}
-
-@media only screen and ( max-height: 568px ) { /* iphone SE */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 497px;
-    }
-
-    .modal-body {
-        overflow-y: scroll;
-        max-height: 385px;
-    }
-}
-
 @media only screen and ( max-width: 1028px ) { /* For medium devices */
     .group {
         font-size: 20pt;
@@ -236,26 +185,23 @@ body {
     }
 }
 
-@media only screen and ( max-width: 850px ) { /* For small devices */
+@media only screen and ( max-width: 750px ) {
     #bar {
         font-size: 12pt;
     }
 }
 
-@media only screen and ( max-width: 750px ) { /* For mobile devices widescreen */
+@media only screen and ( max-width: 600px ) {
     #bar {
         font-size: 10pt;
+    }
+
+    .kkk {
+        display: inline;
     }
 }
 
 @media only screen and ( max-width: 414px ) { /* For phablets and mobile devices */
-    #bar {
-        position: fixed;
-        bottom: 0px;
-        width: 100%;
-        font-size: 8pt;
-    }
-
     .group {
         font-size: 16pt;
         text-align: left;
@@ -269,13 +215,93 @@ body {
         font-size: 14pt;
     }
 
-    .kkk {
-        display: inline;
-    }
-
     .spinner {
         width: 100%;
         display: block;
         margin: auto;
+    }
+}
+
+/* Scroll */
+@media only screen and ( max-device-height: 1024px ) { /* ipad classic portrait ipad pro landscape */
+    #listinfo {
+        overflow-y: scroll;
+        max-height: 952px;
+    }
+}
+
+@media only screen and ( max-device-height: 768px ) { /* ipad classic landscape */
+    #listinfo {
+        overflow-y: scroll;
+        max-height: 677px;
+    }
+}
+
+@media only screen and ( max-device-height: 736px ) { /* iphone 8 + */
+    #bar {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        font-size: 12pt;
+    }
+
+    #listinfo {
+        overflow-y: scroll;
+        max-height: 650px;
+    }
+
+    .kkk {
+        display: inline;
+    }
+
+    .modal-body {
+        overflow-y: scroll;
+        max-height: 585px;
+    }
+}
+
+@media only screen and ( max-device-height: 667px ) { /* iphone 8 */
+    #bar {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        font-size: 10pt;
+    }
+
+    #listinfo {
+        overflow-y: scroll;
+        max-height: 592px;
+    }
+
+    .kkk {
+        display: inline;
+    }
+
+    .modal-body {
+        overflow-y: scroll;
+        max-height: 485px;
+    }
+}
+
+@media only screen and ( max-device-height: 568px ) { /* iphone SE */
+    #bar {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        font-size: 8pt;
+    }
+
+    #listinfo {
+        overflow-y: scroll;
+        max-height: 497px;
+    }
+
+    .kkk {
+        display: inline;
+    }
+
+    .modal-body {
+        overflow-y: scroll;
+        max-height: 385px;
     }
 }
