@@ -11,10 +11,14 @@ body {
 #main,
 #qa-timer,
 #thelist {
+    padding-top: 50px;
     text-align: center;
 }
 
 #bar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
     background-color: #efefef;
     font-size: 16pt;
 }
@@ -139,7 +143,7 @@ body {
 
 /* Extras pane */
 #settings {
-    padding-top: 10px;
+    padding-top: 60px;
 }
 
 .modal-header {
@@ -156,20 +160,24 @@ body {
 }
 
 .credit-title {
-	font-size: 12pt;
+	font-size: 10pt;
 	color: #008bac;
 }
 
 .credit-person {
-	font-size: 14pt;
+	font-size: 12pt;
 }
 
 .credit-symbol {
-	font-size: 11pt;
+	font-size: 9pt;
 }
 
 .credit-company {
-	font-size: 13pt;
+	font-size: 11pt;
+}
+
+.terms-body {
+    font-size: 9pt;
 }
 
 @media only screen and ( max-width: 1028px ) { /* For medium devices */
@@ -186,12 +194,32 @@ body {
 }
 
 @media only screen and ( max-width: 750px ) {
+    #main,
+    #qa-timer,
+    #thelist {
+        padding-top: 43px;
+    }
+
+    #settings {
+        padding-top: 53px;
+    }
+
     #bar {
         font-size: 12pt;
     }
 }
 
 @media only screen and ( max-width: 600px ) {
+    #main,
+    #qa-timer,
+    #thelist {
+        padding-top: 57px;
+    }
+
+    #settings {
+        padding-top: 67px;
+    }
+
     #bar {
         font-size: 10pt;
     }
@@ -223,24 +251,21 @@ body {
 }
 
 /* Scroll */
-@media only screen and ( max-device-height: 1024px ) { /* ipad classic portrait ipad pro landscape */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 952px;
-    }
-}
-
-@media only screen and ( max-device-height: 768px ) { /* ipad classic landscape */
-    #listinfo {
-        overflow-y: scroll;
-        max-height: 677px;
-    }
-}
-
 @media only screen and ( max-device-height: 736px ) { /* iphone 8 + */
+    #main,
+    #qa-timer,
+    #thelist {
+        padding-top: 0px;
+    }
+
+    #settings {
+        padding-top: 10px;
+    }
+
     #bar {
         position: fixed;
         bottom: 0px;
+        z-index: 1;
         width: 100%;
         font-size: 12pt;
     }
@@ -261,9 +286,20 @@ body {
 }
 
 @media only screen and ( max-device-height: 667px ) { /* iphone 8 */
+    #main,
+    #qa-timer,
+    #thelist {
+        padding-top: 0px;
+    }
+
+    #settings {
+        padding-top: 10px;
+    }
+
     #bar {
         position: fixed;
         bottom: 0px;
+        z-index: 1;
         width: 100%;
         font-size: 10pt;
     }
@@ -284,9 +320,20 @@ body {
 }
 
 @media only screen and ( max-device-height: 568px ) { /* iphone SE */
+    #main,
+    #qa-timer,
+    #thelist {
+        padding-top: 0px;
+    }
+
+    #settings {
+        padding-top: 10px;
+    }
+
     #bar {
         position: fixed;
         bottom: 0px;
+        z-index: 1;
         width: 100%;
         font-size: 8pt;
     }
