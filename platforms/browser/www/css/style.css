@@ -177,7 +177,7 @@ body {
 }
 
 .terms-body {
-    font-size: 9pt;
+    font-size: 12pt;
 }
 
 @media only screen and ( max-width: 1028px ) { /* For medium devices */
@@ -283,6 +283,10 @@ body {
         overflow-y: scroll;
         max-height: 585px;
     }
+
+    .terms-body {
+        font-size: 9pt;
+    }
 }
 
 @media only screen and ( max-device-height: 667px ) { /* iphone 8 */
@@ -317,6 +321,10 @@ body {
         overflow-y: scroll;
         max-height: 485px;
     }
+
+    .terms-body {
+        font-size: 9pt;
+    }
 }
 
 @media only screen and ( max-device-height: 568px ) { /* iphone SE */
@@ -350,5 +358,9 @@ body {
     .modal-body {
         overflow-y: scroll;
         max-height: 385px;
+    }
+
+    .terms-body {
+        font-size: 9pt;
     }
 }
