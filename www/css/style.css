@@ -1,9 +1,13 @@
 /* CSS 3 Document */
 
 body {
-    background-color: #ffffff;
-    background: url("../img/background-image.jpg") no-repeat center fixed;
+    background: rgba(227,248,253,1); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(bottom,rgba(227,248,253,0),rgba(227,248,253,1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top,rgba(227,248,253,0),rgba(227,248,253,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top,rgba(227,248,253,0),rgba(227,248,253,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to top, rgba(227,248,253,0), rgba(227,248,253,1)); /*Standard*/
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: "PingFangSC-Regular", "Microsoft JhengHei", "Arial", sans-serif;
 }
 
