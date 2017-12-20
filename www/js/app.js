@@ -54,14 +54,14 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Add";
         }
     };
-    $scope.clear = function (test) {
+    $scope.eraselistcontent = function (test) {
         switch (test) {
             case "1":
-                return "擦寫";
+                return "把名單重啟嗎";
             case "2":
-                return "擦写";
+                return "把名单重启吗";
             default:
-                return "Clear";
+                return "Erase list content";
         }
     };
     $scope.listof = function (test) {
@@ -84,6 +84,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Name";
         }
     };
+    $scope.no = function (test) {
+        switch (test) {
+            case "1":
+                return "不要";
+            case "2":
+                return "不要";
+            default:
+                return "No";
+        }
+    };
     $scope.totalcount = function (test) {
         switch (test) {
             case "1":
@@ -92,6 +102,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "总金额";
             default:
                 return "Total count";
+        }
+    };
+    $scope.yes = function (test) {
+        switch (test) {
+            case "1":
+                return "要";
+            case "2":
+                return "要";
+            default:
+                return "Yes";
         }
     };
     // Language text: Timer

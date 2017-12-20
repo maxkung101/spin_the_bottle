@@ -30,7 +30,31 @@
                 <div id="listinfo">
                     <div id="listheader">
                         <h3>{{ listof(selectedLanguage) }}</h3>
-                        <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}:</strong> {{ list.length }}</button>
+                        <!-- Confirm box -->
+                        <div class="modal fade" id="confirmModal">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body confirm-body">
+                                        {{ eraselistcontent(selectedLanguage) }}?
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-ng-click="reset()">{{ yes(selectedLanguage) }}</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ no(selectedLanguage) }}</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="listbody">
                         <p class="group" data-ng-repeat="n in list track by $index">{{n}}<button data-ng-if="!spinning" data-ng-click="removeItem($index)" class="close">&times;</button></p>
@@ -41,7 +65,6 @@
                             </div>
                         </form>
                     </div>
-                    <button type="button" class="btn btn-danger" data-ng-if="list.length != 0" data-ng-click="reset()" data-ng-disabled="spinning">{{ clear(selectedLanguage) }}</button>
                 </div>
             </div>
             <!-- Randomizer pane -->
