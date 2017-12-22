@@ -220,9 +220,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.close = function (test) {
         switch (test) {
             case "1":
-                return "關";
+                return "關閉";
             case "2":
-                return "关";
+                return "关闭";
             default:
                 return "Close";
         }
@@ -250,9 +250,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.settings = function (test) {
         switch (test) {
             case "1":
-                return "設置";
+                return "設定";
             case "2":
-                return "设置";
+                return "设定";
             default:
                 return "Settings";
         }
