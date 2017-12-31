@@ -401,9 +401,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     // --------------------------------------------------
     // Set text functions
     $scope.textListEmpty = function() {
-        $scope.result0 = "Please take attendance first.";
-        $scope.result1 = "請先出席。";
-        $scope.result2 = "请先出席。";
+        $scope.result0 = "Please fill list first.";
+        $scope.result1 = "請先填寫清單。";
+        $scope.result2 = "请先填写清单。";
     };
     $scope.textListNotready = function() {
         $scope.result0 = "Please add more people.";
