@@ -57,11 +57,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.eraselistcontent = function (test) {
         switch (test) {
             case "1":
-                return "把名單重啟嗎";
+                return "你是要把名單重啟嗎";
             case "2":
-                return "把名单重启吗";
+                return "你是要把名单重启吗";
             default:
-                return "Erase list content";
+                return "Do you want to remove all names from the list";
         }
     };
     $scope.listof = function (test) {
@@ -87,9 +87,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.no = function (test) {
         switch (test) {
             case "1":
-                return "不要";
+                return "不";
             case "2":
-                return "不要";
+                return "不";
             default:
                 return "No";
         }
@@ -107,9 +107,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.yes = function (test) {
         switch (test) {
             case "1":
-                return "要";
+                return "是";
             case "2":
-                return "要";
+                return "是";
             default:
                 return "Yes";
         }
