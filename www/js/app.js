@@ -87,9 +87,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.no = function (test) {
         switch (test) {
             case "1":
-                return "不";
+                return "否";
             case "2":
-                return "不";
+                return "否";
             default:
                 return "No";
         }
@@ -260,11 +260,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.spinningthing = function (test) {
         switch (test) {
             case "1":
-                return "動畫";
+                return "按鍵";
             case "2":
-                return "动画";
+                return "按键";
             default:
-                return " animation";
+                return " button";
         }
     };
     $scope.terms = function (test) {
