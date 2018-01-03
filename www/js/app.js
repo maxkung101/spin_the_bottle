@@ -101,7 +101,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             case "2":
                 return "总金额";
             default:
-                return "Total count";
+                return "Headcount";
         }
     };
     $scope.yes = function (test) {
