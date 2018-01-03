@@ -36,20 +36,13 @@
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
 
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
-                                    </div>
-
                                     <!-- Modal body -->
                                     <div class="modal-body confirm-body">
-                                        {{ eraselistcontent(selectedLanguage) }}?
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-ng-click="reset()">{{ yes(selectedLanguage) }}</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ no(selectedLanguage) }}</button>
+                                        <p>{{ eraselistcontent(selectedLanguage) }}</p>
+                                        <p>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-ng-click="reset()">{{ yes(selectedLanguage) }}</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ no(selectedLanguage) }}</button>
+                                        </p>
                                     </div>
 
                                 </div>
@@ -72,8 +65,8 @@
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
                 <div data-ng-switch="randomizerRadio">
-                    <div class="theintro" data-ng-switch-when="st">{{ whowill(selectedLanguage) }}?</div>
-                    <div class="theintro" data-ng-switch-when="cp">{{ whoshall(selectedLanguage) }}?</div>
+                    <div class="theintro" data-ng-switch-when="st">{{ whowill(selectedLanguage) }}</div>
+                    <div class="theintro" data-ng-switch-when="cp">{{ whoshall(selectedLanguage) }}</div>
                 </div>
                 <p data-ng-switch="selectedLanguage">
                     <span class="theresult" data-ng-switch-when="0">{{ result0 }}</span>
@@ -170,7 +163,7 @@
                         <option value="4">{{ spinnerNyanCat(selectedLanguage) }}</option>
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
                     </select>
-                    <label for="selectedTimer">{{ timerbox(selectedLanguage) }}:</label>
+                    <label for="selectedTimer">{{ timerbox(selectedLanguage) }}{{ theme(selectedLanguage) }}:</label>
                     <select class="form-control" id="selectedTimer" data-ng-model="selectedTimer" data-ng-change="changeTimer()">
                         <option value="0">{{ defaulttimer(selectedLanguage) }}</option>
                         <option value="1">{{ timerTheme1(selectedLanguage) }}</option>

@@ -57,11 +57,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.eraselistcontent = function (test) {
         switch (test) {
             case "1":
-                return "你是要把名單重啟嗎";
+                return "你是要把名單重啟嗎？";
             case "2":
-                return "你是要把名单重启吗";
+                return "你是要把名单重启吗？";
             default:
-                return "Do you want to remove all names from the list";
+                return "Do you want to remove all names from the list?";
         }
     };
     $scope.listof = function (test) {
@@ -189,21 +189,21 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.whoshall = function (test) {
         switch (test) {
             case "1":
-                return "是誰要幫我們祈禱";
+                return "是誰要幫我們祈禱？";
             case "2":
-                return "是谁要帮我们祈祷";
+                return "是谁要帮我们祈祷？";
             default:
-                return "Who shall pray for us";
+                return "Who shall pray for us?";
         }
     };
     $scope.whowill = function (test) {
         switch (test) {
             case "1":
-                return "是誰要先唸給我們";
+                return "是誰要先唸給我們？";
             case "2":
-                return "是谁要先念给我们";
+                return "是谁要先念给我们？";
             default:
-                return "Who will we start with";
+                return "Who will we start with?";
         }
     };
     // Language text: Extras
@@ -275,6 +275,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "使用条款";
             default:
                 return "Terms of Use";
+        }
+    };
+    $scope.theme = function (test) {
+        switch (test) {
+            case "1":
+                return "主題";
+            case "2":
+                return "主题";
+            default:
+                return " theme";
         }
     };
     // Language text: Spinners
