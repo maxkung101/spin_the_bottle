@@ -52,6 +52,10 @@ body {
     padding-right: 5px;
 }
 
+.confirm-body {
+    color: #000;
+}
+
 .group {
     font-size: 20pt;
     text-align: left;
@@ -255,6 +259,44 @@ body {
 }
 
 /* Scroll */
+@media only screen and ( max-device-width: 375px ) { /* iphone X */
+    #main,
+    #qa-timer,
+    #thelist {
+        padding-top: 0px;
+    }
+
+    #settings {
+        padding-top: 10px;
+    }
+
+    #bar {
+        position: fixed;
+        bottom: 0px;
+        z-index: 1;
+        width: 100%;
+        font-size: 10pt;
+    }
+
+    #listinfo {
+        overflow-y: scroll;
+        max-height: 592px;
+    }
+
+    .kkk {
+        display: inline;
+    }
+
+    .modal-body {
+        overflow-y: scroll;
+        max-height: 485px;
+    }
+
+    .terms-body {
+        font-size: 9pt;
+    }
+}
+
 @media only screen and ( max-device-height: 736px ) { /* iphone 8 + */
     #main,
     #qa-timer,

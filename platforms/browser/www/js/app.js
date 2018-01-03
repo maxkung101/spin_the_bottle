@@ -54,14 +54,14 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Add";
         }
     };
-    $scope.clear = function (test) {
+    $scope.eraselistcontent = function (test) {
         switch (test) {
             case "1":
-                return "擦寫";
+                return "你是要把名單重啟嗎？";
             case "2":
-                return "擦写";
+                return "你是要把名单重启吗？";
             default:
-                return "Clear";
+                return "Do you want to remove all names from the list?";
         }
     };
     $scope.listof = function (test) {
@@ -84,6 +84,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Name";
         }
     };
+    $scope.no = function (test) {
+        switch (test) {
+            case "1":
+                return "否";
+            case "2":
+                return "否";
+            default:
+                return "No";
+        }
+    };
     $scope.totalcount = function (test) {
         switch (test) {
             case "1":
@@ -91,7 +101,17 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             case "2":
                 return "总金额";
             default:
-                return "Total count";
+                return "Headcount";
+        }
+    };
+    $scope.yes = function (test) {
+        switch (test) {
+            case "1":
+                return "是";
+            case "2":
+                return "是";
+            default:
+                return "Yes";
         }
     };
     // Language text: Timer
@@ -169,21 +189,21 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.whoshall = function (test) {
         switch (test) {
             case "1":
-                return "是誰要幫我們祈禱";
+                return "是誰要幫我們祈禱？";
             case "2":
-                return "是谁要帮我们祈祷";
+                return "是谁要帮我们祈祷？";
             default:
-                return "Who shall pray for us";
+                return "Who shall pray for us?";
         }
     };
     $scope.whowill = function (test) {
         switch (test) {
             case "1":
-                return "是誰要先唸給我們";
+                return "是誰要先唸給我們？";
             case "2":
-                return "是谁要先念给我们";
+                return "是谁要先念给我们？";
             default:
-                return "Who will we start with";
+                return "Who will we start with?";
         }
     };
     // Language text: Extras
@@ -200,9 +220,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.close = function (test) {
         switch (test) {
             case "1":
-                return "關";
+                return "關閉";
             case "2":
-                return "关";
+                return "关闭";
             default:
                 return "Close";
         }
@@ -230,9 +250,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.settings = function (test) {
         switch (test) {
             case "1":
-                return "設置";
+                return "設定";
             case "2":
-                return "设置";
+                return "设定";
             default:
                 return "Settings";
         }
@@ -240,11 +260,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.spinningthing = function (test) {
         switch (test) {
             case "1":
-                return "動畫";
+                return "按鍵";
             case "2":
-                return "动画";
+                return "按键";
             default:
-                return " animation";
+                return " button";
         }
     };
     $scope.terms = function (test) {
@@ -255,6 +275,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "使用条款";
             default:
                 return "Terms of Use";
+        }
+    };
+    $scope.theme = function (test) {
+        switch (test) {
+            case "1":
+                return "主題";
+            case "2":
+                return "主题";
+            default:
+                return " theme";
         }
     };
     // Language text: Spinners
@@ -381,9 +411,9 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     // --------------------------------------------------
     // Set text functions
     $scope.textListEmpty = function() {
-        $scope.result0 = "Please take attendance first.";
-        $scope.result1 = "請先出席。";
-        $scope.result2 = "请先出席。";
+        $scope.result0 = "Please fill list first.";
+        $scope.result1 = "請先填寫清單。";
+        $scope.result2 = "请先填写清单。";
     };
     $scope.textListNotready = function() {
         $scope.result0 = "Please add more people.";

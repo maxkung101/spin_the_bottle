@@ -30,7 +30,24 @@
                 <div id="listinfo">
                     <div id="listheader">
                         <h3>{{ listof(selectedLanguage) }}</h3>
-                        <h4>{{ totalcount(selectedLanguage) }}: {{ list.length }}</h4>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}:</strong> {{ list.length }}</button>
+                        <!-- Confirm box -->
+                        <div class="modal fade" id="confirmModal">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body confirm-body">
+                                        <p>{{ eraselistcontent(selectedLanguage) }}</p>
+                                        <p>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-ng-click="reset()">{{ yes(selectedLanguage) }}</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ no(selectedLanguage) }}</button>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="listbody">
                         <p class="group" data-ng-repeat="n in list track by $index">{{n}}<button data-ng-if="!spinning" data-ng-click="removeItem($index)" class="close">&times;</button></p>
@@ -41,7 +58,6 @@
                             </div>
                         </form>
                     </div>
-                    <button type="button" class="btn btn-danger" data-ng-if="list.length != 0" data-ng-click="reset()" data-ng-disabled="spinning">{{ clear(selectedLanguage) }}</button>
                 </div>
             </div>
             <!-- Randomizer pane -->
@@ -49,8 +65,8 @@
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
                 <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
                 <div data-ng-switch="randomizerRadio">
-                    <div class="theintro" data-ng-switch-when="st">{{ whowill(selectedLanguage) }}?</div>
-                    <div class="theintro" data-ng-switch-when="cp">{{ whoshall(selectedLanguage) }}?</div>
+                    <div class="theintro" data-ng-switch-when="st">{{ whowill(selectedLanguage) }}</div>
+                    <div class="theintro" data-ng-switch-when="cp">{{ whoshall(selectedLanguage) }}</div>
                 </div>
                 <p data-ng-switch="selectedLanguage">
                     <span class="theresult" data-ng-switch-when="0">{{ result0 }}</span>
@@ -147,7 +163,7 @@
                         <option value="4">{{ spinnerNyanCat(selectedLanguage) }}</option>
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
                     </select>
-                    <label for="selectedTimer">{{ timerbox(selectedLanguage) }}:</label>
+                    <label for="selectedTimer">{{ timerbox(selectedLanguage) }}{{ theme(selectedLanguage) }}:</label>
                     <select class="form-control" id="selectedTimer" data-ng-model="selectedTimer" data-ng-change="changeTimer()">
                         <option value="0">{{ defaulttimer(selectedLanguage) }}</option>
                         <option value="1">{{ timerTheme1(selectedLanguage) }}</option>
