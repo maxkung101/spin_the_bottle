@@ -8,7 +8,7 @@ body {
     background: linear-gradient(to top, rgba(227,248,253,0), rgba(227,248,253,1)); /*Standard*/
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "PingFangSC-Regular", "Microsoft JhengHei", "Arial", sans-serif;
+    font-family: "Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif;
 }
 
 /* All */

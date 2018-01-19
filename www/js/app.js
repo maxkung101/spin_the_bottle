@@ -408,6 +408,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Hong Kong Colors";
         }
     };
+    $scope.colon = function (test) {
+        switch (test) {
+            case "1":
+                return "：";
+            case "2":
+                return "：";
+            default:
+                return ":";
+        }
+    };
     // --------------------------------------------------
     // Set text functions
     $scope.textListEmpty = function() {
