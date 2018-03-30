@@ -27,6 +27,10 @@ Credits
 -------
 See [index.html lines 229 to 256](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L229)
 
+You can also see the credits in the app under Extras --> Credits.
+
 Terms of Use
 ------------
 See [index.html lines 191 to 212](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L191)
+
+You can also view the terms in the app under Extras --> Terms of Use. Please read them on the first time using the app.
