@@ -80,6 +80,7 @@
                     <span data-ng-switch-when="3"><img src="img/nes-mario_disabled.jpg" class="spinner" alt="Mario" /></span>
                     <span data-ng-switch-when="4"><img src="img/nyan-cat_disabled.jpg" class="spinner" alt="Nyan Cat" /></span>
                     <span data-ng-switch-when="5"><img src="img/pikachu_disabled.jpg" class="spinner" alt="Pikachu" /></span>
+					<span data-ng-switch-when="6"><img src="img/sonic-disabled.png" class="spinner" alt="Sonic" /></span>
                 </span>
                 <span class="spinner-image" data-ng-switch="selectedSpinner" data-ng-if="list.length >= 2 && !spinning" data-ng-click="myFunction()">
                     <span data-ng-switch-when="0"><img src="img/loading-stable.png" class="spinner" alt="Loading symbol" /></span>
@@ -88,6 +89,7 @@
                     <span data-ng-switch-when="3"><img src="img/nes-mario.jpg" class="spinner" alt="Mario" /></span>
                     <span data-ng-switch-when="4"><img src="img/nyan-cat-stable.jpg" class="spinner" alt="Nyan Cat" /></span>
                     <span data-ng-switch-when="5"><img src="img/pikachu.jpg" class="spinner" alt="Pikachu" /></span>
+                    <span data-ng-switch-when="6"><img src="img/sonic-stable.png" class="spinner" alt="Sonic" /></span>
                 </span>
                 <p class="spinner-image" data-ng-switch="selectedSpinner" data-ng-if="spinning">
                     <span data-ng-switch-when="0"><img src="img/loading.gif" class="spinner" alt="Loading symbol" /></span>
@@ -96,6 +98,7 @@
                     <span data-ng-switch-when="3"><img src="img/mariowalking.gif" class="spinner" alt="Mario" /></span>
                     <span data-ng-switch-when="4"><img src="img/nyan-cat.gif" class="spinner" alt="Nyan Cat" /></span>
                     <span data-ng-switch-when="5"><img src="img/nyan-pikachu.gif" class="spinner" alt="Pikachu" /></span>
+                    <span data-ng-switch-when="6"><img src="img/sonic-running.gif" class="spinner" alt="Sonic" /></span>
                 </p>
             </div>
             <!-- Timer pane -->
@@ -162,6 +165,7 @@
                         <option value="3">{{ spinnerMario(selectedLanguage) }}</option>
                         <option value="4">{{ spinnerNyanCat(selectedLanguage) }}</option>
                         <option value="5">{{ spinnerPikachu(selectedLanguage) }}</option>
+                        <option value="6">Sonic the Hedgehog</option>
                     </select>
                     <label for="selectedTimer">{{ timerbox(selectedLanguage) }}{{ theme(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedTimer" data-ng-model="selectedTimer" data-ng-change="changeTimer()">
@@ -254,6 +258,10 @@
                                     <span class="credit-symbol">Pikachu</span><br>
                                     <span class="credit-company">The Pokémon Company International</span><br>
                                     <span class="credit-company">Game Freak</span>
+                                </p>
+                                <p class="credit-p">
+                                    <span class="credit-symbol">Sonic</span><br>
+                                    <span class="credit-company">SEGA</span>
                                 </p>
                             </div>
                             <div class="modal-footer">
