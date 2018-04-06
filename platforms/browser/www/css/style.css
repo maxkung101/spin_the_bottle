@@ -1,5 +1,30 @@
 /* CSS 3 Document */
 
+@font-face {
+    font-family: myFirstFont;
+    src: url(../fonts/DBK5HLU1.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: mySecondFont;
+    src: url(../fonts/DFBK5B00.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: myThirdFont;
+    src: url(../fonts/DFT_BK5.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: myForthFont;
+    src: url(../fonts/DFGB_Y5.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: myFifthFont;
+    src: url(../fonts/DHM5UUA1.ttf) format('truetype');
+}
+
 body {
     background: rgba(227,248,253,1); /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(bottom,rgba(227,248,253,0),rgba(227,248,253,1)); /*Safari 5.1-6*/

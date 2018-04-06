@@ -25,12 +25,12 @@ Features
 
 Credits
 -------
-See [index.html lines 233 to 264](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L233)
+See [index.html lines 239 to 270](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L239)
 
 You can also see the credits in the app under Extras --> About.
 
 Terms of Use
 ------------
-See [index.html lines 195 to 216](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L195)
+See [index.html lines 201 to 222](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L201)
 
 You can also view the terms in the app under Extras --> Terms of Use.
