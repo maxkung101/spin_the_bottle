@@ -700,7 +700,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 	} else if ($scope.selectedLanguage == "4") {
 		$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
 	} else if ($scope.selectedLanguage == "5") {
-		$scope.myStyle={'font-family':'myFifthFont, sans-serif'};
+		$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
 	} else {
 		$scope.myStyle={};
 	}
@@ -711,7 +711,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 		} else if ($scope.selectedLanguage == "4") {
 			$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
 		} else if ($scope.selectedLanguage == "5") {
-			$scope.myStyle={'font-family':'myFifthFont, sans-serif'};
+			$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
 		} else {
 			$scope.myStyle={};
 		}
