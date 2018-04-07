@@ -11,16 +11,6 @@
 }
 
 @font-face {
-    font-family: myThirdFont;
-    src: url(../fonts/DFT_BK5.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: myForthFont;
-    src: url(../fonts/DFGB_Y5.ttf) format('truetype');
-}
-
-@font-face {
     font-family: myFifthFont;
     src: url(../fonts/DHM5UUA1.ttf) format('truetype');
 }

@@ -695,26 +695,18 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.timerRadio = "qa";
     $scope.randomizerRadio = "st";
     $scope.selectedLanguage = $localStorage.selectedLanguage || "0";
-	if ($localStorage.selectedLanguage == "1") {
-			$scope.myStyle={'font-family':'myThirdFont, serif'};
-		} else if ($scope.selectedLanguage == "2") {
-			$scope.myStyle={'font-family':'myForthFont, sans-serif'};
-		} else if ($scope.selectedLanguage == "3") {
-			$scope.myStyle={'font-family':'mySecondFont, serif'};
-		} else if ($scope.selectedLanguage == "4") {
-			$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
-		} else if ($scope.selectedLanguage == "5") {
-			$scope.myStyle={'font-family':'myFifthFont, sans-serif'};
-		} else {
-			$scope.myStyle={};
-		}
+	if ($localStorage.selectedLanguage == "3") {
+		$scope.myStyle={'font-family':'mySecondFont, serif'};
+	} else if ($scope.selectedLanguage == "4") {
+		$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
+	} else if ($scope.selectedLanguage == "5") {
+		$scope.myStyle={'font-family':'myFifthFont, sans-serif'};
+	} else {
+		$scope.myStyle={};
+	}
     $scope.changeLanguage = function () {
         $localStorage.selectedLanguage = $scope.selectedLanguage;
-		if ($scope.selectedLanguage == "1") {
-			$scope.myStyle={'font-family':'myThirdFont, serif'};
-		} else if ($scope.selectedLanguage == "2") {
-			$scope.myStyle={'font-family':'myForthFont, sans-serif'};
-		} else if ($scope.selectedLanguage == "3") {
+		if ($scope.selectedLanguage == "3") {
 			$scope.myStyle={'font-family':'mySecondFont, serif'};
 		} else if ($scope.selectedLanguage == "4") {
 			$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
