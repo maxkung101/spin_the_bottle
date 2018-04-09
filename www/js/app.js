@@ -488,6 +488,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Finger spinner";
         }
     };
+	$scope.spinnerBottle = function (test) {
+        switch (test) {
+            case "1":
+                return "旋轉的瓶子";
+            case "2":
+                return "旋转的瓶子";
+            case "3":
+                return "旋轉的瓶子";
+            case "4":
+                return "旋轉的瓶子";
+            case "5":
+                return "旋转的瓶子";
+            default:
+                return "Spinning Bottle";
+        }
+    };
     $scope.spinnerMiku = function (test) {
         switch (test) {
             case "1":
