@@ -488,6 +488,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Finger spinner";
         }
     };
+	$scope.spinnerBottle = function (test) {
+        switch (test) {
+            case "1":
+                return "旋轉的瓶子";
+            case "2":
+                return "旋转的瓶子";
+            case "3":
+                return "旋轉的瓶子";
+            case "4":
+                return "旋轉的瓶子";
+            case "5":
+                return "旋转的瓶子";
+            default:
+                return "Spinning Bottle";
+        }
+    };
     $scope.spinnerMiku = function (test) {
         switch (test) {
             case "1":
@@ -700,7 +716,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 	} else if ($scope.selectedLanguage == "4") {
 		$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
 	} else if ($scope.selectedLanguage == "5") {
-		$scope.myStyle={'font-family':'myFifthFont, sans-serif'};
+		$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
 	} else {
 		$scope.myStyle={};
 	}
@@ -711,7 +727,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 		} else if ($scope.selectedLanguage == "4") {
 			$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
 		} else if ($scope.selectedLanguage == "5") {
-			$scope.myStyle={'font-family':'myFifthFont, sans-serif'};
+			$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
 		} else {
 			$scope.myStyle={};
 		}

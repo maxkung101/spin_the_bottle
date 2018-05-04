@@ -713,10 +713,13 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.selectedLanguage = $localStorage.selectedLanguage || "0";
 	if ($localStorage.selectedLanguage == "3") {
 		$scope.myStyle={'font-family':'mySecondFont, serif'};
+		$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 	} else if ($scope.selectedLanguage == "4") {
 		$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
+		$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 	} else if ($scope.selectedLanguage == "5") {
 		$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
+		$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 	} else {
 		$scope.myStyle={};
 	}
@@ -724,10 +727,13 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $localStorage.selectedLanguage = $scope.selectedLanguage;
 		if ($scope.selectedLanguage == "3") {
 			$scope.myStyle={'font-family':'mySecondFont, serif'};
+			$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 		} else if ($scope.selectedLanguage == "4") {
 			$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
+			$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 		} else if ($scope.selectedLanguage == "5") {
 			$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
+			$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 		} else {
 			$scope.myStyle={};
 		}
