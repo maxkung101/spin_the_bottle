@@ -158,7 +158,7 @@
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
-                    <select class="form-control" id="selectedLanguage" data-ng-model="selectedLanguage" data-ng-change="changeLanguage()">
+                    <select class="form-control" id="selectedLanguage" data-ng-model="selectedLanguage" data-ng-change="changeLanguage()" data-ng-style="innerStyle">
                         <option value="0">English</option>
                         <option value="1">繁体中文</option>
 						<option value="3">繁体中文 (注音)</option>
