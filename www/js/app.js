@@ -708,8 +708,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     } else {
         $scope.textListReady();
     }
-    $scope.timerRadio = "qa";
-    $scope.randomizerRadio = "st";
+    $scope.timerRadio = $localStorage.timerRadio || "qa";
+	$scope.changeTimerRadio = function () {
+		$localStorage.timerRadio = $scope.timerRadio;
+	};
+    $scope.randomizerRadio = $localStorage.randomizerRadio || "st";
     $scope.selectedLanguage = $localStorage.selectedLanguage || "0";
 	if ($localStorage.selectedLanguage == "3") {
 		$scope.myStyle={'font-family':'mySecondFont, serif'};
@@ -795,6 +798,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $scope.changemode();
     };
     $scope.changemode = function (x) { // change randomizer mode
+		$localStorage.randomizerRadio = $scope.randomizerRadio;
         if ($scope.list.length == 1) {
             $scope.textListNotready();
         } else if ($scope.list.length == 0) {
