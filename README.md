@@ -1,4 +1,4 @@
-# RCCC Small Group
+# My Small Group
 ![HTML](https://img.shields.io/badge/HTML-5-red.svg)
 ![CSS](https://img.shields.io/badge/CSS-3-blue.svg)
 ![angularjs](https://img.shields.io/badge/angularjs-v1.5.11-yellow.svg)
@@ -6,7 +6,7 @@
 
 Introduction
 ------------
-***RCCC Small Group*** is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.
+***My Small Group*** is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.
 
 Download source code
 --------------------
