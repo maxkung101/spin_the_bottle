@@ -6,17 +6,17 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.attendance = function (test) {
         switch (test) {
             case "1":
-                return "我的名單";
+                return "名單";
             case "2":
-                return "我的名单";
+                return "名单";
 			case "3":
-                return "我的名單";
+                return "名單";
             case "4":
-                return "我的名單";
+                return "名單";
 			case "5":
-                return "我的名单";
+                return "名单";
 			default:
-                return "My List";
+                return "List";
         }
     };
     $scope.closingtime = function (test) {
@@ -113,7 +113,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             case "5":
                 return "我的小组";
             default:
-                return "My small group";
+                return "My Small Group";
         }
     };
     $scope.nameplace = function (test) {
