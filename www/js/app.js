@@ -681,6 +681,11 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }
     };
     // --------------------------------------------------
+	// Prayer timer
+	$scope.prayerTimerCH_TR = ["... 以你的名義祈禱，阿們。", "... 以耶穌的名字，阿們。"];
+	$scope.prayerTimerCH_SP = ["... 以你的名义祈祷，阿们。", "... 以耶稣的名字，阿们。"];
+	$scope.prayerTimerEN_US = ["... In your name I pray, Amen.", "... In Jesus name, Amen."];
+	// --------------------------------------------------
     // Set text functions
     $scope.textListEmpty = function() {
         $scope.result0 = "Please fill list first.";
@@ -827,9 +832,15 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                     } else {
                         $scope.runtimer1 = false;
                         $scope.minute1 = 1;
-                        if ($scope.selectedLanguage == "1" || "3" || "4") {
+                        if ($scope.selectedLanguage == "1") {
                             $window.alert("時間到了");
-                        } else if ($scope.selectedLanguage == "2" || "5") {
+						} else if ($scope.selectedLanguage == "3") {
+                            $window.alert("時間到了");
+						} else if ($scope.selectedLanguage == "4") {
+                            $window.alert("時間到了");
+                        } else if ($scope.selectedLanguage == "2") {
+                            $window.alert("时间到了");
+						} else if ($scope.selectedLanguage == "5") {
                             $window.alert("时间到了");
                         } else {
                             $window.alert("Time's up");
@@ -866,12 +877,24 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                         $scope.runtimer2 = false;
                         $scope.minute2 = 1;
                         $scope.timer2 = 30;
-                        if ($scope.selectedLanguage == "1" || "3" || "4") {
-                            $window.alert("... 以你的名義祈禱，阿們。");
-                        } else if ($scope.selectedLanguage == "2" || "5") {
-                            $window.alert("... 以你的名义祈祷，阿们。");
+                        if ($scope.selectedLanguage == "1") {
+							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_TR.length) + 1) - 1;
+                            $window.alert($scope.prayerTimerCH_TR[$scope.randint]);
+						} else if ($scope.selectedLanguage == "3") {
+							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_TR.length) + 1) - 1;
+                            $window.alert($scope.prayerTimerCH_TR[$scope.randint]);
+						} else if ($scope.selectedLanguage == "4") {
+							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_TR.length) + 1) - 1;
+                            $window.alert($scope.prayerTimerCH_TR[$scope.randint]);
+                        } else if ($scope.selectedLanguage == "2") {
+							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_SP.length) + 1) - 1;
+                            $window.alert($scope.prayerTimerCH_SP[$scope.randint]);
+						} else if ($scope.selectedLanguage == "5") {
+                            $scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_SP.length) + 1) - 1;
+                            $window.alert($scope.prayerTimerCH_SP[$scope.randint]);
                         } else {
-                            $window.alert("... In your name I pray, Amen.");
+							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerEN_US.length) + 1) - 1;
+                            $window.alert($scope.prayerTimerEN_US[$scope.randint]);
                         }
                     }
                 } else if ($scope.deactivate2) {
