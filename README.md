@@ -23,14 +23,20 @@ Features
 * Multiple Timer Themes
 * Chinese Language (both traditional and simplified)
 
-Credits
--------
-See [index.html lines 243 to 274](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L243)
+Privacy Policy
+--------------
+See [index.html lines 207 and 208](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L206)
 
-You can also see the credits in the app under Extras --> About.
+You can also view the policy in the app under Extras --> Privacy Policy.
 
 Terms of Use
 ------------
-See [index.html lines 205 to 226](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L205)
+See [index.html lines 225 to 242](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L224)
 
 You can also view the terms in the app under Extras --> Terms of Use.
+
+Credits
+-------
+See [index.html lines 260 to 290](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L259)
+
+You can also see the credits in the app under Extras --> About.

@@ -343,7 +343,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "About";
         }
     };
-    $scope.close = function (test) {
+    $scope.closebtn = function (test) {
         switch (test) {
             case "1":
                 return "關閉";
@@ -389,6 +389,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "语言";
 			default:
                 return "Language";
+        }
+    };
+	$scope.privacy = function (test) {
+        switch (test) {
+            case "1":
+                return "隱私政策";
+            case "2":
+                return "隐私政策";
+            case "3":
+                return "隱私政策";
+			case "4":
+                return "隱私政策";
+            case "5":
+                return "隐私政策";
+			default:
+                return "Privacy Policy";
         }
     };
     $scope.settings = function (test) {

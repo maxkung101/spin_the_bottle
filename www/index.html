@@ -193,9 +193,28 @@
                 </div>
                 <br>
                 <h3>{{ about(selectedLanguage) }}</h3>
+                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
                 <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
-                <div id="myModal1" class="modal fade" role="dialog">
+                <div id="myModal3" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">{{ privacy(selectedLanguage) }}</h4>
+                            </div>
+                            <div class="modal-body" data-ng-style="innerStyle">
+                                <p class="terms-body"><!-- Privacy Policy -->
+            Policy is available in English (US) only. My Small Group respects your privacy and does not
+            collect any personal information. For more information, contact us at <a href="mailto:maxkung06@gmail.com?Subject=About%20privacy" target="_top">maxkung06@gmail.com</a>.
+								</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div id="myModal1" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -217,17 +236,15 @@
                                         (such as pastors, elders, and deacons) are also welcome to use it.
                                         Official baptism is not required.
             </li><li><strong>
-            Liability:</strong> By default, we are not responsible for any damages, or data loss. We
-                                respect your privacy and we do not collect any personal information.
+            Liability:</strong> By default, we are not responsible for any damages, data loss, or misuse.
             </li><li><strong>
             Warranty Information:</strong> We don't do warranties. This app was created for offline use,
-                                           and your own access is at your personal risk. We don't take
-                                           responsibility for its use and misuse.
+                                           and your own access is at your personal risk.
                                 </li>
                                 </ol>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">{{ close(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
@@ -274,7 +291,7 @@
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">{{ close(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
