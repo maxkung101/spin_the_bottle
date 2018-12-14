@@ -25,18 +25,18 @@ Features
 
 Privacy Policy
 --------------
-See [index.html lines 207 and 208](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L206)
+See [index.html lines 212 and 213](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L211)
 
 You can also view the policy in the app under Extras --> Privacy Policy.
 
 Terms of Use
 ------------
-See [index.html lines 225 to 242](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L224)
+See [index.html lines 230 to 247](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L229)
 
 You can also view the terms in the app under Extras --> Terms of Use.
 
 Credits
 -------
-See [index.html lines 260 to 290](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L259)
+See [index.html lines 265 to 295](https://github.com/maxkung101/spin_the_bottle/blob/master/www/index.html#L264)
 
 You can also see the credits in the app under Extras --> About.

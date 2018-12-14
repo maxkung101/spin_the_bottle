@@ -50,10 +50,15 @@
                         </div>
                     </div>
                     <div id="listbody">
-                        <p class="group" data-ng-repeat="n in list track by $index">{{n}}<button data-ng-if="!spinning" data-ng-click="removeItem($index)" class="close">&times;</button></p>
+                        <p class="group" data-ng-repeat="n in list track by $index">{{personType(n[1])}} {{n[0]}}<button data-ng-if="!spinning" data-ng-click="removeItem($index)" class="close">&times;</button></p>
                         <form name="myform" data-ng-submit="addIt()" class="input-group">
                             <input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" data-ng-model="name" data-ng-disabled="spinning" required>
-                            <div class="input-group-btn">
+                            <div class="form-check-inline">
+								<label class="form-check-label" for="check1">
+									<input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" data-ng-model="isCounselor">{{ counselor(selectedLanguage) }}
+								</label>
+							</div>
+							<div class="input-group-btn">
                                 <button type="submit" class="btn btn-success" data-ng-disabled="myform.box.$error.required">{{ add(selectedLanguage) }}</button>
                             </div>
                         </form>

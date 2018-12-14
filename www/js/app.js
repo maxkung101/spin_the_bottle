@@ -84,6 +84,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Add";
         }
     };
+	$scope.counselor = function (test) {
+        switch (test) {
+            case "1":
+                return "參贊";
+            case "2":
+                return "参赞";
+            case "3":
+                return "參贊";
+            case "4":
+                return "參贊";
+            case "5":
+                return "参赞";
+            default:
+                return "Counselor";
+        }
+    };
     $scope.eraselistcontent = function (test) {
         switch (test) {
             case "1":
@@ -696,6 +712,16 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return ":";
         }
     };
+	// --------------------------------------------------
+	$scope.personType = function (test) {
+		switch (test) {
+			case 1:
+				return $scope.counselor($scope.selectedLanguage) + $scope.colon($scope.selectedLanguage) + " ";
+				break;
+			default:
+				return "";
+		}
+	};
     // --------------------------------------------------
 	// Prayer timer
 	$scope.prayerTimerCH_TR = ["... 以你的名義祈禱，阿們。", "... 以耶穌的名字，阿們。"];
@@ -791,20 +817,25 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $timeout(function () {
             $scope.rand = Math.floor((Math.random() * $scope.list.length) + 1) - 1;
             if ($scope.randomizerRadio == "st") {
-                $scope.result0 = "We'll start with " + $scope.list[$scope.rand] + ".";
-                $scope.result1 = "讓" + $scope.list[$scope.rand] + "先唸。";
-                $scope.result2 = "让" + $scope.list[$scope.rand] + "先念。";
+                $scope.result0 = "We'll start with " + $scope.list[$scope.rand][0] + ".";
+                $scope.result1 = "讓" + $scope.list[$scope.rand][0] + "先唸。";
+                $scope.result2 = "让" + $scope.list[$scope.rand][0] + "先念。";
                 $scope.spinning = false;
             } else {
-                $scope.result0 = $scope.list[$scope.rand] + " will pray for us.";
-                $scope.result1 = $scope.list[$scope.rand] + "會祈禱。";
-                $scope.result2 = $scope.list[$scope.rand] + "会祈祷。";
+                $scope.result0 = $scope.list[$scope.rand][0] + " will pray for us.";
+                $scope.result1 = $scope.list[$scope.rand][0] + "會祈禱。";
+                $scope.result2 = $scope.list[$scope.rand][0] + "会祈祷。";
                 $scope.spinning = false;
             }
         }, $scope.delay);
     };
     $scope.addIt = function () { // add a person to the list
-        $scope.list.push($scope.name);
+		if ($scope.isCounselor) {
+			$scope.list.push( [$scope.name, 1] );
+			$scope.isCounselor = false;
+		} else {
+			$scope.list.push( [$scope.name, 0] );
+		}
         $scope.name = "";
         $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
