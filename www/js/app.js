@@ -277,6 +277,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Stop";
         }
     };
+	$scope.sortgroup = function (test) {
+        switch (test) {
+            case "1":
+                return "隨機組";
+            case "2":
+                return "随机组";
+            case "3":
+                return "隨機組";
+            case "4":
+                return "隨機組";
+            case "5":
+                return "随机组";
+            default:
+                return "Shuffle group";
+        }
+    };
     // Language text: Randomizer
     $scope.biblereading = function (test) {
         switch (test) {
@@ -748,6 +764,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     // Init
     $scope.spinning = false;
     $scope.list = $localStorage.mylist || [];
+	$scope.noCounselors = [];
     if ($scope.list.length == 0) {
         $scope.textListEmpty();
     } else if ($scope.list.length == 1) {
@@ -830,6 +847,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }, $scope.delay);
     };
     $scope.addIt = function () { // add a person to the list
+		$scope.noCounselors = [];
 		if ($scope.isCounselor) {
 			$scope.list.push( [$scope.name, 1] );
 			$scope.isCounselor = false;
@@ -848,6 +866,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $scope.list.splice(x, 1);
         $localStorage.mylist = $scope.list
         $scope.changemode();
+		$scope.noCounselors = [];
     };
     $scope.changemode = function (x) { // change randomizer mode
 		$localStorage.randomizerRadio = $scope.randomizerRadio;
@@ -859,8 +878,18 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             $scope.textListReady();
         }
     };
-    $scope.reset = function () { // reset everything
+	$scope.sortNames = function () { // sort names (excluding counselors)
+		$scope.noCounselors = [];
+		for (var i=0; i < $scope.list.length; i++) {
+			if ($scope.list[i][1] == 0) {
+				$scope.noCounselors.push($scope.list[i][0]);
+			}
+		}
+		$scope.noCounselors.sort(function(a, b){return 0.5 - Math.random()});
+	};
+    $scope.resetThis = function () { // reset everything
         $scope.list = [];
+		$scope.noCounselors = [];
         $scope.name = "";
         $localStorage.mylist = [];
         $scope.textListEmpty();
