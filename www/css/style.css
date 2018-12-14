@@ -310,6 +310,10 @@ body {
     .terms-body {
         font-size: 9pt;
     }
+
+	.shuffler {
+		padding-bottom: 70px;
+	}
 }
 
 @media only screen and ( max-device-height: 736px ) { /* iphone 8 + */
@@ -348,6 +352,10 @@ body {
     .terms-body {
         font-size: 9pt;
     }
+
+	.shuffler {
+		padding-bottom: 70px;
+	}
 }
 
 @media only screen and ( max-device-height: 667px ) { /* iphone 8 */
@@ -386,6 +394,10 @@ body {
     .terms-body {
         font-size: 9pt;
     }
+
+	.shuffler {
+		padding-bottom: 70px;
+	}
 }
 
 @media only screen and ( max-device-height: 568px ) { /* iphone SE */
@@ -424,4 +436,8 @@ body {
     .terms-body {
         font-size: 9pt;
     }
+
+	.shuffler {
+		padding-bottom: 70px;
+	}
 }
