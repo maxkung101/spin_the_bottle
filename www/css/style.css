@@ -250,6 +250,10 @@ body {
     .kkk {
         display: inline;
     }
+
+	.nnn {
+		display: none;
+	}
 }
 
 @media only screen and ( max-width: 414px ) { /* For phablets and mobile devices */
