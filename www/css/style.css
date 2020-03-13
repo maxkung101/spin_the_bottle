@@ -16,12 +16,20 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1)); /*Standard*/
+    background-color: rgb(187, 187, 187); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1)); /*Standard*/
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif;
     color:rgb(0, 0, 0);
+}
+
+.lightmode {
+    background-color: #ffffff;
+}
+
+.darkmode {
+    background-color: #303030;
 }
 
 /* All */

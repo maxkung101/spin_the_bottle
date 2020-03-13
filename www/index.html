@@ -30,7 +30,7 @@
                 <div id="listinfo">
                     <div id="listheader">
                         <h3>{{ listof(selectedLanguage) }}</h3>
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
+                        <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
                         <!-- Confirm box -->
                         <div class="modal fade" id="confirmModal">
                             <div class="modal-dialog modal-sm">
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="listbody">
+                    <div id="listbody" data-ng-model="listbody" data-ng-class="setBckgr(selectedContrast)">
                         <p class="group" data-ng-repeat="n in list track by $index">{{personType(n[1])}} {{n[0]}}<button data-ng-if="!spinning" data-ng-click="removeItem($index)" class="close">&times;</button></p>
                         <form name="myform" data-ng-submit="addIt()" class="input-group">
                             <input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" data-ng-model="name" data-ng-disabled="spinning" required>
@@ -158,7 +158,7 @@
                 <p data-ng-if='!runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-success btn-lg btn-block" data-ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p data-ng-if='runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-danger btn-lg btn-block" data-ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
 				<p data-ng-if='timerRadio=="qa"'>
-					<button type="button" class="btn btn-default btn-lg btn-block" data-ng-click="sortNames()" data-ng-disabled="list.length <= 1">{{ sortgroup(selectedLanguage) }}</button>
+					<button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-ng-click="sortNames()" data-ng-disabled="list.length <= 1">{{ sortgroup(selectedLanguage) }}</button>
 				</p>
 				<ol class="shuffler" data-ng-if='timerRadio=="qa"'>
 					<li class="group" data-ng-repeat="n in noCounselors track by $index">{{n}}<br></li>
@@ -170,9 +170,9 @@
                 <div class="list-group">
                     <label for="selectedContrast">{{ appearance(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedContrast" data-ng-model="selectedContrast" data-ng-change="changeContrast()">
-                        <option value="0">Light</option>
-                        <option value="1">Dark</option>
-                        <option value="2">Auto</option>
+                        <option value="0">{{ lightcontrast(selectedLanguage) }}</option>
+                        <option value="1">{{ darkcontrast(selectedLanguage) }}</option>
+                        <option value="2">{{ autocontrast(selectedLanguage) }}</option>
                     </select>
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedLanguage" data-ng-model="selectedLanguage" data-ng-change="changeLanguage()" data-ng-style="innerStyle">
@@ -210,16 +210,16 @@
                 </div>
                 <br>
                 <h3>{{ about(selectedLanguage) }}</h3>
-                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
-                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
-                <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
                 <div id="myModal3" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ privacy(selectedLanguage) }}</h4>
                             </div>
-                            <div class="modal-body" data-ng-style="innerStyle">
+                            <div class="modal-body" data-ng-style="innerStyle" data-ng-class="setBckgr(selectedContrast)">
                                 <p class="terms-body"><!-- Privacy Policy -->
             Policy is available in English (US) only. My Small Group respects your privacy and does not
             collect any personal information. For more information, contact us at <a href="mailto:maxkung06@gmail.com?Subject=About%20privacy" target="_top">maxkung06@gmail.com</a>.
@@ -237,7 +237,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ terms(selectedLanguage) }}</h4>
                             </div>
-                            <div class="modal-body" data-ng-style="innerStyle">
+                            <div class="modal-body" data-ng-style="innerStyle" data-ng-class="setBckgr(selectedContrast)">
                                 <p class="terms-body"><!-- Terms of Use -->
             Terms are available in English (US) only. By using this app, you agree with these terms and
             conditions. You can only agree with these terms if you're age 12 or older. We may update these
@@ -272,7 +272,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ credits(selectedLanguage) }}</h4>
                             </div>
-                            <div class="modal-body" data-ng-style="innerStyle">
+                            <div class="modal-body" data-ng-style="innerStyle" data-ng-class="setBckgr(selectedContrast)">
                                 <p class="credit-p"><!-- Credits -->
                                     <span class="credit-title">Development</span><br>
                                     <span class="credit-person">Max Kung</span>

@@ -744,6 +744,54 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Appearance";
         }
     };
+    $scope.lightcontrast = function (test) {
+        switch (test) {
+            case "1":
+                return "亮";
+            case "2":
+                return "亮";
+            case "3":
+                return "亮";
+            case "4":
+                return "亮";
+            case "5":
+                return "亮";
+            default:
+                return "Light";
+        }
+    };
+    $scope.darkcontrast = function (test) {
+        switch (test) {
+            case "1":
+                return "暗";
+            case "2":
+                return "暗";
+            case "3":
+                return "暗";
+            case "4":
+                return "暗";
+            case "5":
+                return "暗";
+            default:
+                return "Dark";
+        }
+    };
+    $scope.autocontrast = function (test) {
+        switch (test) {
+            case "1":
+                return "自動";
+            case "2":
+                return "自动";
+            case "3":
+                return "自動";
+            case "4":
+                return "自動";
+            case "5":
+                return "自动";
+            default:
+                return "Auto";
+        }
+    };
 	// --------------------------------------------------
 	$scope.personType = function (test) {
 		switch (test) {
@@ -776,6 +824,18 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 break;
             default:
                 return 'btn-default';
+        };
+    };
+    $scope.setBckgr = function(test) {
+        switch (test) {
+            case "0":
+                return 'lightmode';
+                break;
+            case "1":
+                return 'darkmode';
+                break;
+            default:
+                return '';
         };
     };
     // --------------------------------------------------
@@ -848,8 +908,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.selectedContrast = $localStorage.selectedContrast || "0";
     if ($localStorage.selectedContrast == "0") {
         $scope.bgStyle={
-            'background-color': 'rgb(255, 255, 255)',
-            'background-image': 'linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1))',
+            'background-color': 'rgb(187, 187, 187)',
+            'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
             'color': 'rgb(0, 0, 0)'
         };
     } else if ($localStorage.selectedContrast == "1") {
@@ -865,8 +925,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         $localStorage.selectedContrast = $scope.selectedContrast;
         if ($scope.selectedContrast == "0") {
             $scope.bgStyle={
-                'background-color': 'rgb(255, 255, 255)',
-                'background-image': 'linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1))',
+                'background-color': 'rgb(187, 187, 187)',
+                'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
                 'color': 'rgb(0, 0, 0)'
             };
         } else if ($scope.selectedContrast == "1") {
