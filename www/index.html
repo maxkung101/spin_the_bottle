@@ -17,7 +17,7 @@
     <script src="js/app.js"></script>
 </head>
 <body data-ng-controller="MainCtrl" data-ng-style="bgStyle">
-    <ul id="bar" class="nav nav-tabs nav-justified" role="tablist" data-ng-style="myStyle">
+    <ul id="bar" class="nav nav-tabs nav-justified" role="tablist" data-ng-style="myStyle" [ngClass]="setClasses(selectedContrast)">
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> <span class="kkk"><br></span>{{ attendance(selectedLanguage) }}</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><i class="fa fa-spinner"></i> <span class="kkk"><br></span>{{ closingtime(selectedLanguage) }}</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> <span class="kkk"><br></span>{{ timerbox(selectedLanguage) }}</a></li>

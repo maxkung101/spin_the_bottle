@@ -737,7 +737,19 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 			default:
 				return "";
 		}
-	};
+    };
+    $scope.setClasses = function(test) {
+        switch (test) {
+            case "0":
+                return 'bg-light';
+                break;
+            case "1":
+                return 'bg-dark';
+                break;
+            default:
+                return '';
+        };
+    };
     // --------------------------------------------------
 	// Prayer timer
 	$scope.prayerTimerCH_TR = ["... 以你的名義祈禱，阿們。", "... 以耶穌的名字，阿們。"];
