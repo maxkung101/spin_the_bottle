@@ -807,36 +807,36 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     };
     $scope.selectedContrast = $localStorage.selectedContrast || "0";
     if ($localStorage.selectedContrast == "0") {
-        $scope.myStyle={
+        $scope.bgStyle={
             'background-color': 'rgb(255, 255, 255)',
             'background-image': 'linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1))',
             'color': 'rgb(0, 0, 0)'
         };
     } else if ($localStorage.selectedContrast == "1") {
-        $scope.myStyle={
+        $scope.bgStyle={
             'background-color': 'rgb(0, 0, 0)',
             'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
             'color': 'rgb(255, 255, 255)'
         };
     } else {
-        $scope.myStyle={};
+        $scope.bgStyle={};
     }
     $scope.changeContrast = function () {
         $localStorage.selectedContrast = $scope.selectedContrast;
         if ($scope.selectedContrast == "0") {
-            $scope.myStyle={
+            $scope.bgStyle={
                 'background-color': 'rgb(255, 255, 255)',
                 'background-image': 'linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1))',
                 'color': 'rgb(0, 0, 0)'
             };
         } else if ($scope.selectedContrast == "1") {
-            $scope.myStyle={
+            $scope.bgStyle={
                 'background-color': 'rgb(0, 0, 0)',
                 'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
                 'color': 'rgb(255, 255, 255)'
             };
         } else {
-            $scope.myStyle={};
+            $scope.bgStyle={};
         }
     };
     $scope.selectedSpinner = $localStorage.selectedSpinner || "0";
