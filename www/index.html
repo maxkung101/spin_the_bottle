@@ -168,6 +168,12 @@
             <div id="settings" class="container tab-pane fade">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
+                    <label for="selectedContrast">Contrast{{ colon(selectedLanguage) }}</label>
+                    <select class="form-control" id="selectedContrast" data-ng-model="selectedContrast" data-ng-change="changeContrast()">
+                        <option value="0">Light</option>
+                        <option value="1">Dark</option>
+                        <option value="2">Auto</option>
+                    </select>
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedLanguage" data-ng-model="selectedLanguage" data-ng-change="changeLanguage()" data-ng-style="innerStyle">
                         <option value="0">English</option>

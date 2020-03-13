@@ -781,10 +781,10 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 	if ($localStorage.selectedLanguage == "3") {
 		$scope.myStyle={'font-family':'mySecondFont, serif'};
 		$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
-	} else if ($scope.selectedLanguage == "4") {
+	} else if ($localStorage.selectedLanguage == "4") {
 		$scope.myStyle={'font-family':'myFirstFont, sans-serif'};
 		$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
-	} else if ($scope.selectedLanguage == "5") {
+	} else if ($localStorage.selectedLanguage == "5") {
 		$scope.myStyle={'font-family':'myThirdFont, sans-serif'};
 		$scope.innerStyle={'font-family':'"Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif'};
 	} else {
@@ -804,6 +804,40 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 		} else {
 			$scope.myStyle={};
 		}
+    };
+    $scope.selectedContrast = $localStorage.selectedContrast || "0";
+    if ($localStorage.selectedContrast == "0") {
+        $scope.myStyle={
+            'background-color': 'rgb(255, 255, 255)',
+            'background-image': 'linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1))',
+            'color': 'rgb(0, 0, 0)'
+        };
+    } else if ($localStorage.selectedContrast == "1") {
+        $scope.myStyle={
+            'background-color': 'rgb(0, 0, 0)',
+            'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
+            'color': 'rgb(255, 255, 255)'
+        };
+    } else {
+        $scope.myStyle={};
+    }
+    $scope.changeContrast = function () {
+        $localStorage.selectedContrast = $scope.selectedContrast;
+        if ($scope.selectedContrast == "0") {
+            $scope.myStyle={
+                'background-color': 'rgb(255, 255, 255)',
+                'background-image': 'linear-gradient(to top, rgb(255, 255, 255), rgba(227, 248, 253, 1))',
+                'color': 'rgb(0, 0, 0)'
+            };
+        } else if ($scope.selectedContrast == "1") {
+            $scope.myStyle={
+                'background-color': 'rgb(0, 0, 0)',
+                'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
+                'color': 'rgb(255, 255, 255)'
+            };
+        } else {
+            $scope.myStyle={};
+        }
     };
     $scope.selectedSpinner = $localStorage.selectedSpinner || "0";
     $scope.changeSpinner = function () {
