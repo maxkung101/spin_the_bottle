@@ -728,6 +728,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return ":";
         }
     };
+    $scope.appearance = function (test) {
+        switch (test) {
+            case "1":
+                return "出現";
+            case "2":
+                return "出现";
+            case "3":
+                return "出現";
+            case "4":
+                return "出現";
+            case "5":
+                return "出现";
+            default:
+                return "Appearance";
+        }
+    };
 	// --------------------------------------------------
 	$scope.personType = function (test) {
 		switch (test) {
@@ -748,6 +764,18 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 break;
             default:
                 return '';
+        };
+    };
+    $scope.setBtns = function(test) {
+        switch (test) {
+            case "0":
+                return 'btn-light';
+                break;
+            case "1":
+                return 'btn-dark';
+                break;
+            default:
+                return 'btn-default';
         };
     };
     // --------------------------------------------------

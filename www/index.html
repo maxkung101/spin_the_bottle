@@ -17,7 +17,7 @@
     <script src="js/app.js"></script>
 </head>
 <body data-ng-controller="MainCtrl" data-ng-style="bgStyle">
-    <ul id="bar" class="nav nav-tabs nav-justified" role="tablist" data-ng-style="myStyle" [ngClass]="setClasses(selectedContrast)">
+    <ul id="bar" class="nav nav-tabs nav-justified" role="tablist" data-ng-style="myStyle" data-ng-class="setClasses(selectedContrast)">
         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> <span class="kkk"><br></span>{{ attendance(selectedLanguage) }}</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><i class="fa fa-spinner"></i> <span class="kkk"><br></span>{{ closingtime(selectedLanguage) }}</a></li>
         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> <span class="kkk"><br></span>{{ timerbox(selectedLanguage) }}</a></li>
@@ -67,8 +67,8 @@
             </div>
             <!-- Randomizer pane -->
             <div id="main" class="container tab-pane fade">
-                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
-                <label class="radio-inline btn btn-default"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
+                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
+                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
                 <div data-ng-switch="randomizerRadio">
                     <div class="theintro" data-ng-switch-when="st">{{ whowill(selectedLanguage) }}</div>
                     <div class="theintro" data-ng-switch-when="cp">{{ whoshall(selectedLanguage) }}</div>
@@ -114,8 +114,8 @@
             </div>
             <!-- Timer pane -->
             <div id="qa-timer" class="container tab-pane fade">
-                <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
-                <label class="radio-inline btn btn-default"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
+                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
+                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
                 <div data-ng-switch="timerRadio">
                     <h1 data-ng-switch-when="qa">{{ qa(selectedLanguage) }}</h1>
                     <h1 data-ng-switch-when="pr">{{ prayer(selectedLanguage) }}</h1>
@@ -168,7 +168,7 @@
             <div id="settings" class="container tab-pane fade">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
-                    <label for="selectedContrast">Contrast{{ colon(selectedLanguage) }}</label>
+                    <label for="selectedContrast">{{ appearance(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedContrast" data-ng-model="selectedContrast" data-ng-change="changeContrast()">
                         <option value="0">Light</option>
                         <option value="1">Dark</option>
