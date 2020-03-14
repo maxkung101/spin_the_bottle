@@ -21,7 +21,7 @@ Features
 * Timer
 * Multiple Randomizer Animations
 * Multiple Timer Themes
-* Chinese Language (both traditional and simplified)
+* Chinese Language (both simplified and traditional)
 
 Privacy Policy
 --------------
