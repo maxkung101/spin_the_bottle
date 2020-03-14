@@ -302,7 +302,7 @@ body {
 
     #listinfo {
         overflow-y: scroll;
-        max-height: 497px;
+        margin-bottom: 70px;
     }
 
     .kkk {
