@@ -2,6 +2,8 @@
 var app = angular.module('plunker', ['ngStorage']);
 
 app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
+    $scope.date = new Date();
+    $scope.hour = $scope.date.getHours();
     // Language text: Bar
     $scope.attendance = function (test) {
         switch (test) {
@@ -802,6 +804,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 				return "";
 		}
     };
+    // --------------------------------------------------
+    // Light and Dark modes
     $scope.setClasses = function(test) {
         switch (test) {
             case "0":
@@ -811,7 +815,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return 'bg-dark';
                 break;
             default:
-                return '';
+                if ($scope.hour >= 7 && $scope.hour <= 18) return 'bg-light';
+                else return 'bg-dark';
         };
     };
     $scope.setBtns = function(test) {
@@ -823,7 +828,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return 'btn-dark';
                 break;
             default:
-                return 'btn-default';
+                if ($scope.hour >= 7 && $scope.hour <= 18) return 'btn-light';
+                else return 'btn-dark';
         };
     };
     $scope.setBckgr = function(test) {
@@ -835,7 +841,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return 'darkmode';
                 break;
             default:
-                return '';
+                if ($scope.hour >= 7 && $scope.hour <= 18) return 'lightmode';
+                else return 'darkmode';
         };
     };
     // --------------------------------------------------
@@ -919,7 +926,19 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             'color': 'rgb(255, 255, 255)'
         };
     } else {
-        $scope.bgStyle={};
+        if ($scope.hour >= 7 && $scope.hour <= 18) {
+            $scope.bgStyle={
+                'background-color': 'rgb(187, 187, 187)',
+                'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
+                'color': 'rgb(0, 0, 0)'
+            };
+        } else {
+            $scope.bgStyle={
+                'background-color': 'rgb(0, 0, 0)',
+                'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
+                'color': 'rgb(255, 255, 255)'
+            };
+        }
     }
     $scope.changeContrast = function () {
         $localStorage.selectedContrast = $scope.selectedContrast;
@@ -936,7 +955,19 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 'color': 'rgb(255, 255, 255)'
             };
         } else {
-            $scope.bgStyle={};
+            if ($scope.hour >= 7 && $scope.hour <= 18) {
+                $scope.bgStyle={
+                    'background-color': 'rgb(187, 187, 187)',
+                    'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
+                    'color': 'rgb(0, 0, 0)'
+                };
+            } else {
+                $scope.bgStyle={
+                    'background-color': 'rgb(0, 0, 0)',
+                    'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
+                    'color': 'rgb(255, 255, 255)'
+                };
+            }
         }
     };
     $scope.selectedSpinner = $localStorage.selectedSpinner || "0";
