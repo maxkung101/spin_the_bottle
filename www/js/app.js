@@ -650,6 +650,22 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                 return "Black";
         }
     };
+    $scope.timerTheme3 = function (test) {
+        switch (test) {
+            case "1":
+                return "若歌教會";
+            case "2":
+                return "若歌教会";
+            case "3":
+                return "若歌教會";
+            case "4":
+                return "若歌教會";
+            case "5":
+                return "若歌教会";
+            default:
+                return "RCCC";
+        }
+    };
     $scope.timerTheme6 = function (test) {
         switch (test) {
             case "1":
