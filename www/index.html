@@ -5,24 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script data-require="angular.js@1.5.x" src="js/angular.min.js" data-semver="1.5.11"></script>
     <script src="js/ngStorage.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body data-ng-controller="MainCtrl" data-ng-style="bgStyle">
     <ul id="bar" class="nav nav-tabs nav-justified" role="tablist" data-ng-style="myStyle" data-ng-class="setClasses(selectedContrast)">
-        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> <span class="kkk"><br></span>{{ attendance(selectedLanguage) }}</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#main"><i class="fa fa-spinner"></i> <span class="kkk"><br></span>{{ closingtime(selectedLanguage) }}</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> <span class="kkk"><br></span>{{ timerbox(selectedLanguage) }}</a></li>
-        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#settings"><i class="fa fa-cog"></i> <span class="kkk"><br></span>{{ extras(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#thelist"><i class="fa fa-list-alt"></i> <span class="kkk"><br></span>{{ attendance(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#main"><i class="fa fa-spinner"></i> <span class="kkk"><br></span>{{ closingtime(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#qa-timer"><i class="fa fa-hourglass"></i> <span class="kkk"><br></span>{{ timerbox(selectedLanguage) }}</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#settings"><i class="fa fa-cog"></i> <span class="kkk"><br></span>{{ extras(selectedLanguage) }}</a></li>
     </ul>
     <div id="mainapp" class="container col-sm-12" data-ng-style="myStyle">
         <div class="tab-content">
@@ -31,7 +28,7 @@
                 <div id="listinfo">
                     <div id="listheader">
                         <h3>{{ listof(selectedLanguage) }}</h3>
-                        <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
+                        <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
                         <!-- Confirm box -->
                         <div class="modal fade" id="confirmModal">
                             <div class="modal-dialog modal-sm">
@@ -41,8 +38,8 @@
                                     <div class="modal-body confirm-body">
                                         <p>{{ eraselistcontent(selectedLanguage) }}</p>
                                         <p>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-ng-click="resetThis()">{{ yes(selectedLanguage) }}</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ no(selectedLanguage) }}</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-ng-click="resetThis()">{{ yes(selectedLanguage) }}</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ no(selectedLanguage) }}</button>
                                         </p>
                                     </div>
 
@@ -166,7 +163,7 @@
 				</ol>
 			</div>
             <!-- Extras pane -->
-            <div id="settings" class="container tab-pane fade">
+            <div id="settings" class="container tab-pane fade d-grid gap-3">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
                     <label for="selectedContrast">{{ appearance(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
@@ -211,9 +208,9 @@
                 </div>
                 <br>
                 <h3>{{ about(selectedLanguage) }}</h3>
-                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
-                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#myModal1">{{ terms(selectedLanguage) }}</button>
-                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-toggle="modal" data-target="#myModal2">{{ credits(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#myModal1">{{ terms(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#myModal2">{{ credits(selectedLanguage) }}</button>
                 <div id="myModal3" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -227,7 +224,7 @@
 								</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
@@ -262,7 +259,7 @@
                                 </ol>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
@@ -310,7 +307,7 @@
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
