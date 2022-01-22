@@ -15,6 +15,11 @@
     src: url(../fonts/DHM5UUA1.ttf) format('truetype');
 }
 
+html {
+    min-height: calc(100% + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
 body {
     background-color: rgb(187, 187, 187); /* For browsers that do not support gradients */
     background-image: linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1)); /*Standard*/
