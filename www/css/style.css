@@ -303,6 +303,7 @@ body {
         z-index: 1;
         width: 100%;
         font-size: 8pt;
+	padding-bottom: env(safe-area-inset-bottom, 0);
     }
 
     #listinfo {
