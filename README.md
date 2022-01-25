@@ -8,6 +8,10 @@ Introduction
 ------------
 ***My Small Group*** is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.
 
+Link
+----
+[https://mysmallgroup.w3spaces.com/](https://mysmallgroup.w3spaces.com/)
+
 Download source code
 --------------------
 Clone the repo via git:
