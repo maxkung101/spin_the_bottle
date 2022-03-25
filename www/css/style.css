@@ -41,7 +41,7 @@ body {
     display: none;
 }
 
-#LargeOnly {
+#largeOnly {
     display: block;
 }
 
@@ -254,7 +254,7 @@ body {
         display: block;
     }
 
-    #LargeOnly {
+    #largeOnly {
         display: none;
     }
 }
