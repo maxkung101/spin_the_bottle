@@ -37,6 +37,14 @@ body {
     background-color: #303030;
 }
 
+#smallOnly {
+    display: none;
+}
+
+#LargeOnly {
+    display: block;
+}
+
 /* All */
 #main,
 #qa-timer,
@@ -240,6 +248,14 @@ body {
 
     #bar {
         font-size: 12pt;
+    }
+
+    #smallOnly {
+        display: block;
+    }
+
+    #LargeOnly {
+        display: none;
     }
 }
 

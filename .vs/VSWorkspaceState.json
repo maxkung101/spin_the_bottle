@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\www",
-    "\\www\\img",
-    "\\www\\img\\touch"
+    "\\www\\css",
+    "\\www\\js"
   ],
-  "SelectedNode": "\\www\\manifest.json",
+  "SelectedNode": "\\www\\js\\app.js",
   "PreviewInSolutionExplorer": false
 }
