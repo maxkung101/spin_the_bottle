@@ -179,9 +179,9 @@
                 <div class="list-group">
                     <label for="selectedContrast">{{ appearance(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedContrast" data-ng-model="selectedContrast" data-ng-change="changeContrast()">
+                        <option value="2">{{ autocontrast(selectedLanguage) }}</option>
                         <option value="0">{{ lightcontrast(selectedLanguage) }}</option>
                         <option value="1">{{ darkcontrast(selectedLanguage) }}</option>
-                        <option value="2">{{ autocontrast(selectedLanguage) }}</option>
                     </select>
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedLanguage" data-ng-model="selectedLanguage" data-ng-change="changeLanguage()" data-ng-style="innerStyle">

@@ -928,7 +928,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 			$scope.myStyle={};
 		}
     };
-    $scope.selectedContrast = $localStorage.selectedContrast || "0";
+    $scope.selectedContrast = $localStorage.selectedContrast || "2";
     if ($localStorage.selectedContrast == "0") {
         $scope.bgStyle={
             'background-color': 'rgb(187, 187, 187)',
@@ -957,7 +957,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }
     }
     $scope.changeContrast = function () {
-        $localStorage.selectedContrast = $scope.selectedContrast;
+        $localStorage.selectedContrast = $scope.selectedContrast || "2";
         if ($scope.selectedContrast == "0") {
             $scope.bgStyle={
                 'background-color': 'rgb(187, 187, 187)',
