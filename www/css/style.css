@@ -37,11 +37,11 @@ body {
     background-color: #303030;
 }
 
-#smallOnly {
+div#smallOnly {
     display: none;
 }
 
-#largeOnly {
+div#largeOnly {
     display: block;
 }
 
@@ -250,11 +250,11 @@ body {
         font-size: 12pt;
     }
 
-    #smallOnly {
+    div#smallOnly {
         display: block;
     }
 
-    #largeOnly {
+    div#largeOnly {
         display: none;
     }
 }
