@@ -12,6 +12,8 @@ Link
 ----
 [https://mysmallgroup.w3spaces.com/](https://mysmallgroup.w3spaces.com/)
 
+![QR Code](www/img/frame.png?raw=true "QR Code")
+
 Download source code
 --------------------
 Clone the repo via git:
