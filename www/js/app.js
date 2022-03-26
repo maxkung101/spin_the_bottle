@@ -1028,13 +1028,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
         }, $scope.delay);
     };
     $scope.addIt = function () { // add a person to the list
-		$scope.noCounselors = [];
-		if ($scope.isCounselor) {
-			$scope.list.push( [$scope.name, 1] );
-			$scope.isCounselor = false;
-		} else {
-			$scope.list.push( [$scope.name, 0] );
-		}
+		$scope.list.push( [$scope.name] );
         $scope.name = "";
         $localStorage.mylist = $scope.list
         if ($scope.list.length == 1) {
@@ -1045,7 +1039,7 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     };
     $scope.removeItem = function (x) { // remove a person from the list
         $scope.list.splice(x, 1);
-        $localStorage.mylist = $scope.list
+        $localStorage.mylist = $scope.list;
         $scope.changemode();
 		$scope.noCounselors = [];
     };
@@ -1059,12 +1053,10 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
             $scope.textListReady();
         }
     };
-	$scope.sortNames = function () { // sort names (excluding counselors)
+	$scope.sortNames = function () { // sort names
 		$scope.noCounselors = [];
 		for (var i=0; i < $scope.list.length; i++) {
-			if ($scope.list[i][1] == 0) {
-				$scope.noCounselors.push($scope.list[i][0]);
-			}
+			$scope.noCounselors.push($scope.list[i][0]);
 		}
 		$scope.noCounselors.sort(function(a, b){return 0.5 - Math.random()});
 	};
