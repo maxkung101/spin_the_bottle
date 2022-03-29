@@ -14,9 +14,8 @@ QR Link
 
 Download source code
 --------------------
-Clone the repo via git:
 ```
-$ git clone https://github.com/maxkung101/spin_the_bottle
+$ gh repo clone maxkung101/spin_the_bottle
 ```
 Features
 --------
