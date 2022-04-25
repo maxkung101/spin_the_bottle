@@ -4,12 +4,36 @@ const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  'index.html',
-  'mobilehome.html',
-  'css/style.css',
-  'js/app.js',
-  'js/ngStorage.js',
-  'js/script.js'
+    'index.html',
+    'mobilehome.html',
+    'css/style.css',
+    'js/app.js',
+    'js/ngStorage.js',
+    'js/script.js',
+    'img/loading_disabled.jpg',
+    'img/loading-stable.png',
+    'img/loading.gif',
+    'img/fidget-disabled.png',
+    'img/fidget-spinning.gif',
+    'img/fidget-stable.png',
+    'img/bottle-disabled.png',
+    'img/bottle-stable.png',
+    'img/leekspin_disabled.jpg',
+    'img/leekspin.jpg',
+    'img/mariowalking.gif',
+    'img/mikuspinning.gif',
+    'img/nes-mario_disabled.jpg',
+    'img/nes-mario.jpg',
+    'img/nyan-cat_disabled.jpg',
+    'img/nyan-cat-stable.jpg',
+    'img/nyan-cat.gif',
+    'img/nyan-pikachu.gif',
+    'img/pikachu_disabled.jpg',
+    'img/pikachu.jpg',
+    'img/sonic-disabled.png',
+    'img/sonic-running.gif',
+    'img/sonic-stable.png',
+    'img/spinning-bottle.gif'
 ];
 
 // The install handler takes care of precaching the resources we always need.
