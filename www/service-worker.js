@@ -33,7 +33,11 @@ const PRECACHE_URLS = [
     'img/sonic-disabled.png',
     'img/sonic-running.gif',
     'img/sonic-stable.png',
-    'img/spinning-bottle.gif'
+    'img/spinning-bottle.gif'/*,
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
+    'https://use.fontawesome.com/releases/v5.6.3/css/all.css',
+    'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
+    'https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'*/
 ];
 
 // The install handler takes care of precaching the resources we always need.
@@ -41,8 +45,15 @@ self.addEventListener('install', function(event) {
     console.log('[Service Worker] Install');
     event.waitUntil(
         caches.open(PRECACHE)
-            .then(cache => cache.addAll(PRECACHE_URLS))
-            .then(self.skipWaiting())
+            .then(function (cache) {
+                console.log('Opened cache');
+                // Magic is here. Look the  mode: 'no-cors' part.
+                cache.addAll(PRECACHE_URLS.map(function (urlToPrefetch) {
+                    return new Request(urlToPrefetch, { mode: 'no-cors' });
+                })).then(function () {
+                    console.log('All resources have been fetched and cached.');
+                });
+            })
     );
 });
 
