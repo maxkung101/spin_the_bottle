@@ -6,6 +6,23 @@
   "orientation": "portrait-primary",
   "background_color": "#e3f8fd",
   "description": "My Small Group is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.",
+  "screenshots": [
+    {
+      "src": "img/screenshots/screenshot1.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "img/screenshots/screenshot2.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "img/screenshots/screenshot3.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
   "features": [
     "fast",
     "cross platform"
