@@ -1,21 +1,26 @@
 {
-    "name": "My Small Group",
-    "short_name": "My Small Group",
-    "start_url": ".",
-    "display": "standalone",
-    "orientation": "portrait-primary",
-    "background_color": "#e3f8fd",
-    "description": "My Small Group is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.",
-    "icons": [
-        {
-            "src": "img/touch/homescreen96.png",
-            "sizes": "96x96",
-            "type": "image/png"
-        },
-        {
-            "src": "img/touch/homescreen512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
-  }
+  "name": "My Small Group",
+  "short_name": "My Small Group",
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#e3f8fd",
+  "theme_color": "#000000",
+  "description": "My Small Group is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.",
+  "features": [
+    "fast",
+    "cross platform"
+  ],
+  "icons": [
+    {
+      "src": "img/touch/homescreen96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "img/touch/homescreen512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
