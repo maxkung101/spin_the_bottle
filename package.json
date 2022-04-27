@@ -3,10 +3,10 @@
   "type": "module",
   "version": "1.0.0",
   "description": "![HTML](https://img.shields.io/badge/HTML-5-red.svg)\r ![CSS](https://img.shields.io/badge/CSS-3-blue.svg)\r ![angularjs](https://img.shields.io/badge/angularjs-v1.5.11-yellow.svg)\r ![bootstrap](https://img.shields.io/badge/bootstrap-v5.0-blue.svg)",
-  "main": "server.js",
+  "main": "server.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.mjs"
   },
   "repository": {
     "type": "git",
