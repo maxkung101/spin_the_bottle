@@ -12,5 +12,5 @@ const { SERVER_PORT: port = 8080 } = process.env;
 
 // Run server
 app.listen({port}, () => {
-    console.log('Now listening at http://localhost:' + port)
+    console.log(`Now listening at http://localhost:${port}`)
 });
