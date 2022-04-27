@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
 })
 
 // Run server
-app.listen(6666, function () {
-    console.log('Now listening at http://localhost:6666')
+app.listen(8080, function () {
+    console.log('Now listening at http://localhost:8080')
 });
