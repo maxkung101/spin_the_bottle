@@ -1,11 +1,11 @@
-const path = require('path');
-const express = require('express');
+import { join } from 'path';
+import express from 'express';
 const app = express();
 
-app.use(express.static('www'));
+app.use(express('www'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(join(__dirname, 'index.html'));
 })
 
 const { SERVER_PORT: port = 8080 } = process.env;
