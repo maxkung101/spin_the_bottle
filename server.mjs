@@ -1,6 +1,5 @@
 import { join } from 'path';
 import express from 'express';
-import { fileURLToPath } from 'url';
 
 const app = express();
 const { SERVER_PORT: port = 8080 } = process.env;
