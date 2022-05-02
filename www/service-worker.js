@@ -41,36 +41,76 @@ const PRECACHE_URLS = [
 ];
 
 // The install handler takes care of precaching the resources we always need.
-self.addEventListener('install', function(event) {
-    console.log('[Service Worker] Install');
-    event.waitUntil(
-        caches.open(PRECACHE)
-            .then(function (cache) {
-                console.log('Opened cache');
-                // Magic is here. Look the  mode: 'no-cors' part.
-                cache.addAll(PRECACHE_URLS.map(function (urlToPrefetch) {
-                    return new Request(urlToPrefetch, { mode: 'no-cors' });
-                })).then(function () {
-                    console.log('All resources have been fetched and cached.');
-                });
-            })
-    );
-});
+self.addEventListener('install', (event) => {
+    // prevents the waiting, meaning the service worker activates
+    // as soon as it's finished installing
+    // NOTE: don't use this if you don't want your sw to control pages
+    // that were loaded with an older version
+    self.skipWaiting();
+  
+    event.waitUntil((async () => {
+      try {
+        // self.cacheName and self.contentToCache are imported via a script
+        const cache = await caches.open(self.cacheName);
+        const total = self.contentToCache.length;
+        let installed = 0;
+  
+        await Promise.all(self.contentToCache.map(async (url) => {
+          let controller;
+  
+          try {
+            controller = new AbortController();
+            const { signal } = controller;
+            // the cache option set to reload will force the browser to
+            // request any of these resources via the network,
+            // which avoids caching older files again
+            const req = new Request(url, { cache: 'reload' });
+            const res = await fetch(req, { signal });
+  
+            if (res && res.status === 200) {
+              await cache.put(req, res.clone());
+              installed += 1;
+            } else {
+              console.info(`unable to fetch ${url} (${res.status})`);
+            }
+          } catch (e) {
+            console.info(`unable to fetch ${url}, ${e.message}`);
+            // abort request in any case
+            controller.abort();
+          }
+        }));
+  
+        if (installed === total) {
+          console.info(`application successfully installed (${installed}/${total} files added in cache)`);
+        } else {
+          console.info(`application partially installed (${installed}/${total} files added in cache)`);
+        }
+      } catch (e) {
+        console.error(`unable to install application, ${e.message}`);
+      }
+    })());
+  });
 
 // The activate handler takes care of cleaning up old caches.
-self.addEventListener('activate', function(event) {
-    console.log('[Service Worker] Activate');
-    const currentCaches = [PRECACHE, RUNTIME];
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
-        }).then(cachesToDelete => {
-            return Promise.all(cachesToDelete.map(cacheToDelete => {
-                return caches.delete(cacheToDelete);
-            }));
-        }).then(() => self.clients.claim())
-    );
+self.addEventListener('activate', (event) => {
+    event.waitUntil((async () => {
+      const cacheNames = await caches.keys();
+  
+      await Promise.all(cacheNames.map(async (cacheName) => {
+        if (self.cacheName !== cacheName) {
+          await caches.delete(cacheName);
+        }
+      }));
+    })());
 });
+
+// this imported script has the newly generated cache name (self.cacheName)
+// and a list of all the files on my bucket I want to be cached (self.contentToCache),
+// and is automatically generated in Gitlab based on the tag version
+self.importScripts('cache.js');
+
+// the install event will be triggered if there's any update,
+// a new cache will be created (see 1.) and the old one deleted (see 2.)
 
 // The fetch handler serves responses for same-origin resources from a cache.
 // If no response is found, it populates the runtime cache with the response
