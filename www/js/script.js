@@ -8,9 +8,9 @@ function isRunningMinimal() {
 }
 
 if (isRunningStandalone()) {
-    window.location = "mobilehome.html";
+    window.location = "index.html";
 }
 
 if (isRunningMinimal()) {
-    window.location = "mobilehome.html";
+    window.location = "index.html";
 }

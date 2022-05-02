@@ -5,7 +5,6 @@ const RUNTIME = 'runtime';
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
     'index.html',
-    'mobilehome.html',
     'css/style.css',
     'js/app.js',
     'js/ngStorage.js',
