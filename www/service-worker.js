@@ -103,14 +103,6 @@ self.addEventListener('activate', (event) => {
     })());
 });
 
-// this imported script has the newly generated cache name (self.cacheName)
-// and a list of all the files on my bucket I want to be cached (self.contentToCache),
-// and is automatically generated in Gitlab based on the tag version
-self.importScripts('cache.js');
-
-// the install event will be triggered if there's any update,
-// a new cache will be created (see 1.) and the old one deleted (see 2.)
-
 // The fetch handler serves responses for same-origin resources from a cache.
 // If no response is found, it populates the runtime cache with the response
 // from the network before returning it to the page.
