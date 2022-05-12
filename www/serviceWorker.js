@@ -10,7 +10,7 @@ const {
     precaching: { matchPrecache, precacheAndRoute },
 } = workbox;
 
-precacheAndRoute([{ url: "index.html", revision: null }]);
+precacheAndRoute([{ url: "offline.html", revision: null }]);
 
 // Cache page navigations (html) with a Network First strategy
 registerRoute(
@@ -78,7 +78,7 @@ registerRoute(
 setCatchHandler(async ({ event }) => {
     // Return the precached offline page if a document is being requested
     if (event.request.destination === "document") {
-        return matchPrecache("index.html");
+        return matchPrecache("offline.html");
     }
 
     return Response.error();
