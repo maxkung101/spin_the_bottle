@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\www"
   ],
-  "SelectedNode": "\\server.js",
+  "SelectedNode": "\\www\\manifest.json",
   "PreviewInSolutionExplorer": false
 }
