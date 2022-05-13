@@ -21,20 +21,49 @@ html {
 }
 
 body {
-    background-color: rgb(187, 187, 187); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1)); /*Standard*/
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "Helvetica Neue", "Microsoft JhengHei", "Arial", sans-serif;
-    color:rgb(0, 0, 0);
 }
 
-.lightmode {
-    background-color: #ffffff;
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: rgb(187, 187, 187); /* For browsers that do not support gradients */
+        background-image: linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1)); /*Standard*/
+        color: rgb(0, 0, 0);
+    }
+
+    .btn-light {
+        display: inline;
+    }
+
+    .btn-dark {
+        display: none;
+    }
+
+    #listbody, #listinfo, .modal-body {
+        background-color: #ffffff;
+    }
 }
 
-.darkmode {
-    background-color: #303030;
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(0, 0, 0); /* For browsers that do not support gradients */
+        background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1)); /*Standard*/
+        color: rgb(255, 255, 255);
+    }
+
+    .btn-light {
+        display: none;
+    }
+
+    .btn-dark {
+        display: inline;
+    }
+
+    #listbody, #listinfo, .modal-body {
+        background-color: #303030;
+    }
 }
 
 div#smallOnly {
@@ -67,7 +96,6 @@ div#largeOnly {
 
 /* My List pane */
 #listinfo {
-    background-color: #fff;
     border-style: solid;
     border-width: 2px;
     border-color: #adadad;
@@ -319,7 +347,7 @@ div#largeOnly {
         z-index: 1;
         width: 100%;
         font-size: 8pt;
-	padding-bottom: env(safe-area-inset-bottom, 0);
+	    padding-bottom: env(safe-area-inset-bottom, 0);
     }
 
     #listinfo {

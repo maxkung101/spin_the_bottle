@@ -821,47 +821,6 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 		}
     };
     // --------------------------------------------------
-    // Light and Dark modes
-    $scope.setClasses = function(test) {
-        switch (test) {
-            case "0":
-                return 'bg-light';
-                break;
-            case "1":
-                return 'bg-dark';
-                break;
-            default:
-                if ($scope.hour >= 7 && $scope.hour <= 18) return 'bg-light';
-                else return 'bg-dark';
-        };
-    };
-    $scope.setBtns = function(test) {
-        switch (test) {
-            case "0":
-                return 'btn-light';
-                break;
-            case "1":
-                return 'btn-dark';
-                break;
-            default:
-                if ($scope.hour >= 7 && $scope.hour <= 18) return 'btn-light';
-                else return 'btn-dark';
-        };
-    };
-    $scope.setBckgr = function(test) {
-        switch (test) {
-            case "0":
-                return 'lightmode';
-                break;
-            case "1":
-                return 'darkmode';
-                break;
-            default:
-                if ($scope.hour >= 7 && $scope.hour <= 18) return 'lightmode';
-                else return 'darkmode';
-        };
-    };
-    // --------------------------------------------------
 	// Prayer timer
 	$scope.prayerTimerCH_TR = ["... 以你的名義祈禱，阿們。", "... 以耶穌的名字，阿們。"];
 	$scope.prayerTimerCH_SP = ["... 以你的名义祈祷，阿们。", "... 以耶稣的名字，阿们。"];
@@ -927,64 +886,6 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
 		} else {
 			$scope.myStyle={};
 		}
-    };
-    $scope.selectedContrast = $localStorage.selectedContrast || "2";
-    if ($localStorage.selectedContrast == "0") {
-        $scope.bgStyle={
-            'background-color': 'rgb(187, 187, 187)',
-            'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
-            'color': 'rgb(0, 0, 0)'
-        };
-    } else if ($localStorage.selectedContrast == "1") {
-        $scope.bgStyle={
-            'background-color': 'rgb(0, 0, 0)',
-            'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
-            'color': 'rgb(255, 255, 255)'
-        };
-    } else {
-        if ($scope.hour >= 7 && $scope.hour <= 18) {
-            $scope.bgStyle={
-                'background-color': 'rgb(187, 187, 187)',
-                'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
-                'color': 'rgb(0, 0, 0)'
-            };
-        } else {
-            $scope.bgStyle={
-                'background-color': 'rgb(0, 0, 0)',
-                'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
-                'color': 'rgb(255, 255, 255)'
-            };
-        }
-    }
-    $scope.changeContrast = function () {
-        $localStorage.selectedContrast = $scope.selectedContrast || "2";
-        if ($scope.selectedContrast == "0") {
-            $scope.bgStyle={
-                'background-color': 'rgb(187, 187, 187)',
-                'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
-                'color': 'rgb(0, 0, 0)'
-            };
-        } else if ($scope.selectedContrast == "1") {
-            $scope.bgStyle={
-                'background-color': 'rgb(0, 0, 0)',
-                'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
-                'color': 'rgb(255, 255, 255)'
-            };
-        } else {
-            if ($scope.hour >= 7 && $scope.hour <= 18) {
-                $scope.bgStyle={
-                    'background-color': 'rgb(187, 187, 187)',
-                    'background-image': 'linear-gradient(to top, rgb(187, 187, 187), rgba(227, 248, 253, 1))',
-                    'color': 'rgb(0, 0, 0)'
-                };
-            } else {
-                $scope.bgStyle={
-                    'background-color': 'rgb(0, 0, 0)',
-                    'background-image': 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 106, 133, 1))',
-                    'color': 'rgb(255, 255, 255)'
-                };
-            }
-        }
     };
     $scope.selectedSpinner = $localStorage.selectedSpinner || "0";
     $scope.changeSpinner = function () {

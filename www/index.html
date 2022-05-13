@@ -38,7 +38,8 @@
                 <div id="listinfo">
                     <div id="listheader">
                         <h3>{{ listof(selectedLanguage) }}</h3>
-                        <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
+                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#confirmModal" data-ng-disabled="list.length == 0 || spinning"><strong>{{ totalcount(selectedLanguage) }}{{ colon(selectedLanguage) }}</strong> {{ list.length }}</button>
                         <!-- Confirm box -->
                         <div class="modal fade" id="confirmModal">
                             <div class="modal-dialog modal-sm">
@@ -57,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="listbody" data-ng-model="listbody" data-ng-class="setBckgr(selectedContrast)">
+                    <div id="listbody" data-ng-model="listbody">
                         <form name="myform" data-ng-submit="addIt()" class="input-group">
                             <input type="text" class="form-control" id="name" name="box" placeholder="{{ nameplace(selectedLanguage) }}" data-ng-model="name" data-ng-disabled="spinning" required>
 							<div class="input-group-btn">
@@ -70,8 +71,8 @@
             </div>
             <!-- Randomizer pane -->
             <div id="main" class="container tab-pane fade">
-                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
-                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-secondary"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="st">{{ biblereading(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-secondary"><input type="radio" name="randomizerRadio" data-ng-model="randomizerRadio" data-ng-click="changemode()" data-ng-disabled="spinning" value="cp">{{ closeprayer(selectedLanguage) }}</label>
                 <div data-ng-switch="randomizerRadio">
                     <div class="theintro" data-ng-switch-when="st">{{ whowill(selectedLanguage) }}</div>
                     <div class="theintro" data-ng-switch-when="cp">{{ whoshall(selectedLanguage) }}</div>
@@ -117,8 +118,8 @@
             </div>
             <!-- Timer pane -->
             <div id="qa-timer" class="container tab-pane fade">
-                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
-                <label class="radio-inline btn" data-ng-class="setBtns(selectedContrast)"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-secondary"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="qa">{{ qa(selectedLanguage) }}</label>
+                <label class="radio-inline btn btn-secondary"><input type="radio" name="timerRadio" data-ng-model="timerRadio" data-ng-click="changeTimerRadio()" data-ng-disabled="runtimer1 || runtimer2" value="pr">{{ prayer(selectedLanguage) }}</label>
                 <div data-ng-switch="timerRadio">
                     <h1 data-ng-switch-when="qa">{{ qa(selectedLanguage) }}</h1>
                     <h1 data-ng-switch-when="pr">{{ prayer(selectedLanguage) }}</h1>
@@ -161,7 +162,8 @@
                 <p data-ng-if='!runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-success btn-lg btn-block" data-ng-click="countdown2()">{{ startbutton(selectedLanguage) }}</button></p>
                 <p data-ng-if='runtimer2 && timerRadio=="pr"'><button type="button" class="btn btn-danger btn-lg btn-block" data-ng-click="endcountdown2()">{{ stopbutton(selectedLanguage) }}</button></p>
 				<p data-ng-if='timerRadio=="qa"'>
-					<button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-ng-click="sortNames()" data-ng-disabled="list.length <= 1">{{ sortgroup(selectedLanguage) }}</button>
+                    <button type="button" class="btn btn-lg btn-block btn-light" data-ng-click="sortNames()" data-ng-disabled="list.length <= 1">{{ sortgroup(selectedLanguage) }}</button>
+                    <button type="button" class="btn btn-lg btn-block btn-dark" data-ng-click="sortNames()" data-ng-disabled="list.length <= 1">{{ sortgroup(selectedLanguage) }}</button>
 				</p>
 				<ol class="shuffler" data-ng-if='timerRadio=="qa"'>
 					<li class="group" data-ng-repeat="n in noCounselors track by $index">{{n}}<br></li>
@@ -171,12 +173,6 @@
             <div id="settings" class="container tab-pane fade d-grid gap-3">
                 <h3>{{ settings(selectedLanguage) }}</h3>
                 <div class="list-group">
-                    <label for="selectedContrast">{{ appearance(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
-                    <select class="form-control" id="selectedContrast" data-ng-model="selectedContrast" data-ng-change="changeContrast()">
-                        <option value="2">{{ autocontrast(selectedLanguage) }}</option>
-                        <option value="0">{{ lightcontrast(selectedLanguage) }}</option>
-                        <option value="1">{{ darkcontrast(selectedLanguage) }}</option>
-                    </select>
                     <label for="selectedLanguage">{{ language(selectedLanguage) }}{{ colon(selectedLanguage) }}</label>
                     <select class="form-control" id="selectedLanguage" data-ng-model="selectedLanguage" data-ng-change="changeLanguage()" data-ng-style="innerStyle">
                         <option value="0">English</option>
@@ -213,23 +209,27 @@
                 </div>
                 <br>
                 <h3>{{ about(selectedLanguage) }}</h3>
-                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
-                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#myModal1">{{ terms(selectedLanguage) }}</button>
-                <button type="button" class="btn btn-lg btn-block" data-ng-class="setBtns(selectedContrast)" data-bs-toggle="modal" data-bs-target="#myModal2">{{ credits(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block btn-light" data-bs-toggle="modal" data-bs-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block btn-dark" data-bs-toggle="modal" data-bs-target="#myModal3">{{ privacy(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block btn-light" data-bs-toggle="modal" data-bs-target="#myModal1">{{ terms(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block btn-dark" data-bs-toggle="modal" data-bs-target="#myModal1">{{ terms(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block btn-light" data-bs-toggle="modal" data-bs-target="#myModal2">{{ credits(selectedLanguage) }}</button>
+                <button type="button" class="btn btn-lg btn-block btn-dark" data-bs-toggle="modal" data-bs-target="#myModal2">{{ credits(selectedLanguage) }}</button>
                 <div id="myModal3" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ privacy(selectedLanguage) }}</h4>
                             </div>
-                            <div class="modal-body" data-ng-style="innerStyle" data-ng-class="setBckgr(selectedContrast)">
+                            <div class="modal-body" data-ng-style="innerStyle">
                                 <p class="terms-body"><!-- Privacy Policy -->
             Policy is available in English (US) only. My Small Group respects your privacy and does not
             collect any personal information. For more information, contact us at <a href="mailto:maxkung06@gmail.com?Subject=About%20privacy" target="_top">maxkung06@gmail.com</a>.
 								</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ terms(selectedLanguage) }}</h4>
                             </div>
-                            <div class="modal-body" data-ng-style="innerStyle" data-ng-class="setBckgr(selectedContrast)">
+                            <div class="modal-body" data-ng-style="innerStyle">
                                 <p class="terms-body"><!-- Terms of Use -->
             Terms are available in English (US) only. By using this app, you agree with these terms and
             conditions. You can only agree with these terms if you're age 12 or older. We may update these
@@ -264,7 +264,8 @@
                                 </ol>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
@@ -275,7 +276,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">{{ credits(selectedLanguage) }}</h4>
                             </div>
-                            <div class="modal-body" data-ng-style="innerStyle" data-ng-class="setBckgr(selectedContrast)">
+                            <div class="modal-body" data-ng-style="innerStyle">
                                 <p class="credit-p"><!-- Credits -->
                                     <span class="credit-title">Development</span><br>
                                     <span class="credit-person">Max Kung</span>
@@ -312,7 +313,8 @@
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn" data-ng-class="setBtns(selectedContrast)" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
+                                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">{{ closebtn(selectedLanguage) }}</button>
                             </div>
                         </div>
                     </div>
