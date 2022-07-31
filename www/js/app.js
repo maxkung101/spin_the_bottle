@@ -653,17 +653,17 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
     $scope.timerTheme3 = function (test) {
         switch (test) {
             case "1":
-                return "若歌教會";
+                return "深藍";
             case "2":
-                return "若歌教会";
+                return "深蓝";
             case "3":
-                return "若歌教會";
+                return "深藍";
             case "4":
-                return "若歌教會";
+                return "深藍";
             case "5":
-                return "若歌教会";
+                return "深蓝";
             default:
-                return "RCCC";
+                return "Dark Blue";
         }
     };
     $scope.timerTheme6 = function (test) {
