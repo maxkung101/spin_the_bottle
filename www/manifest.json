@@ -3,6 +3,7 @@
   "short_name": "My Small Group",
   "start_url": ".",
   "display": "standalone",
+  "display_override": ["window-controls-overlay"],
   "orientation": "portrait-primary",
   "theme_color": "#e3f8fd",
   "background_color": "#e3f8fd",
