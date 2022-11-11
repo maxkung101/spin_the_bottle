@@ -54,5 +54,8 @@
       "purpose": "maskable"
     }
   ],
-  "dir": "auto"
+  "dir": "auto",
+  "categories": [
+    "utilities"
+  ]
 }
