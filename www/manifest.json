@@ -58,5 +58,12 @@
   "categories": [
     "utilities"
   ],
-  "scope": "https://calm-lime-eel-tutu.cyclic.app/"
+  "scope": "https://calm-lime-eel-tutu.cyclic.app/",
+  "shortcuts": [
+    {
+      "name": "calmLimeEelTutu",
+      "url": "https://calm-lime-eel-tutu.cyclic.app/",
+      "description": "cyclic"
+    }
+  ]
 }
