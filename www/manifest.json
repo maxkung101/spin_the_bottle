@@ -57,5 +57,6 @@
   "dir": "auto",
   "categories": [
     "utilities"
-  ]
+  ],
+  "scope": "https://calm-lime-eel-tutu.cyclic.app/"
 }
