@@ -1,9 +1,3 @@
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-        navigator.serviceWorker
-            .register("serviceWorker.js")
-            .then((registration) => {
-                console.log("SW registration successful");
-            });
-    });
-}
+if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
