@@ -1,12 +1,15 @@
 {
+  "id": "/",
   "name": "My Small Group",
   "short_name": "My Small Group",
-  "start_url": ".",
+  "start_url": "/",
   "display_override": ["fullscreen", "minimal-ui"],
   "display": "standalone",
   "orientation": "portrait-primary",
   "theme_color": "#e3f8fd",
   "background_color": "#e3f8fd",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "description": "My Small Group is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.",
   "screenshots": [
     {
@@ -27,7 +30,8 @@
   ],
   "features": [
     "fast",
-    "cross platform"
+    "cross platform",
+    "simple"
   ],
   "icons": [
     {
@@ -707,11 +711,11 @@
   "categories": [
     "utilities"
   ],
-  "scope": "https://powerful-raincoat-eel.cyclic.app/",
+  "scope": "/",
   "shortcuts": [
     {
       "name": "Home",
-      "url": "/home",
+      "url": "/",
       "description": "Home page"
     }
   ],
