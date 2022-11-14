@@ -710,9 +710,9 @@
   "scope": "https://powerful-raincoat-eel.cyclic.app/",
   "shortcuts": [
     {
-      "name": "calmLimeEelTutu",
-      "url": "https://calm-lime-eel-tutu.cyclic.app/",
-      "description": "cyclic"
+      "name": "Home",
+      "url": "/home",
+      "description": "Home page"
     }
   ],
   "lang": "en"
