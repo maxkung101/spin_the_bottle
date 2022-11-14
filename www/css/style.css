@@ -1,20 +1,5 @@
 /* CSS 3 Document */
 
-@font-face {
-    font-family: myFirstFont;
-    src: url(../fonts/DBK5HLU1.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: mySecondFont;
-    src: url(../fonts/DFBK5B00.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: myThirdFont;
-    src: url(../fonts/DHM5UUA1.ttf) format('truetype');
-}
-
 html {
     min-height: calc(100% + env(safe-area-inset-top));
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
