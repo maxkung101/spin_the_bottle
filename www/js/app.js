@@ -652,17 +652,8 @@ app.controller('MainCtrl', function ($scope, $localStorage, $timeout, $window) {
                         if ($scope.selectedLanguage == "1") {
 							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_TR.length) + 1) - 1;
                             $window.alert($scope.prayerTimerCH_TR[$scope.randint]);
-						} else if ($scope.selectedLanguage == "3") {
-							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_TR.length) + 1) - 1;
-                            $window.alert($scope.prayerTimerCH_TR[$scope.randint]);
-						} else if ($scope.selectedLanguage == "4") {
-							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_TR.length) + 1) - 1;
-                            $window.alert($scope.prayerTimerCH_TR[$scope.randint]);
                         } else if ($scope.selectedLanguage == "2") {
 							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_SP.length) + 1) - 1;
-                            $window.alert($scope.prayerTimerCH_SP[$scope.randint]);
-						} else if ($scope.selectedLanguage == "5") {
-                            $scope.randint = Math.floor((Math.random() * $scope.prayerTimerCH_SP.length) + 1) - 1;
                             $window.alert($scope.prayerTimerCH_SP[$scope.randint]);
                         } else {
 							$scope.randint = Math.floor((Math.random() * $scope.prayerTimerEN_US.length) + 1) - 1;
