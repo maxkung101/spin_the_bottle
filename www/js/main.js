@@ -4,5 +4,5 @@ const el = document.createElement('pwa-update');
 document.body.appendChild(el);
 
 if (typeof navigator.serviceWorker !== 'undefined') {
-    navigator.serviceWorker.register('www/serviceWorker.js')
+    navigator.serviceWorker.register('serviceWorker.js')
   }
