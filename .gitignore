@@ -48,3 +48,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Other
+node_modules
+dist
+dev-dist
+build
+types
+.idea
+.github
