@@ -2,7 +2,7 @@
   "id": "/",
   "name": "My Small Group",
   "short_name": "My Small Group",
-  "start_url": "https://powerful-raincoat-eel.cyclic.app/",
+  "start_url": "/",
   "display_override": [ "fullscreen", "minimal-ui" ],
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -711,7 +711,7 @@
   "categories": [
     "utilities"
   ],
-  "scope": "https://powerful-raincoat-eel.cyclic.app/",
+  "scope": "/",
   "shortcuts": [
     {
       "name": "Home",
