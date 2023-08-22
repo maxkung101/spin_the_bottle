@@ -711,7 +711,7 @@
   "categories": [
     "utilities"
   ],
-  "scope": "/",
+  "scope": ".",
   "shortcuts": [
     {
       "name": "Home",
