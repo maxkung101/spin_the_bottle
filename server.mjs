@@ -2,10 +2,10 @@ import path from 'path';
 import { join, dirname } from 'path';
 import express from 'express';
 import { fileURLToPath } from 'url';
+import https from "https";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const https = require('https');
 const app = express();
 const { SERVER_PORT: port = 8080 } = process.env;
 
