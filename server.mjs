@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
     res.sendFile(join(__dirname, 'index.html'));
 })
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 
 // Run server
 server.listen({port}, () => {
