@@ -9,7 +9,6 @@ const __dirname = dirname(__filename);
 const app = express();
 const { SERVER_PORT: port = 8080 } = process.env;
 
-//app.use(express('www'));
 app.use(express.static(path.join(__dirname, 'www')));
 
 app.get('/', (req, res) => {
