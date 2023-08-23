@@ -16,7 +16,9 @@ app.get('/', (req, res) => {
     res.sendFile(join(__dirname, 'index.html'));
 })
 
+const server = http.createServer(app);
+
 // Run server
-app.listen({port}, () => {
+server.listen({port}, () => {
     console.log(`Now listening at http://localhost:${port}`)
 });
