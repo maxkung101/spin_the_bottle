@@ -1,4 +1,4 @@
-// This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
+/*// This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
 
 const CACHE = "pwabuilder-offline-page";
 
@@ -54,3 +54,18 @@ self.addEventListener('fetch', (event) => {
 });
 
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
+*/
+
+self.addEventListener('install', function(e) {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', function(e) {
+  self.registration.unregister()
+    .then(function() {
+      return self.clients.matchAll();
+    })
+    .then(function(clients) {
+      clients.forEach(client => client.navigate(client.url))
+    });
+});
