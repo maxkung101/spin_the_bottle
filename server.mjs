@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 const server = https.createServer(app);
 
-// Run server here
+// Run server
 server.listen({port}, () => {
     console.log(`Now listening at http://localhost:${port}`)
 });
