@@ -4,17 +4,10 @@
 ![angularjs](https://img.shields.io/badge/angularjs-v1.5.11-yellow.svg)
 ![bootstrap](https://img.shields.io/badge/bootstrap-v5.0-blue.svg)
 
-Introduction
-------------
 ***My Small Group*** is a randomizer app intended for caretakers and counselors at church fellowship to lead their small group.
 
-Download source code
---------------------
-```
-$ gh repo clone maxkung101/spin_the_bottle
-```
-Features
---------
+## Introduction
+### Features
 * Name List
 * Randomizer
 * Timer
@@ -23,6 +16,13 @@ Features
 * Multiple Timer Themes
 * Chinese Language (both simplified and traditional)
 
-Credits
--------
+## Setup
+### Download source code
+Type in the following command in your terminal.
+```
+$ gh repo clone maxkung101/spin_the_bottle
+```
+
+## About
+### Credits
 Programmed by Max Kung
